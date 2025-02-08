@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" size="small" :inline="true" v-show="showSearch" label-width="68px">
-      <el-form-item label="字典名称" prop="dictType">
+      <el-form-item label="Tên" prop="dictType">
         <el-select v-model="queryParams.dictType">
           <el-option
             v-for="item in typeOptions"
@@ -11,16 +11,16 @@
           />
         </el-select>
       </el-form-item>
-      <el-form-item label="字典标签" prop="dictLabel">
+      <el-form-item label="Thẻ" prop="dictLabel">
         <el-input
           v-model="queryParams.dictLabel"
-          placeholder="请输入字典标签"
+          placeholder="Vui lòng nhập thẻ từ điển"
           clearable
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="状态" prop="status">
-        <el-select v-model="queryParams.status" placeholder="数据状态" clearable>
+      <el-form-item label="Trạng thái" prop="status">
+        <el-select v-model="queryParams.status" placeholder="Trạng thái dữ liệu" clearable>
           <el-option
             v-for="dict in dict.type.sys_normal_disable"
             :key="dict.value"
@@ -30,8 +30,8 @@
         </el-select>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">搜索</el-button>
-        <el-button icon="el-icon-refresh" size="mini" @click="resetQuery">重置</el-button>
+        <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">Tìm kiếm</el-button>
+        <el-button icon="el-icon-refresh" size="mini" @click="resetQuery">Reset</el-button>
       </el-form-item>
     </el-form>
 
@@ -44,7 +44,7 @@
           size="mini"
           @click="handleAdd"
           v-hasPermi="['system:dict:add']"
-        >新增</el-button>
+        >Thêm</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -55,7 +55,7 @@
           :disabled="single"
           @click="handleUpdate"
           v-hasPermi="['system:dict:edit']"
-        >修改</el-button>
+        >Sửa</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -66,7 +66,7 @@
           :disabled="multiple"
           @click="handleDelete"
           v-hasPermi="['system:dict:remove']"
-        >删除</el-button>
+        >Xóa</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -76,7 +76,7 @@
           size="mini"
           @click="handleExport"
           v-hasPermi="['system:dict:export']"
-        >导出</el-button>
+        >Export</el-button>
       </el-col>
       <el-col :span="1.5">
         <el-button
@@ -85,7 +85,7 @@
           icon="el-icon-close"
           size="mini"
           @click="handleClose"
-        >关闭</el-button>
+        >Close</el-button>
       </el-col>
       <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
