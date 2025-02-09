@@ -29,8 +29,8 @@
       </el-col>
       <!--用户数据-->
       <el-col :span="20" :xs="24">
-        <el-form :model="queryParams" ref="queryForm" size="small" :inline="true" v-show="showSearch" label-width="68px">
-          <el-form-item label="Người dùng" prop="userName">
+        <el-form :model="queryParams" ref="queryForm" size="small" :inline="true" v-show="showSearch" label-width="80px">
+          <el-form-item label="Tên" prop="userName">
             <el-input
               v-model="queryParams.userName"
               placeholder="Vui lòng nhập tên người dùng của bạn"
