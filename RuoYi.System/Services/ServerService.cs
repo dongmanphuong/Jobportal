@@ -7,7 +7,7 @@ namespace RuoYi.System.Services;
 
 public class ServerService : ITransient
 {
-    private const string NO_DATA = "暂无";
+    private const string NO_DATA = "None";
 
     // https://github.com/Jinjinov/Hardware.Info
     private readonly IHardwareInfo _hardwareInfo;
@@ -169,7 +169,7 @@ public class ServerService : ITransient
         var minutes = (totalSeconds - days * daySeconds - hours * hourSeconds) / 60; // 分钟
         //var seconds = totalSeconds % 60;
 
-        return $"{days}天{hours}小时{minutes}分钟";
+        return $"{days} days {hours} hours {minutes} minutes";
     }
 
     /// <summary>
@@ -180,7 +180,7 @@ public class ServerService : ITransient
     private string GetRunTime(DateTime endTime, DateTime startTime)
     {
         var timeSpan = endTime - startTime;
-        return $"{timeSpan.Days}天{timeSpan.Hours}小时{timeSpan.Minutes}分钟";
+        return $"{timeSpan.Days} days {timeSpan.Hours} hours {timeSpan.Minutes} minutes";
 
         //long nd = 1000 * 24 * 60 * 60;
         //long nh = 1000 * 60 * 60;
