@@ -13,6 +13,7 @@ export let isRelogin = { show: false };
 
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 // 创建axios实例
+
 const service = axios.create({
   // axios中请求配置有baseURL选项，表示请求URL公共部分
   baseURL: process.env.VUE_APP_BASE_API,
@@ -74,7 +75,7 @@ service.interceptors.request.use(config => {
 // 响应拦截器
 service.interceptors.response.use(res => {
     // 未设置状态码则默认成功状态
-    const code = res.data.code || 200;
+    const code = res.data.code || 200 ;
     // 获取错误信息
     const msg = errorCode[code] || res.data.msg || errorCode['default']
     // 二进制数据则直接返回
@@ -116,9 +117,9 @@ service.interceptors.response.use(res => {
     if (message == "Network Error") {
       message = "Kết nối api bất thường";
     } else if (message.includes("timeout")) {
-      message = "api timeout";
+      message = "API timeout";
     } else if (message.includes("Request failed with status code")) {
-      message = "Giao diện hệ thống" + message.substr(message.length - 3) + "Ngoại lệ";
+      message = "Error code " + message.substr(message.length - 3) + "";
     }
     Message({ message: message, type: 'error', duration: 5 * 1000 })
     return Promise.reject(error)

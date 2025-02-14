@@ -5,8 +5,8 @@ namespace RuoYi.Framework
 {
     public class AjaxResult : ConcurrentDictionary<string, object>
     {
-        private const string Msg_Success = "操作成功.";
-        private const string Msg_Error = "系统错误, 请联系管理员.";
+        private const string Msg_Success = "Succeed.";
+        private const string Msg_Error = "System error, please contact the administrator.";
 
         /** 状态码 */
         public const string CODE_TAG = "code";

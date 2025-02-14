@@ -109,7 +109,7 @@ export const selectComponents = [
     label: 'Drop Down',
     tag: 'el-select',
     tagIcon: 'select',
-    placeholder: '请选择',
+    placeholder: 'Please select ',
     defaultValue: undefined,
     span: 24,
     labelWidth: null,
@@ -120,10 +120,10 @@ export const selectComponents = [
     filterable: false,
     multiple: false,
     options: [{
-      label: '选项一',
+      label: 'Options 1',
       value: 1
     }, {
-      label: '选项二',
+      label: 'Options 2',
       value: 2
     }],
     regList: [],
@@ -131,10 +131,10 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/select'
   },
   {
-    label: '级联选择',
+    label: 'Cascade Selection',
     tag: 'el-cascader',
     tagIcon: 'cascader',
-    placeholder: '请选择',
+    placeholder: 'Please select ',
     defaultValue: [],
     span: 24,
     labelWidth: null,
@@ -152,11 +152,11 @@ export const selectComponents = [
     options: [{
       id: 1,
       value: 1,
-      label: '选项1',
+      label: 'Option 1',
       children: [{
         id: 2,
         value: 2,
-        label: '选项1-1'
+        label: 'Option 1-1'
       }]
     }],
     dataType: 'dynamic',
@@ -169,7 +169,7 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/cascader'
   },
   {
-    label: '单选框组',
+    label: 'Radio Group',
     tag: 'el-radio-group',
     tagIcon: 'radio',
     defaultValue: undefined,
@@ -182,10 +182,10 @@ export const selectComponents = [
     disabled: false,
     required: true,
     options: [{
-      label: '选项一',
+      label: 'Option 1',
       value: 1
     }, {
-      label: '选项二',
+      label: 'Option 2',
       value: 2
     }],
     regList: [],
@@ -193,7 +193,7 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/radio'
   },
   {
-    label: '多选框组',
+    label: 'Checkbox Group',
     tag: 'el-checkbox-group',
     tagIcon: 'checkbox',
     defaultValue: [],
@@ -206,10 +206,10 @@ export const selectComponents = [
     disabled: false,
     required: true,
     options: [{
-      label: '选项一',
+      label: 'Option 1',
       value: 1
     }, {
-      label: '选项二',
+      label: 'Option 2',
       value: 2
     }],
     regList: [],
@@ -217,7 +217,7 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/checkbox'
   },
   {
-    label: '开关',
+    label: 'Switch',
     tag: 'el-switch',
     tagIcon: 'switch',
     defaultValue: false,
@@ -237,7 +237,7 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/switch'
   },
   {
-    label: '滑块',
+    label: 'Slider',
     tag: 'el-slider',
     tagIcon: 'slider',
     defaultValue: null,
@@ -255,10 +255,10 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/slider'
   },
   {
-    label: '时间选择',
+    label: 'Time Picker',
     tag: 'el-time-picker',
     tagIcon: 'time',
-    placeholder: '请选择',
+    placeholder: 'Please Select',
     defaultValue: null,
     span: 24,
     labelWidth: null,
@@ -276,7 +276,7 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/time-picker'
   },
   {
-    label: '时间范围',
+    label: 'Time Range',
     tag: 'el-time-picker',
     tagIcon: 'time-range',
     defaultValue: null,
@@ -287,9 +287,9 @@ export const selectComponents = [
     clearable: true,
     required: true,
     'is-range': true,
-    'range-separator': '至',
-    'start-placeholder': '开始时间',
-    'end-placeholder': '结束时间',
+    'range-separator': 'To',
+    'start-placeholder': 'From Time',
+    'end-placeholder': 'To Time',
     format: 'HH:mm:ss',
     'value-format': 'HH:mm:ss',
     regList: [],
@@ -297,10 +297,10 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/time-picker'
   },
   {
-    label: '日期选择',
+    label: 'Date Picker',
     tag: 'el-date-picker',
     tagIcon: 'date',
-    placeholder: '请选择',
+    placeholder: 'Please select ',
     defaultValue: null,
     type: 'date',
     span: 24,
@@ -317,7 +317,7 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/date-picker'
   },
   {
-    label: '日期范围',
+    label: 'Date Range',
     tag: 'el-date-picker',
     tagIcon: 'date-range',
     defaultValue: null,
@@ -325,9 +325,9 @@ export const selectComponents = [
     labelWidth: null,
     style: { width: '100%' },
     type: 'daterange',
-    'range-separator': '至',
-    'start-placeholder': '开始日期',
-    'end-placeholder': '结束日期',
+    'range-separator': 'To',
+    'start-placeholder': 'From Date',
+    'end-placeholder': 'To Date',
     disabled: false,
     clearable: true,
     required: true,
@@ -339,7 +339,7 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/date-picker'
   },
   {
-    label: '评分',
+    label: 'Rate',
     tag: 'el-rate',
     tagIcon: 'rate',
     defaultValue: 0,
@@ -357,7 +357,7 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/rate'
   },
   {
-    label: '颜色选择',
+    label: 'Color Picker',
     tag: 'el-color-picker',
     tagIcon: 'color',
     defaultValue: null,
@@ -372,7 +372,7 @@ export const selectComponents = [
     document: 'https://element.eleme.cn/#/en-US/component/color-picker'
   },
   {
-    label: '上传',
+    label: 'Upload',
     tag: 'el-upload',
     tagIcon: 'upload',
     action: 'https://jsonplaceholder.typicode.com/posts/',
@@ -384,7 +384,7 @@ export const selectComponents = [
     name: 'file',
     'auto-upload': true,
     showTip: false,
-    buttonText: '点击上传',
+    buttonText: 'Click Upload',
     fileSize: 2,
     sizeUnit: 'MB',
     'list-type': 'text',
@@ -402,20 +402,20 @@ export const layoutComponents = [
     type: 'default',
     justify: 'start',
     align: 'top',
-    label: '行容器',
+    label: 'Row Container',
     layoutTree: true,
     children: [],
     document: 'https://element.eleme.cn/#/en-US/component/layout'
   },
   {
     layout: 'colFormItem',
-    label: '按钮',
+    label: 'Button',
     changeTag: true,
     labelWidth: null,
     tag: 'el-button',
     tagIcon: 'button',
     span: 24,
-    default: '主要按钮',
+    default: 'Primary Buttons',
     type: 'primary',
     icon: 'el-icon-search',
     size: 'medium',

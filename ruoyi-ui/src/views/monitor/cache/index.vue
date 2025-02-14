@@ -3,12 +3,12 @@
     <el-row>
       <el-col :span="24" class="card-box">
         <el-card>
-          <div slot="header"><span><i class="el-icon-monitor"></i> 基本信息</span></div>
+          <div slot="header"><span><i class="el-icon-monitor"></i>Basic Information</span></div>
           <div class="el-table el-table--enable-row-hover el-table--medium">
             <table cellspacing="0" style="width: 100%">
               <tbody>
                 <tr>
-                  <td class="el-table__cell is-leaf"><div class="lable">Redis版本</div></td>
+                  <td class="el-table__cell is-leaf"><div class="lable">Redis Version</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.redis_version }}</div></td>
                   <td class="el-table__cell is-leaf"><div class="lable">运行模式</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.redis_mode == "standalone" ? "单机" : "集群" }}</div></td>
@@ -18,9 +18,9 @@
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.connected_clients }}</div></td>
                 </tr>
                 <tr>
-                  <td class="el-table__cell is-leaf"><div class="lable">运行时间(天)</div></td>
+                  <td class="el-table__cell is-leaf"><div class="lable">Running time (days)</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.uptime_in_days }}</div></td>
-                  <td class="el-table__cell is-leaf"><div class="lable">使用内存</div></td>
+                  <td class="el-table__cell is-leaf"><div class="lable">Memory Information</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ cache.info.used_memory_human }}</div></td>
                   <td class="el-table__cell is-leaf"><div class="lable">使用CPU</div></td>
                   <td class="el-table__cell is-leaf"><div class="cell" v-if="cache.info">{{ parseFloat(cache.info.used_cpu_user_children).toFixed(2) }}</div></td>
@@ -45,7 +45,7 @@
 
       <el-col :span="12" class="card-box">
         <el-card>
-          <div slot="header"><span><i class="el-icon-pie-chart"></i> 命令统计</span></div>
+          <div slot="header"><span><i class="el-icon-pie-chart"></i>Command Statistics</span></div>
           <div class="el-table el-table--enable-row-hover el-table--medium">
             <div ref="commandstats" style="height: 420px" />
           </div>
@@ -54,7 +54,7 @@
 
       <el-col :span="12" class="card-box">
         <el-card>
-          <div slot="header"><span><i class="el-icon-odometer"></i> 内存信息</span></div>
+          <div slot="header"><span><i class="el-icon-odometer"></i>Memory</span></div>
           <div class="el-table el-table--enable-row-hover el-table--medium">
             <div ref="usedmemory" style="height: 420px" />
           </div>
@@ -117,7 +117,7 @@ export default {
           },
           series: [
             {
-              name: "峰值",
+              name: "Peak",
               type: "gauge",
               min: 0,
               max: 1000,
@@ -127,7 +127,7 @@ export default {
               data: [
                 {
                   value: parseFloat(this.cache.info.used_memory_human),
-                  name: "内存消耗",
+                  name: "Consumption",
                 }
               ]
             }

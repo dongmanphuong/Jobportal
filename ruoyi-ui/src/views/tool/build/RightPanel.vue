@@ -1,8 +1,8 @@
 <template>
   <div class="right-board">
     <el-tabs v-model="currentTab" class="center-tabs">
-      <el-tab-pane label="组件属性" name="field" />
-      <el-tab-pane label="表单属性" name="form" />
+      <el-tab-pane label="Component Properties" name="field" />
+      <el-tab-pane label="Form Properties" name="form" />
     </el-tabs>
     <div class="field-box">
       <a class="document-link" target="_blank" :href="documentLink" title="查看组件文档">
@@ -11,7 +11,7 @@
       <el-scrollbar class="right-scrollbar">
         <!-- 组件属性 -->
         <el-form v-show="currentTab==='field' && showField" size="small" label-width="90px">
-          <el-form-item v-if="activeData.changeTag" label="组件类型">
+          <el-form-item v-if="activeData.changeTag" label="Type">
             <el-select
               v-model="activeData.tagIcon"
               placeholder="请选择组件类型"
@@ -31,7 +31,7 @@
               </el-option-group>
             </el-select>
           </el-form-item>
-          <el-form-item v-if="activeData.vModel!==undefined" label="字段名">
+          <el-form-item v-if="activeData.vModel!==undefined" label="Field Name">
             <el-input v-model="activeData.vModel" placeholder="请输入字段名（v-model）" />
           </el-form-item>
           <el-form-item v-if="activeData.componentName!==undefined" label="组件名">
@@ -512,61 +512,61 @@
         </el-form>
         <!-- 表单属性 -->
         <el-form v-show="currentTab === 'form'" size="small" label-width="90px">
-          <el-form-item label="表单名">
+          <el-form-item label="Name">
             <el-input v-model="formConf.formRef" placeholder="请输入表单名（ref）" />
           </el-form-item>
-          <el-form-item label="表单模型">
+          <el-form-item label="Model">
             <el-input v-model="formConf.formModel" placeholder="请输入数据模型" />
           </el-form-item>
-          <el-form-item label="校验模型">
+          <el-form-item label="Rules">
             <el-input v-model="formConf.formRules" placeholder="请输入校验模型" />
           </el-form-item>
-          <el-form-item label="表单尺寸">
+          <el-form-item label="Size">
             <el-radio-group v-model="formConf.size">
               <el-radio-button label="medium">
-                中等
+                Medium
               </el-radio-button>
               <el-radio-button label="small">
-                较小
+                Small
               </el-radio-button>
               <el-radio-button label="mini">
-                迷你
+                Mini
               </el-radio-button>
             </el-radio-group>
           </el-form-item>
-          <el-form-item label="标签对齐">
+          <el-form-item label="Alignment">
             <el-radio-group v-model="formConf.labelPosition">
               <el-radio-button label="left">
-                左对齐
+                Left
               </el-radio-button>
               <el-radio-button label="right">
-                右对齐
+                Right
               </el-radio-button>
               <el-radio-button label="top">
-                顶部对齐
+                Top
               </el-radio-button>
             </el-radio-group>
           </el-form-item>
-          <el-form-item label="标签宽度">
+          <el-form-item label="Label Width">
             <el-input-number v-model="formConf.labelWidth" placeholder="标签宽度" />
           </el-form-item>
-          <el-form-item label="栅格间隔">
+          <el-form-item label="Spacing">
             <el-input-number v-model="formConf.gutter" :min="0" placeholder="栅格间隔" />
           </el-form-item>
-          <el-form-item label="禁用表单">
+          <el-form-item label="Disable">
             <el-switch v-model="formConf.disabled" />
           </el-form-item>
-          <el-form-item label="表单按钮">
+          <el-form-item label="Buttons">
             <el-switch v-model="formConf.formBtns" />
           </el-form-item>
-          <el-form-item label="显示未选中组件边框">
+          <el-form-item label="Borders">
             <el-switch v-model="formConf.unFocusedComponentBorder" />
           </el-form-item>
         </el-form>
       </el-scrollbar>
     </div>
 
-    <treeNode-dialog :visible.sync="dialogVisible" title="添加选项" @commit="addNode" />
+    <treeNode-dialog :visible.sync="dialogVisible" title="Add Options" @commit="addNode" />
     <icons-dialog :visible.sync="iconsVisible" :current="activeData[currentIconModel]" @select="setIcon" />
   </div>
 </template>

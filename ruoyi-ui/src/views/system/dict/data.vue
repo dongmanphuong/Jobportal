@@ -158,7 +158,7 @@
         <el-form-item label="Stt" prop="dictSort">
           <el-input-number v-model="form.dictSort" controls-position="right" :min="0" />
         </el-form-item>
-        <el-form-item label="回显样式" prop="listClass">
+        <el-form-item label="Loại" prop="listClass">
           <el-select v-model="form.listClass">
             <el-option
               v-for="item in listClassOptions"
@@ -222,27 +222,27 @@ export default {
       listClassOptions: [
         {
           value: "default",
-          label: "默认"
+          label: "Mặc định"
         },
         {
           value: "primary",
-          label: "主要"
+          label: "Loại"
         },
         {
           value: "success",
-          label: "成功"
+          label: "Thành công"
         },
         {
           value: "info",
-          label: "信息"
+          label: "Thông tin"
         },
         {
           value: "warning",
-          label: "警告"
+          label: "Cảnh báo"
         },
         {
           value: "danger",
-          label: "危险"
+          label: "Nguy hiểm"
         }
       ],
       // 类型数据字典
@@ -260,13 +260,13 @@ export default {
       // 表单校验
       rules: {
         dictLabel: [
-          { required: true, message: "数据标签不能为空", trigger: "blur" }
+          { required: true, message: "Nhãn dữ liệu không được để trống", trigger: "blur" }
         ],
         dictValue: [
-          { required: true, message: "数据键值不能为空", trigger: "blur" }
+          { required: true, message: "Giá trị khóa dữ liệu không được để trống", trigger: "blur" }
         ],
         dictSort: [
-          { required: true, message: "数据顺序不能为空", trigger: "blur" }
+          { required: true, message: "Chuỗi dữ liệu không được để trống", trigger: "blur" }
         ]
       }
     };
@@ -339,7 +339,7 @@ export default {
     handleAdd() {
       this.reset();
       this.open = true;
-      this.title = "添加字典数据";
+      this.title = "Thêm dữ liệu từ điển";
       this.form.dictType = this.queryParams.dictType;
     },
     // 多选框选中数据
@@ -355,7 +355,7 @@ export default {
       getData(dictCode).then(response => {
         this.form = response.data;
         this.open = true;
-        this.title = "修改字典数据";
+        this.title = "Sửa đổi dữ liệu từ điển";
       });
     },
     /** 提交按钮 */
@@ -365,14 +365,14 @@ export default {
           if (this.form.dictCode != undefined) {
             updateData(this.form).then(response => {
               this.$store.dispatch('dict/removeDict', this.queryParams.dictType);
-              this.$modal.msgSuccess("修改成功");
+              this.$modal.msgSuccess("Sửa đổi thành công");
               this.open = false;
               this.getList();
             });
           } else {
             addData(this.form).then(response => {
               this.$store.dispatch('dict/removeDict', this.queryParams.dictType);
-              this.$modal.msgSuccess("新增成功");
+              this.$modal.msgSuccess("Đã thêm thành công");
               this.open = false;
               this.getList();
             });
@@ -383,11 +383,11 @@ export default {
     /** 删除按钮操作 */
     handleDelete(row) {
       const dictCodes = row.dictCode || this.ids;
-      this.$modal.confirm('是否确认删除字典编码为"' + dictCodes + '"的数据项？').then(function() {
+      this.$modal.confirm('Bạn có muôn xóa dữ liệu có id = ' + dictCodes + ' không？').then(function() {
         return delData(dictCodes);
       }).then(() => {
         this.getList();
-        this.$modal.msgSuccess("删除成功");
+        this.$modal.msgSuccess("Đã xóa thành công");
         this.$store.dispatch('dict/removeDict', this.queryParams.dictType);
       }).catch(() => {});
     },

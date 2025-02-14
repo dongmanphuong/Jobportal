@@ -2,7 +2,7 @@
 {
     public class MessageConstants
     {
-        public const string Succeed = "操作成功";
+        public const string Succeed = "Succeed";
         public const string Required = "* 必须填写";
         public const string Login_Blocked = "很遗憾，访问IP已被列入系统黑名单";
         public const string Captcha_Invalid = "验证码错误或已失效";
@@ -14,7 +14,7 @@
         public const string User_Blocked = "用户已封禁，请联系管理员";
         public const string User_Password_Retry_Limit_Exceed = "密码输入错误{0}次，帐户锁定{1}分钟";
         public const string User_Password_Retry_Limit_Count = "密码输入错误{0}次";
-        public const string User_Login_Success = "登录成功";
-        public const string User_Register_Success = "注册成功";
+        public const string User_Login_Success = "Login successful";
+        public const string User_Register_Success = "Successful registration";
     }
 }

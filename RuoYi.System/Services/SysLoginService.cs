@@ -46,21 +46,23 @@ public class SysLoginService : ITransient
     /// <returns>结果</returns>
     public async Task<string> LoginAsync(string username, string password, string code, string uuid)
     {
-        // 验证码校验
+        // Verification code verification
         ValidateCaptcha(username, code, uuid);
-        // 登录前置校验
+
+        // Pre-login verification
         LoginPreCheck(username, password);
-        // 用户验证
+
+        // User verification
         var userDto = await _sysUserService.GetDtoByUsernameAsync(username);
         CheckLoginUser(username, password, userDto);
 
-        // 记录登录成功
+        // Record successful login
         await _sysLogininforService.AddAsync(username, Constants.LOGIN_SUCCESS, MessageConstants.User_Login_Success);
 
         var loginUser = CreateLoginUser(userDto);
         await RecordLoginInfoAsync(userDto.UserId ?? 0);
 
-        // 生成token
+        // Generate token
         return await _tokenService.CreateToken(loginUser);
     }
 

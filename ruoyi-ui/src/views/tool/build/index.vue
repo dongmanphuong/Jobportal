@@ -9,7 +9,7 @@
       <el-scrollbar class="left-scrollbar">
         <div class="components-list">
           <div class="components-title">
-            <svg-icon icon-class="component" />输入型组件
+            <svg-icon icon-class="component" />Input Components
           </div>
           <draggable
             class="components-draggable"
@@ -31,7 +31,7 @@
             </div>
           </draggable>
           <div class="components-title">
-            <svg-icon icon-class="component" />选择型组件
+            <svg-icon icon-class="component" />Selected Components
           </div>
           <draggable
             class="components-draggable"
@@ -55,7 +55,7 @@
             </div>
           </draggable>
           <div class="components-title">
-            <svg-icon icon-class="component" /> 布局型组件
+            <svg-icon icon-class="component" /> Layout Components
           </div>
           <draggable
             class="components-draggable" :list="layoutComponents"
@@ -79,13 +79,13 @@
     <div class="center-board">
       <div class="action-bar">
         <el-button icon="el-icon-download" type="text" @click="download">
-          导出vue文件
+          Export Vue
         </el-button>
         <el-button class="copy-btn-main" icon="el-icon-document-copy" type="text" @click="copy">
-          复制代码
+          Copy Code
         </el-button>
         <el-button class="delete-btn" icon="el-icon-delete" type="text" @click="empty">
-          清空
+          Clear
         </el-button>
       </div>
       <el-scrollbar class="center-scrollbar">
