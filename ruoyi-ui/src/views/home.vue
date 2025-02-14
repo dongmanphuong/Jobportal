@@ -6,6 +6,14 @@
     <JobCategories />
     <JobList />
     <TopBusinesses />
+    <JobProfiles />
+    <BannerSlider />
+    <BestJobs />
+    <NewsEvents />
+    <VideoCareerGuide />
+    <AppDownloadSection />
+    <SupportSection />
+    <FooterSection />
   </div> 
   </template>
   
@@ -14,8 +22,17 @@
   import VBanner from '../components/VBanner.vue'
   import SlideBanner from '../components/SlideBanner.vue'
   import JobCategories from '../components/JobCategories.vue';
-import JobList from '../components/JobList.vue';
-import TopBusinesses from '../components/TopBusinesses.vue';
+  import JobList from '../components/JobList.vue';
+  import TopBusinesses from '../components/TopBusinesses.vue';
+  import JobProfiles from '../components/JobProfiles.vue';
+  import BannerSlider from '../components/BannerSlider.vue';
+import BestJobs from '../components/BestJobs.vue';
+import NewsEvents from '../components/NewsEvents.vue';
+import VideoCareerGuide from '../components/VideoCareerGuide.vue';
+import AppDownloadSection from '../components/AppDownloadSection.vue';
+import FooterSection from '../components/FooterSection.vue';
+import SupportSection from '../components/SupportSection.vue';
+
 
   export default {
     name: 'Index',
@@ -25,7 +42,15 @@ import TopBusinesses from '../components/TopBusinesses.vue';
       SlideBanner,
       JobCategories,
       JobList,
-      TopBusinesses
+      TopBusinesses,
+      JobProfiles,
+      BannerSlider,
+      BestJobs,
+      NewsEvents,
+      VideoCareerGuide,
+      AppDownloadSection,
+      SupportSection,
+      FooterSection
     }
   }
   </script>

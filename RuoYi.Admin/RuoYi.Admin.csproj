@@ -15,6 +15,10 @@
 	  <ProjectReference Include="..\RuoYi.Generator\RuoYi.Generator.csproj" />
 	  <ProjectReference Include="..\RuoYi.Quartz\RuoYi.Quartz.csproj" />
 	  <ProjectReference Include="..\RuoYi.System\RuoYi.System.csproj" />
+	</ItemGroup>	
+
+	<ItemGroup>
+	  <Folder Include="logs\" />
 	</ItemGroup>
 
 </Project>

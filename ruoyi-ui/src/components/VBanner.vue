@@ -5,8 +5,8 @@
         <div class="header">
           <!-- Logo Section -->
           <div class="logo">
-            <a href="http://v2.vieclamnamdinh.gov.vn" title="home">
-              <img :src="logoSrc" @error="handleImageError" alt="Trung Tâm Dịch Vụ Việc Làm Nam Định">
+            <a href="https://vieclambackan.gov.vn/" title="home">
+              <img :src="logoSrc" @error="handleImageError" alt="Trung Tâm Dịch Vụ Việc Làm Bắc Kan">
             </a>
           </div>
           
@@ -40,8 +40,8 @@
     name: "VBanner",
     data() {
       return {
-        logoSrc: "http://file2.vieclamnamdinh.gov.vn/data/0/images/2024/06/10/host/logonamdinhv2.png?dpi=150&quality=100&h=70",
-        defaultLogoSrc: "http://file2.vieclamnamdinh.gov.vn/image/noimage/2.jpg?dpi=150&quality=100&h=70",
+        logoSrc: "http://file.vieclambackan.gov.vn/data/0/images/2019/07/17/host/logobackannew2.png?dpi=150&quality=100&h=70",
+        defaultLogoSrc: "http://file.vieclambackan.gov.vn/data/0/images/2019/07/17/host/logobackannew2.png?dpi=150&quality=100&h=70",
         menuItems: [
           { title: "Giới thiệu", link: "/gioi-thieu", submenu: [] },
           {
@@ -55,8 +55,8 @@
               { title: "Bản tin thị trường", link: "/ban-tin-thi-truong" }
             ]
           },
-          { title: "Việc tìm người", link: "/viec-lam", submenu: [] },
-          { title: "Người tìm việc", link: "/ho-so-xin-viec", submenu: [] },
+          { title: "Việc làm", link: "/viec-lam", submenu: [] },
+         
           { title: "Bảo hiểm thất nghiệp", link: "/bao-hiem-that-nghiep", submenu: [] },
           { title: "Văn bản", link: "/van-ban", submenu: [] },
           { title: "Sàn việc làm", link: "/san-viec-lam", submenu: [] },

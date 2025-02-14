@@ -2,8 +2,8 @@
     <div class="topbar">
       <div class="container">
         <div class="contact-info">
-          <span>Hotline: 0228.8602176</span>
-          <span>Email: <a href="mailto:ttgtvlnamdinh@gmail.com">ttgtvlnamdinh@gmail.com</a></span>
+          <span>Hotline: 02093.871.363</span>
+          <span>Email: <a href="mailto:ttgtvlbackan@gmail.com">ttgtvlbackan@gmail.com</a></span>
         </div>
         <div class="auth-buttons">
           <a href="#" class="btn">Đăng ký</a>
