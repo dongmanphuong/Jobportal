@@ -81,17 +81,9 @@ export default {
           ]
         },
         { title: "Việc làm", link: "/viec-lam", submenu: [] },
-        { title: "Bảo hiểm thất nghiệp", link: "/bao-hiem-that-nghiep", submenu: [] },
+        { title: "Bảo hiểm ", link: "/bao-hiem-that-nghiep", submenu: [] },
         { title: "Văn bản", link: "/van-ban", submenu: [] },
-        { title: "Sàn việc làm", link: "/san-viec-lam", submenu: [] },
-        {
-          title: "Đa phương tiện",
-          link: "#",
-          submenu: [
-            { title: "Video", link: "/video" },
-            { title: "Hình ảnh", link: "/album-anh" }
-          ]
-        }
+        { title: "Sàn việc làm", link: "/san-viec-lam", submenu: [] }
       ]
     };
   },
@@ -107,6 +99,13 @@ export default {
 </script>
 
 <style scoped>
+/* ======= Căn chỉnh spacing trên PC ======= */
+.container {
+  max-width: 1200px; /* Giữ menu gọn trong 1200px */
+  margin: 0 auto;
+  padding: 0 20px; /* Tạo khoảng cách rìa màn hình */
+}
+
 /* ======= PC MENU ======= */
 .header {
   display: flex;
