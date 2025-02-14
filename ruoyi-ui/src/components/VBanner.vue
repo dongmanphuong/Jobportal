@@ -5,7 +5,7 @@
         <!-- Logo -->
         <div class="logo">
           <a href="https://vieclambackan.gov.vn/" title="home">
-            <img :src="logoSrc" @error="handleImageError" alt="Trung Tâm Dịch Vụ Việc Làm Bắc Kan">
+            <img :src="logoSrc" @error="handleImageError" alt="Trung Tâm Dịch Vụ Việc Làm Bắc Kạn">
           </a>
         </div>
 
