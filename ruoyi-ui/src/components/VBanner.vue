@@ -68,7 +68,9 @@ export default {
       logoSrc: "http://file.vieclambackan.gov.vn/data/0/images/2019/07/17/host/logobackannew2.png?dpi=150&quality=100&h=70",
       defaultLogoSrc: "http://file.vieclambackan.gov.vn/data/0/images/2019/07/17/host/logobackannew2.png?dpi=150&quality=100&h=70",
       menuItems: [
-        { title: "Giới thiệu", link: "/gioi-thieu", submenu: [] },
+        { title: "Giới thiệu", link: "/gioi-thieu", 
+        submenu: [{ title: "Cơ cấu tổ chức", link: "/dao-tao-nghe" },
+        { title: "Giới thiệu", link: "/tu-van" },] },
         {
           title: "Tin tức & Sự kiện",
           link: "/tin-tuc-va-su-kien",
@@ -120,6 +122,7 @@ export default {
 
 .nav-menu {
   flex-grow: 1;
+  z-index: 1000; /* Cao hơn slider */
 }
 
 .main-menu {

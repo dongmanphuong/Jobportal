@@ -32,7 +32,7 @@
 
 <script>
 import Swiper from "swiper";
-import "swiper/css/swiper.min.css"; // 🛠 Swiper v5
+import "swiper/css/swiper.min.css"; // Swiper v5
 
 export default {
   data() {
@@ -48,8 +48,8 @@ export default {
   },
   mounted() {
     new Swiper(".swiper-container", {
-      slidesPerView: 4, // Hiển thị 4 công ty trên PC
-      spaceBetween: 30, // **✅ Khoảng cách giữa các item**
+      slidesPerView: 4, // ✅ Hiển thị 4 item trên PC
+      spaceBetween: 20, // ✅ Spacing hợp lý
       loop: true,
       autoplay: {
         delay: 3000,
@@ -60,9 +60,8 @@ export default {
         prevEl: ".swiper-button-prev",
       },
       breakpoints: {
-        1024: { slidesPerView: 4 },
-        768: { slidesPerView: 2 }, // Hiển thị 2 công ty trên Tablet
-        480: { slidesPerView: 1 }, // Hiển thị 1 công ty trên Mobile
+        1024: { slidesPerView: 4 }, // PC hiển thị 4 item
+        768: { slidesPerView: 2 }, // Mobile hiển thị 2 item
       },
     });
   },
@@ -97,7 +96,7 @@ export default {
   object-fit: contain;
   border-radius: 10px;
   background: white;
-  padding: 15px; /* **✅ Tạo khoảng cách đẹp xung quanh item** */
+  padding: 15px; /* ✅ Tạo khoảng cách đẹp xung quanh item */
   transition: transform 0.3s ease-in-out;
 }
 
