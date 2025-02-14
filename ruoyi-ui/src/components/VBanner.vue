@@ -83,7 +83,7 @@ export default {
         { title: "Việc làm", link: "/viec-lam", submenu: [] },
         { title: "Bảo hiểm ", link: "/bao-hiem-that-nghiep", submenu: [] },
         { title: "Văn bản", link: "/van-ban", submenu: [] },
-        { title: "Sàn việc làm", link: "/san-viec-lam", submenu: [] }
+        { title: "Sàn việc làm", link: "/san-viec-lam", submenu: [] },
       ]
     };
   },
