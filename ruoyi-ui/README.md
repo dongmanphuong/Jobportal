@@ -18,3 +18,8 @@ npm run build:stage
 
 npm run build:prod
 ```
+
+Addition modules
+```bash
+npm install bootstrap
+npm install bootstrap-icons
