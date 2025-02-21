@@ -12,13 +12,7 @@
     <!-- Card Grid -->
     <div class="container content-space-t-1 content-space-t-md-2 content-space-b-2 content-space-b-lg-3">
       <div class="row">
-        <div class="col-lg-3 order-lg-2">
-          <!-- Navbar -->
-          Rightbar
-          <!-- End Navbar -->
-        </div>
-        <!-- End Col -->
-        <div class="col-lg-9">
+        <div class="col-lg-12">
           <app-main />
         </div>
         <!-- End Col -->
@@ -39,6 +33,7 @@ import Header from "@/components/Layout/Header.vue";
 import Footer from "@/components/Layout/Footer.vue";
 import { AppMain } from './components'
 import Herojob from "../components/Layout/HeroSection/HeroJob.vue";
+import Rightbar from "../components/Joblist/Rightbar.vue";
 
 import 'bootstrap';
 
@@ -47,6 +42,7 @@ export default {
     Header,
     Herojob,
     AppMain,
+    Rightbar,
     Footer
   }
 };

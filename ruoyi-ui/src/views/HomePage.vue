@@ -1,5 +1,6 @@
 <template>
  <div>
+
     <Joblists />
   </div>
 
@@ -10,7 +11,7 @@
 
   export default {
     components: {
-      Joblists
+      Joblists,
     }
   }
   </script>

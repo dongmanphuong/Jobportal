@@ -6,6 +6,7 @@ Vue.use(Router)
 /* Layout */
 import Layout from '@/layout'
 import DefaultLayout from '../layout/default.vue'
+import HomeLayout from '../layout/home.vue'
 
 export const constantRoutes = [
   {
@@ -18,19 +19,6 @@ export const constantRoutes = [
         component: () => import('@/views/redirect')
       }
     ]
-  },
-  {
-    path: "/viec-lam",
-    component: DefaultLayout,
-    children: [
-      { path: "", component: () => import('@/views/joblists.vue') },
-      { path: "jobs", component: () => import('@/views/joblists.vue') }
-    ]
-  },
-  {
-    path: '/home',
-    component: () => import('@/views/home'),
-    hidden: true
   },
   {
     path: '/login',
@@ -52,16 +40,23 @@ export const constantRoutes = [
     component: () => import('@/views/error/401'),
     hidden: true
   },
+  // {
+  //   path: "/viec-lam",
+  //   component: DefaultLayout,
+  //   children: [
+  //     { path: "", component: () => import('@/views/joblists.vue') },
+  //     { path: "jobs", component: () => import('@/views/joblists.vue') }
+  //   ]
+  // },
   {
     path: '',
-    component: Layout,
-    redirect: 'index',
+    component: HomeLayout,
     children: [
       {
         path: 'index',
-        component: () => import('@/views/index'),
-        name: 'Index',
-        meta: { title: 'Trang chủ', icon: 'dashboard', affix: true }
+        component: () => import('@/views/HomePage.vue'),
+        // name: 'Index',
+        // meta: { title: 'Trang chủ', icon: 'dashboard', affix: true }
       }
     ]
   },

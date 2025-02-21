@@ -1,19 +1,18 @@
 <template>
-  <Navbar />
+  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-light">
+    <TopBar />
+    <Navbar />
+</header>
 </template>
 
-<script setup lang="ts">
-import Navbar from './Header/Navbar.vue';
-
-</script>
-
-
 <script>
-import Navbar from '@/components/Layout/Header/Navbar.vue'
+import Navbar from '@/components/Layout/Header/NavBar.vue'
+import TopBar from './Header/TopBar.vue';
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    TopBar
   }
 }
 </script>

@@ -3,6 +3,8 @@ import Vue from 'vue'
 import Cookies from 'js-cookie'
 
 import Element from 'element-ui'
+import vSelect from 'vue-select'
+
 import './assets/styles/element-variables.scss'
 
 import '@/assets/styles/index.scss' // global css
@@ -18,6 +20,12 @@ import './assets/icons' // icon
 import './permission' // permission control
 import { getDicts } from "@/api/system/dict/data";
 import { getConfigKey } from "@/api/system/config";
+
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+import 'vue-select/dist/vue-select.css';
+
+
 import { parseTime, resetForm, addDateRange, selectDictLabel, selectDictLabels, handleTree } from "@/utils/ruoyi";
 // 分页组件
 import Pagination from "@/components/Pagination";
@@ -58,6 +66,11 @@ Vue.component('FileUpload', FileUpload)
 Vue.component('ImageUpload', ImageUpload)
 Vue.component('ImagePreview', ImagePreview)
 
+Vue.component('v-select', vSelect)
+
+
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
 Vue.use(directive)
 Vue.use(plugins)
 Vue.use(VueMeta)

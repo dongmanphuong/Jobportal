@@ -1,217 +1,213 @@
 <template>
-  <!-- ========== HEADER ========== -->
-  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-light">
-    <!-- Topbar -->
-    <nav class="py-2 bg-body-tertiary border-bottom">
-      <div class="container d-flex flex-wrap">
-        <ul class="nav me-auto">
-          <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2 active" aria-current="page"> Hotline: 0228.8602176</a>
+
+<div class="container">
+    <nav class="js-mega-menu navbar-nav-wrap">
+      <!-- Default Logo -->
+      <a class="navbar-brand" href="../index.html" aria-label="Front">
+        <img class="navbar-brand-logo" src="/assets/svg/logos/logo.svg" alt="Logo">
+      </a>
+      <!-- End Default Logo -->
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-default">
+          <i class="bi-list"></i>
+        </span>
+        <span class="navbar-toggler-toggled">
+          <i class="bi-x"></i>
+        </span>
+      </button>
+      <!-- End Toggler -->
+
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <!-- Landings -->
+          <li class="hs-has-mega-menu nav-item">
+            <a id="landingsMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Landings</a>
+
+            <!-- Mega Menu -->
+            <div class="hs-mega-menu dropdown-menu w-100" aria-labelledby="landingsMegaMenu" style="min-width: 30rem;">
+              <div class="row">
+                <div class="col-lg-6 d-none d-lg-block">
+                  <!-- Banner Image -->
+                  <div class="navbar-dropdown-menu-banner" style="background-image: url(/assets/svg/components/shape-3.svg);">
+                    <div class="navbar-dropdown-menu-banner-content">
+                      <div class="mb-4">
+                        <span class="h2 d-block">Branding Works</span>
+                        <p>Experience a level of our quality in both design & customization works.</p>
+                      </div>
+                      <a class="btn btn-primary btn-transition" href="#">Learn more <i class="bi-chevron-right small"></i></a>
+                    </div>
+                  </div>
+                  <!-- End Banner Image -->
+                </div>
+                <!-- End Col -->
+
+                <div class="col-lg-6">
+                  <div class="navbar-dropdown-menu-inner">
+                    <div class="row">
+                      <div class="col-sm mb-3 mb-sm-0">
+                        <span class="dropdown-header">Classic</span>
+                        <a class="dropdown-item" href="#">Corporate</a>
+                        <a class="dropdown-item" href="#">Analytics <span class="badge bg-primary rounded-pill ms-1">Hot</span></a>
+                        <a class="dropdown-item" href="#">Studio</a>
+                        <a class="dropdown-item" href="#">Marketing</a>
+                        <a class="dropdown-item" href="#">Advertisement</a>
+                        <a class="dropdown-item" href="#">Consulting</a>
+                        <a class="dropdown-item" href="#">Portfolio</a>
+                        <a class="dropdown-item" href="#">Software</a>
+                        <a class="dropdown-item" href="#">Business</a>
+                      </div>
+                      <!-- End Col -->
+
+                      <div class="col-sm">
+                        <div class="mb-3">
+                          <span class="dropdown-header">App</span>
+                          <a class="dropdown-item" href="#">UI Kit</a>
+                          <a class="dropdown-item" href="#">SaaS</a>
+                          <a class="dropdown-item" href="#">Workflow</a>
+                          <a class="dropdown-item" href="#">Payment</a>
+                          <a class="dropdown-item" href="#">Tool</a>
+                        </div>
+
+                        <span class="dropdown-header">Onepage</span>
+                        <a class="dropdown-item" href="#">Corporate</a>
+                        <a class="dropdown-item" href="#">SaaS <span class="badge bg-primary rounded-pill ms-1">Hot</span></a>
+                      </div>
+                      <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+                  </div>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+            </div>
+            <!-- End Mega Menu -->
           </li>
+          <!-- End Landings -->
 
-        </ul>
-        <ul class="nav">
-          <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Đăng nhập</a></li>
-          <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Đăng ký</a></li>
-        </ul>
-      </div>
-    </nav>
-    <!-- End Topbar -->
+          <!-- Company -->
+          <li class="hs-has-sub-menu nav-item">
+            <a id="companyMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Company</a>
 
-    <div class="container">
-      <nav class="js-mega-menu navbar-nav-wrap">
-        <!-- Default Logo -->
-        <a class="navbar-brand" href="#" aria-label="Front">
-          <img class="navbar-brand-logo" src="@/assets/logo/backan-logo.png" alt="Logo">
-        </a>
-        <!-- End Default Logo -->
-
-        <!-- Secondary Content -->
-        <div class="navbar-nav-wrap-secondary-content">
-
+            <!-- Mega Menu -->
+            <div class="hs-sub-menu dropdown-menu" aria-labelledby="companyMegaMenu" style="min-width: 14rem;">
+              <a class="dropdown-item" href="#">About</a>
+              <a class="dropdown-item" href="#">Services</a>
+              <a class="dropdown-item" href="#">Customer Stories</a>
+              <a class="dropdown-item" href="#">Customer Story</a>
+              <a class="dropdown-item" href="#">Careers</a>
+              <a class="dropdown-item" href="#">Careers Overview</a>
+              <a class="dropdown-item" href="#">Hire Us</a>
+              <a class="dropdown-item" href="#">Pricing</a>
+              <a class="dropdown-item" href="#">Contacts: Agency</a>
+              <a class="dropdown-item" href="#">Contacts: Startup</a>
+            </div>
+            <!-- End Mega Menu -->
+          </li>
+          <!-- End Company -->
 
           <!-- Account -->
-          <div class="dropdown">
-            <a href="#" id="navbarShoppingCartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-              data-bs-dropdown-animation>
-              <img class="avatar avatar-xs avatar-circle" src="@/assets/front4//img/160x160/img9.jpg"
-                alt="Image Description">
-            </a>
+          <li class="hs-has-sub-menu nav-item">
+            <a id="accountMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
 
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarShoppingCartDropdown"
-              style="min-width: 16rem;">
-              <a class="d-flex align-items-center p-2" href="#">
-                <div class="flex-shrink-0">
-                  <img class="avatar" src="@/assets/front4//img/160x160/img9.jpg" alt="Image Description">
+            <!-- Mega Menu -->
+            <div class="hs-sub-menu dropdown-menu" aria-labelledby="accountMegaMenu" style="min-width: 14rem;">
+              <!-- Authentication -->
+              <div class="hs-has-sub-menu nav-item">
+                <a id="authenticationMegaMenu" class="hs-mega-menu-invoker dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Authentication</a>
+
+                <div class="hs-sub-menu dropdown-menu" aria-labelledby="authenticationMegaMenu" style="min-width: 14rem;">
+                  <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Signup Modal</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Login</a>
+                  <a class="dropdown-item" href="#">Signup</a>
+                  <a class="dropdown-item" href="#">Reset Password</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Login Simple</a>
+                  <a class="dropdown-item" href="#">Signup Simple</a>
+                  <a class="dropdown-item" href="#">Reset Password Simple</a>
                 </div>
-                <div class="flex-grow-1 ms-3">
-                  <span class="d-block fw-semibold">Lida Reidy <span class="badge bg-primary ms-1">Pro</span></span>
-                  <span class="d-block text-muted small">lidareidy@gmail.com</span>
-                </div>
-              </a>
+              </div>
+              <!-- End Authentication -->
 
-              <div class="dropdown-divider my-3"></div>
-
-              <a class="dropdown-item" href="#">
-                <span class="dropdown-item-icon">
-                  <i class="bi-chat-left-dots"></i>
-                </span> Messages
-              </a>
-              <a class="dropdown-item" href="#">
-                <span class="dropdown-item-icon">
-                  <i class="bi-wallet2"></i>
-                </span> Purchase history
-              </a>
-              <a class="dropdown-item" href="#">
-                <span class="dropdown-item-icon">
-                  <i class="bi-person"></i>
-                </span> Account
-              </a>
-              <a class="dropdown-item" href="#">
-                <span class="dropdown-item-icon">
-                  <i class="bi-credit-card"></i>
-                </span> Payment methods
-              </a>
-
-              <div class="dropdown-divider"></div>
-
-              <a class="dropdown-item" href="#">
-                <span class="dropdown-item-icon">
-                  <i class="bi-question-circle"></i>
-                </span> Help
-              </a>
-              <a class="dropdown-item" href="#">
-                <span class="dropdown-item-icon">
-                  <i class="bi-box-arrow-right"></i>
-                </span> Log out
-              </a>
+              <a class="dropdown-item" href="#">Personal Info</a>
+              <a class="dropdown-item" href="#">Security</a>
+              <a class="dropdown-item" href="#">Notifications</a>
+              <a class="dropdown-item" href="#">Preferences</a>
+              <a class="dropdown-item" href="#">Orders</a>
+              <a class="dropdown-item" href="#">Wishlist</a>
+              <a class="dropdown-item" href="#">Payments</a>
+              <a class="dropdown-item" href="#">Address</a>
+              <a class="dropdown-item" href="#">Teams</a>
             </div>
-          </div>
+            <!-- End Mega Menu -->
+          </li>
           <!-- End Account -->
-        </div>
-        <!-- End Secondary Content -->
 
-        <!-- Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-default">
-            <i class="bi-list"></i>
-          </span>
-          <span class="navbar-toggler-toggled">
-            <i class="bi-x"></i>
-          </span>
-        </button>
-        <!-- End Toggler -->
+          <!-- Pages -->
+          <li class="hs-has-sub-menu nav-item">
+            <a id="pagesMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
 
-        <!-- Collapse -->
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mt-2">
-            <li class="nav-item">
-              <a class="nav-link " href="#">Giới thiệu</a>
-            </li>
+            <!-- Mega Menu -->
+            <div class="hs-sub-menu dropdown-menu" aria-labelledby="pagesMegaMenu" style="min-width: 14rem;">
+              <a class="dropdown-item" href="#">FAQ</a>
+              <a class="dropdown-item" href="#">Terms & Conditions</a>
+              <a class="dropdown-item" href="#">Privacy & Policy</a>
+              <a class="dropdown-item" href="#">Coming Soon</a>
+              <a class="dropdown-item" href="#">Maintenance Mode</a>
+              <a class="dropdown-item" href="#">Status</a>
+              <a class="dropdown-item" href="#">Invoice</a>
+              <a class="dropdown-item" href="#">Error 404</a>
+            </div>
+            <!-- End Mega Menu -->
+          </li>
+          <!-- End Pages -->
 
-            <!-- Thông tin hữu ích -->
-            <li class="hs-has-sub-menu nav-item">
-              <a id="coursesMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">Thông tin hữu ích</a>
+          <!-- Blog -->
+          <li class="hs-has-sub-menu nav-item">
+            <a id="blogMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
 
-              <!-- Mega Menu -->
-              <div class="hs-sub-menu dropdown-menu" aria-labelledby="coursesMegaMenu" style="min-width: 17rem;">
-                <!-- Business -->
-                <div class="hs-has-sub-menu nav-item">
-                  <a id="businessMegaMenu" class="hs-mega-menu-invoker dropdown-item dropdown-toggle" href="#"
-                    role="button" data-bs-toggle="dropdown" aria-expanded="false">Cầm nang nghề nghiệp</a>
+            <!-- Mega Menu -->
+            <div class="hs-sub-menu dropdown-menu" aria-labelledby="blogMegaMenu" style="min-width: 14rem;">
+              <a class="dropdown-item" href="#">Journal</a>
+              <a class="dropdown-item" href="#">Metro</a>
+              <a class="dropdown-item" href="#">Newsroom</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Article</a>
+              <a class="dropdown-item" href="#">Author Profile</a>
+            </div>
+            <!-- End Mega Menu -->
+          </li>
+          <!-- End Blog -->
 
-                  <div class="hs-sub-menu dropdown-menu" aria-labelledby="businessMegaMenu" style="min-width: 14rem;">
-                    <a class="dropdown-item" href="#">All Finance & Accounting</a>
-                    <a class="dropdown-item" href="#">Accounting & Bookkeeping</a>
-                    <a class="dropdown-item" href="#">Compliance</a>
-                    <a class="dropdown-item" href="#">Economics</a>
-                    <a class="dropdown-item" href="#">Finance</a>
-                    <a class="dropdown-item" href="#">Other</a>
-                  </div>
-                </div>
-                <!-- End Business -->
+          <!-- Portfolio -->
+          <li class="hs-has-sub-menu nav-item">
+            <a id="portfolioMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
 
-                <!-- Finance & Accounting -->
-                <div class="hs-has-sub-menu nav-item">
-                  <a id="financeAccountingMegaMenu" class="hs-mega-menu-invoker dropdown-item dropdown-toggle" href="#"
-                    role="button" data-bs-toggle="dropdown" aria-expanded="false">Công cụ</a>
+            <!-- Mega Menu -->
+            <div class="hs-sub-menu dropdown-menu" aria-labelledby="portfolioMegaMenu" style="min-width: 14rem;">
+              <a class="dropdown-item" href="#">Grid</a>
+              <a class="dropdown-item" href="#">Product Article</a>
+              <a class="dropdown-item" href="#">Case Studies: Branding</a>
+              <a class="dropdown-item" href="#">Case Studies: Product</a>
+            </div>
+            <!-- End Mega Menu -->
+          </li>
+          <!-- End Portfolio -->
 
-                  <div class="hs-sub-menu dropdown-menu" aria-labelledby="financeAccountingMegaMenu"
-                    style="min-width: 14rem;">
-                    <a class="dropdown-item" href="#">All IT & Software</a>
-                    <a class="dropdown-item" href="#">IT Sertification</a>
-                    <a class="dropdown-item" href="#">Network & security</a>
-                    <a class="dropdown-item" href="#">Hardware</a>
-                    <a class="dropdown-item" href="#">Operating systems</a>
-                    <a class="dropdown-item" href="#">Other</a>
-                  </div>
-                </div>
-                <!-- End Finance & Accounting -->
-
-
-                <!-- Design -->
-                <div class="hs-has-sub-menu nav-item">
-                  <a id="designMegaMenu" class="hs-mega-menu-invoker dropdown-item dropdown-toggle" href="#"
-                    role="button" data-bs-toggle="dropdown" aria-expanded="false">Media</a>
-
-                  <div class="hs-sub-menu dropdown-menu" aria-labelledby="designMegaMenu" style="min-width: 14rem;">
-                    <a class="dropdown-item" href="#">All Marketing</a>
-                    <a class="dropdown-item" href="#">Digital marketing</a>
-                    <a class="dropdown-item" href="#">Branding</a>
-                    <a class="dropdown-item" href="#">Advertising</a>
-                    <a class="dropdown-item" href="#">Other</a>
-                  </div>
-                </div>
-                <!-- End Design -->
-
-              </div>
-              <!-- End Mega Menu -->
-            </li>
-            <!-- End Courses -->
-            <!-- Tim viec lam -->
-            <li class="hs-has-sub-menu nav-item">
-              <a id="listingsDropdown" class="hs-mega-menu-invoker nav-link dropdown-toggle " href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">Tìm việc làm</a>
-              <div class="hs-sub-menu dropdown-menu" aria-labelledby="listingsDropdown" style="min-width: 14rem;">
-                <a class="dropdown-item " href="#">Courses</a>
-                <a class="dropdown-item " href="#">Course Overview</a>
-                <a class="dropdown-item " href="#">Author Profile</a>
-              </div>
-            </li>
-            <!-- End Tim viec lam -->
-
-            <!-- Tim viec lam -->
-            <li class="hs-has-sub-menu nav-item">
-              <a id="listingsDropdown" class="hs-mega-menu-invoker nav-link dropdown-toggle " href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">Hồ sơ & CV</a>
-              <div class="hs-sub-menu dropdown-menu" aria-labelledby="listingsDropdown" style="min-width: 14rem;">
-                <a class="dropdown-item " href="#">Courses</a>
-                <a class="dropdown-item " href="#">Course Overview</a>
-                <a class="dropdown-item " href="#">Author Profile</a>
-              </div>
-            </li>
-            <!-- End Tim viec lam -->
-
-            <!-- Tim viec lam -->
-            <li class="hs-has-sub-menu nav-item">
-              <a id="listingsDropdown" class="hs-mega-menu-invoker nav-link dropdown-toggle " href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">Cẩm nang nghề nghiệp</a>
-              <div class="hs-sub-menu dropdown-menu" aria-labelledby="listingsDropdown" style="min-width: 14rem;">
-                <a class="dropdown-item " href="#">Courses</a>
-                <a class="dropdown-item " href="#">Course Overview</a>
-                <a class="dropdown-item " href="#">Author Profile</a>
-              </div>
-            </li>
-            <!-- End Tim viec lam -->
-
-          </ul>
-        </div>
-        <!-- End Collapse -->
-      </nav>
-    </div>
-  </header>
-  <!-- ========== END HEADER ========== -->
+          <!-- Button -->
+          <li class="nav-item">
+            <a class="btn btn-primary btn-transition" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">Buy now</a>
+          </li>
+          <!-- End Button -->
+        </ul>
+      </div>
+      <!-- End Collapse -->
+    </nav>
+  </div>
 </template>
 
 
