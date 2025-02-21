@@ -95,7 +95,7 @@ export const constantRoutes = [
   }
 ]
 
-// 动态路由，基于用户权限动态去加载
+
 export const dynamicRoutes = [
   {
     path: '/system/user-auth',
@@ -153,6 +153,79 @@ export const dynamicRoutes = [
       }
     ]
   },
+  
+  {
+    path: '/tuyendung/doanhnghiep',
+    component: () => import('@/views/tuyendung/thongtin'),
+    hidden: true
+  },
+  {
+    path: '/tuyendung/dangtin',
+    component: () => import('@/views/tuyendung/dangtin'),
+    hidden: true
+  },
+  {
+    path: '/tuyendung/danhsach',
+    component: () => import('@/views/tuyendung/danhsach'),
+    hidden: true
+  }, 
+  {
+    path: '/hosoungvien/danhsach',
+    component: () => import('@/views/hosoungvien/danhsach'),
+    hidden: true
+  }, 
+  {
+    path: '/hosoungvien/ApplicantList',
+    component: () => import('@/views/hosoungvien/ApplicantList'),
+    hidden: true
+  }, 
+  {
+    path: '/hosoungvien/SavedCandidates',
+    component: () => import('@/views/hosoungvien/SavedCandidates'),
+    hidden: true
+  }, 
+  {
+    path: '/hosoungvien/InvitedCandidates',
+    component: () => import('@/views/hosoungvien/InvitedCandidates'),
+    hidden: true
+  }, 
+  {
+    path: '/hosoungvien/ViewedCandidates',
+    component: () => import('@/views/hosoungvien/ViewedCandidates'),
+    hidden: true
+  }, 
+  {
+    path: '/hosoungvien/BlacklistedCandidates',
+    component: () => import('@/views/hosoungvien/BlacklistedCandidates'),
+    hidden: true
+  }, 
+  {
+    path: '/hosoungvien/TransactionList',
+    component: () => import('@/views/hosoungvien/TransactionList'),
+    hidden: true
+  }, 
+  {
+    path: '/hosoungvien/EmployerDashboard',
+    component: () => import('@/views/hosoungvien/EmployerDashboard'),
+    hidden: true
+  }, 
+  
+  {
+    path: '/jobseeker/Dashboard',
+    component: () => import('@/views/jobseeker/Dashboard'),
+    hidden: true
+  }, 
+  {
+    path: '/jobseeker/ResumeManagement',
+    component: () => import('@/views/jobseeker/ResumeManagement'),
+    hidden: true
+  }, 
+  
+  {
+    path: '/jobseeker/WorkPreferences',
+    component: () => import('@/views/jobseeker/WorkPreferences'),
+    hidden: true
+  }, 
   {
     path: '/tool/gen-edit',
     component: Layout,
@@ -169,7 +242,6 @@ export const dynamicRoutes = [
   }
 ]
 
-// 防止连续点击多次路由报错
 let routerPush = Router.prototype.push;
 let routerReplace = Router.prototype.replace;
 // push
@@ -182,7 +254,7 @@ Router.prototype.replace = function push(location) {
 }
 
 export default new Router({
-  mode: 'history', // 去掉url中的#
+  mode: 'history', 
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })

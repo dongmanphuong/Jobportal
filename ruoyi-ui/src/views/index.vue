@@ -1,9 +1,12 @@
 <template>
- 
+ <EmployerDashboard />
 </template>
 
 <script>
+import EmployerDashboard from './hosoungvien/EmployerDashboard.vue';
+
 export default {
+  components: { EmployerDashboard } ,
   name: "Index",
   data() {
     return {
