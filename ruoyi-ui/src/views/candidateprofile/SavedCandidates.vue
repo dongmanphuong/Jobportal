@@ -5,6 +5,6 @@
 </template>
 
 <script>
-import SavedCandidates from '../../components/Hosoungvien/SavedCandidates.vue';
+import SavedCandidates from '../../components/CandidateProfile/SavedCandidates.vue';
 export default { components: { SavedCandidates } };
 </script>

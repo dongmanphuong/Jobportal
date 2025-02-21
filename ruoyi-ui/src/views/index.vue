@@ -1,10 +1,9 @@
 <template>
- <EmployerDashboard />
+ <SavedCandidates />
 </template>
 
 <script>
-import EmployerDashboard from './hosoungvien/EmployerDashboard.vue';
-
+import SavedCandidates from './candidateprofile/SavedCandidates.vue';
 export default {
   components: { EmployerDashboard } ,
   name: "Index",

@@ -141,58 +141,58 @@ export const dynamicRoutes = [
   },
   
   {
-    path: '/tuyendung/doanhnghiep',
-    component: () => import('@/views/tuyendung/thongtin'),
+    path: '/recruitment/employer',
+    component: () => import('@/views/recruitment/EmployerForm'),
     hidden: true
   },
   {
-    path: '/tuyendung/dangtin',
-    component: () => import('@/views/tuyendung/dangtin'),
+    path: '/recruitment/postjob',
+    component: () => import('@/views/recruitment/PostJob'),
     hidden: true
   },
   {
-    path: '/tuyendung/danhsach',
-    component: () => import('@/views/tuyendung/danhsach'),
+    path: '/recruitment/joblisting',
+    component: () => import('@/views/recruitment/JobListing'),
     hidden: true
   }, 
   {
-    path: '/hosoungvien/danhsach',
-    component: () => import('@/views/hosoungvien/danhsach'),
+    path: '/candidateprofile/list',
+    component: () => import('@/views/candidateprofile/CandidateList'),
     hidden: true
   }, 
   {
-    path: '/hosoungvien/ApplicantList',
-    component: () => import('@/views/hosoungvien/ApplicantList'),
+    path: '/candidateprofile/ApplicantList',
+    component: () => import('@/views/candidateprofile/ApplicantList'),
     hidden: true
   }, 
   {
-    path: '/hosoungvien/SavedCandidates',
-    component: () => import('@/views/hosoungvien/SavedCandidates'),
+    path: '/candidateprofile/SavedCandidates',
+    component: () => import('@/views/candidateprofile/SavedCandidates'),
     hidden: true
   }, 
   {
-    path: '/hosoungvien/InvitedCandidates',
-    component: () => import('@/views/hosoungvien/InvitedCandidates'),
+    path: '/candidateprofile/InvitedCandidates',
+    component: () => import('@/views/candidateprofile/InvitedCandidates'),
     hidden: true
   }, 
   {
-    path: '/hosoungvien/ViewedCandidates',
-    component: () => import('@/views/hosoungvien/ViewedCandidates'),
+    path: '/candidateprofile/ViewedCandidates',
+    component: () => import('@/views/candidateprofile/ViewedCandidates'),
     hidden: true
   }, 
   {
-    path: '/hosoungvien/BlacklistedCandidates',
-    component: () => import('@/views/hosoungvien/BlacklistedCandidates'),
+    path: '/candidateprofile/BlacklistedCandidates',
+    component: () => import('@/views/candidateprofile/BlacklistedCandidates'),
     hidden: true
   }, 
   {
-    path: '/hosoungvien/TransactionList',
-    component: () => import('@/views/hosoungvien/TransactionList'),
+    path: '/candidateprofile/TransactionList',
+    component: () => import('@/views/candidateprofile/TransactionList'),
     hidden: true
   }, 
   {
-    path: '/hosoungvien/EmployerDashboard',
-    component: () => import('@/views/hosoungvien/EmployerDashboard'),
+    path: '/candidateprofile/EmployerDashboard',
+    component: () => import('@/views/candidateprofile/EmployerDashboard'),
     hidden: true
   }, 
   

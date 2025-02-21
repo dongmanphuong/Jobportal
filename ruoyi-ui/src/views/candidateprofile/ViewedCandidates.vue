@@ -5,6 +5,6 @@
 </template>
 
 <script>
-import ViewedCandidates from '../../components/Hosoungvien/ViewedCandidates.vue';
+import ViewedCandidates from '../../components/CandidateProfile/ViewedCandidates.vue';
 export default { components: { ViewedCandidates } };
 </script>

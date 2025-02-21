@@ -5,6 +5,6 @@
 </template>
 
 <script>
-import ApplicantList from '../../components/Hosoungvien/ApplicantList.vue';
+import ApplicantList from '../../components/CandidateProfile/ApplicantList.vue';
 export default { components: { ApplicantList } };
 </script>

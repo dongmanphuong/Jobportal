@@ -5,6 +5,6 @@
 </template>
 
 <script>
-import BlacklistedCandidates from '../../components/Hosoungvien/BlacklistedCandidates.vue';
+import BlacklistedCandidates from '../../components/CandidateProfile/BlacklistedCandidates.vue';
 export default { components: { BlacklistedCandidates } };
 </script>

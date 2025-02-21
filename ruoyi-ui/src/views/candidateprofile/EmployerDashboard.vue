@@ -4,6 +4,6 @@
     </div>
 </template>
 <script>
-import EmployerDashboard from '../../components/Hosoungvien/EmployerDashboard.vue';
+import EmployerDashboard from '../../components/CandidateProfile/EmployerDashboard.vue';
 export default { components: { EmployerDashboard } };
 </script>
