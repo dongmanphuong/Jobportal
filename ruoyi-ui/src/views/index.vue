@@ -4,12 +4,12 @@
 
 <script>
 import EmployerDashboard from './candidateprofile/EmployerDashboard.vue';
+
 export default {
   components: { EmployerDashboard } ,
   name: "Index",
   data() {
     return {
-      // 版本号
       version: "1.0.1"
     };
   },
