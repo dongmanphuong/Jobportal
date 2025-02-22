@@ -4,8 +4,9 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 /* Layout */
+//import DefaultLayout from '../layout/default.vue'
+
 import Layout from '@/layout'
-import DefaultLayout from '../layout/default.vue'
 
 export const constantRoutes = [
   {
@@ -21,7 +22,7 @@ export const constantRoutes = [
   },
   {
     path: "/viec-lam",
-    component: DefaultLayout,
+    component: Layout,
     children: [
       { path: "", component: () => import('@/views/joblists.vue') },
       { path: "jobs", component: () => import('@/views/joblists.vue') }
@@ -142,31 +143,37 @@ export const dynamicRoutes = [
   
   {
     path: '/recruitment/employer',
+    component: Layout,
     component: () => import('@/views/recruitment/EmployerForm'),
     hidden: true
   },
   {
     path: '/recruitment/postjob',
+    component: Layout,
     component: () => import('@/views/recruitment/PostJob'),
     hidden: true
   },
   {
     path: '/recruitment/joblisting',
+    component: Layout,
     component: () => import('@/views/recruitment/JobListing'),
     hidden: true
   }, 
   {
     path: '/candidateprofile/list',
+    component: Layout,
     component: () => import('@/views/candidateprofile/CandidateList'),
     hidden: true
   }, 
   {
     path: '/candidateprofile/ApplicantList',
+    component: Layout,
     component: () => import('@/views/candidateprofile/ApplicantList'),
     hidden: true
   }, 
   {
     path: '/candidateprofile/SavedCandidates',
+    component: Layout,
     component: () => import('@/views/candidateprofile/SavedCandidates'),
     hidden: true
   }, 
@@ -177,6 +184,7 @@ export const dynamicRoutes = [
   }, 
   {
     path: '/candidateprofile/ViewedCandidates',
+    component: Layout,
     component: () => import('@/views/candidateprofile/ViewedCandidates'),
     hidden: true
   }, 
