@@ -23,8 +23,6 @@ export const constantRoutes = [
     ]
   },
   {
-<<<<<<< HEAD
-=======
     path: "/viec-lam",
     component: Layout,
     children: [
