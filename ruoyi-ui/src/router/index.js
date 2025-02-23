@@ -4,9 +4,14 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 /* Layout */
+//import DefaultLayout from '../layout/default.vue'
+
 import Layout from '@/layout'
+<<<<<<< HEAD
 import DefaultLayout from '../layout/default.vue'
 import HomeLayout from '../layout/home.vue'
+=======
+>>>>>>> bfbece0a6ce595ca1894e1e4a0896a685fed0949
 
 export const constantRoutes = [
   {
@@ -21,6 +26,22 @@ export const constantRoutes = [
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    path: "/viec-lam",
+    component: Layout,
+    children: [
+      { path: "", component: () => import('@/views/joblists.vue') },
+      { path: "jobs", component: () => import('@/views/joblists.vue') }
+    ]
+  },
+  {
+    path: '/home',
+    component: () => import('@/views/home'),
+    hidden: true
+  },
+  {
+>>>>>>> bfbece0a6ce595ca1894e1e4a0896a685fed0949
     path: '/login',
     component: () => import('@/views/login'),
     hidden: true
@@ -76,7 +97,7 @@ export const constantRoutes = [
   }
 ]
 
-// 动态路由，基于用户权限动态去加载
+
 export const dynamicRoutes = [
   {
     path: '/system/user-auth',
@@ -134,6 +155,86 @@ export const dynamicRoutes = [
       }
     ]
   },
+  
+  {
+    path: '/recruitment/employer',
+    component: Layout,
+    component: () => import('@/views/recruitment/EmployerForm'),
+    hidden: true
+  },
+  {
+    path: '/recruitment/postjob',
+    component: Layout,
+    component: () => import('@/views/recruitment/PostJob'),
+    hidden: true
+  },
+  {
+    path: '/recruitment/joblisting',
+    component: Layout,
+    component: () => import('@/views/recruitment/JobListing'),
+    hidden: true
+  }, 
+  {
+    path: '/candidateprofile/list',
+    component: Layout,
+    component: () => import('@/views/candidateprofile/CandidateList'),
+    hidden: true
+  }, 
+  {
+    path: '/candidateprofile/ApplicantList',
+    component: Layout,
+    component: () => import('@/views/candidateprofile/ApplicantList'),
+    hidden: true
+  }, 
+  {
+    path: '/candidateprofile/SavedCandidates',
+    component: Layout,
+    component: () => import('@/views/candidateprofile/SavedCandidates'),
+    hidden: true
+  }, 
+  {
+    path: '/candidateprofile/InvitedCandidates',
+    component: () => import('@/views/candidateprofile/InvitedCandidates'),
+    hidden: true
+  }, 
+  {
+    path: '/candidateprofile/ViewedCandidates',
+    component: Layout,
+    component: () => import('@/views/candidateprofile/ViewedCandidates'),
+    hidden: true
+  }, 
+  {
+    path: '/candidateprofile/BlacklistedCandidates',
+    component: () => import('@/views/candidateprofile/BlacklistedCandidates'),
+    hidden: true
+  }, 
+  {
+    path: '/candidateprofile/TransactionList',
+    component: () => import('@/views/candidateprofile/TransactionList'),
+    hidden: true
+  }, 
+  {
+    path: '/candidateprofile/EmployerDashboard',
+    component: () => import('@/views/candidateprofile/EmployerDashboard'),
+    hidden: true
+  }, 
+  
+  {
+    path: '/jobseeker/Dashboard',
+    component: () => import('@/views/jobseeker/Dashboard'),
+    hidden: true
+  }, 
+  {
+    path: '/jobseeker/ResumeManagement',
+    component: () => import('@/views/jobseeker/ResumeManagement'),
+    hidden: true
+  }, 
+  
+  {
+    path: '/jobseeker/WorkPreferences',
+    component: () => import('@/views/jobseeker/WorkPreferences'),
+    hidden: true
+  }, 
   {
     path: '/tool/gen-edit',
     component: Layout,
@@ -150,7 +251,6 @@ export const dynamicRoutes = [
   }
 ]
 
-// 防止连续点击多次路由报错
 let routerPush = Router.prototype.push;
 let routerReplace = Router.prototype.replace;
 // push
@@ -163,7 +263,7 @@ Router.prototype.replace = function push(location) {
 }
 
 export default new Router({
-  mode: 'history', // 去掉url中的#
+  mode: 'history', 
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })

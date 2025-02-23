@@ -1,0 +1,58 @@
+<template>
+  <div class="container content-space-1 content-space-lg-1">
+    <!-- Heading -->
+    <div class="w-md-100 w-lg-75 text-center mx-md-auto mb-1">
+      <h2>Danh sách việc làm</h2>
+      <p>Tổng hợp những việc làm hot nhất từ các  <a class="link" href="#">top công ty</a> tốt nhất và dựa trên những tiêu chí Chất lượng dịch vụ ...</p>
+    </div>
+    <!-- End Heading -->
+    <!-- Nav -->
+    <div class="text-center">
+      <ul class="nav nav-segment nav-pills mb-3" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="nav-one-eg1-tab" href="#nav-one-eg1" data-bs-toggle="pill"
+            data-bs-target="#nav-one-eg1" role="tab" aria-controls="nav-one-eg1" aria-selected="true">Mới nhất</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-two-eg1-tab" href="#nav-two-eg1" data-bs-toggle="pill"
+            data-bs-target="#nav-two-eg1" role="tab" aria-controls="nav-two-eg1" aria-selected="false">Việc tốt nhất</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-three-eg1-tab" href="#nav-three-eg1" data-bs-toggle="pill"
+            data-bs-target="#nav-three-eg1" role="tab" aria-controls="nav-three-eg1" aria-selected="false">Tuyển gấp</a>
+        </li>
+      </ul>
+    </div>
+    <!-- End Nav -->
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="nav-one-eg1" role="tabpanel" aria-labelledby="nav-one-eg1-tab">
+        <JobLatest />
+      </div>
+
+      <div class="tab-pane fade" id="nav-two-eg1" role="tabpanel" aria-labelledby="nav-two-eg1-tab">
+        <p>Second tab content...</p>
+      </div>
+
+      <div class="tab-pane fade" id="nav-three-eg1" role="tabpanel" aria-labelledby="nav-three-eg1-tab">
+        <p>Third tab content...</p>
+      </div>
+    </div>
+    <!-- End Tab Content -->
+
+    <div class="text-center">
+      <a class="btn btn-outline-primary" href="../demo-jobs/job-list.html">Danh sách việc làm <i
+          class="bi-chevron-right small ms-1"></i></a>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import JobLatest from './JobTab/JobLatest.vue';
+export default {
+  components: {
+    JobLatest
+  }
+}
+</script>
