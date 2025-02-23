@@ -68,10 +68,7 @@
     "vue-owl-carousel": "^2.0.3",
     "vue-router": "3.4.9",
     "vue-select": "^3.20.4",
-<<<<<<< HEAD
     "vue-slick-carousel": "^1.0.6",
-=======
->>>>>>> bfbece0a6ce595ca1894e1e4a0896a685fed0949
     "vuedraggable": "2.24.3",
     "vuex": "3.6.0"
   },
