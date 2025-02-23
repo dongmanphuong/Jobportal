@@ -9,9 +9,9 @@
 
       <!-- Auth Buttons (Căn phải) -->
       <div class="auth-buttons">
-        <a href="/register" class="btn">Đăng ký</a>
+        <a href="#" class="btn">Đăng ký</a>
         <span class="divider">|</span>
-        <a href="/login" class="btn">Đăng nhập</a>
+        <a href="#" class="btn">Đăng nhập</a>
       </div>
     </div>
   </div>

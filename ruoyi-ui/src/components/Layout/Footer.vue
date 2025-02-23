@@ -24,42 +24,42 @@
       </div>
       <!-- End Col -->
 
-      <div class="col-6 col-sm mb-7 mb-sm-0">
-        <h5 class="text-white mb-3">Features</h5>
-
+      <div class="col-6 col-sm col-lg-4 mb-7 mb-sm-0">
+        <h5 class="text-white mb-0">Văn phòng huyện Xuân Trường</h5>
         <!-- List -->
-        <ul class="list-unstyled list-py-1 mb-0">
-          <li><a class="link-sm link-light" href="#">Press <i class="bi-box-arrow-up-right small ms-1"></i></a></li>
-          <li><a class="link-sm link-light" href="#">Release Notes</a></li>
-          <li><a class="link-sm link-light" href="#">Integrations</a></li>
-          <li><a class="link-sm link-light" href="#">Pricing</a></li>
+        <ul class="list-unstyled list-py-1 mb-3">
+          <li><a class="link-sm link-light" href="#">31 Tổ 3 – TT. Xuân Trường huyện Xuân Trường.</a></li>
+          <li><a class="link-sm link-light" href="#">Điện thoại: 0228.3887.585.</a></li>
+        </ul>
+
+        <h5 class="text-white mb-0-">Văn phòng huyện Nghĩa Hưng</h5>
+        <!-- List -->
+        <ul class="list-unstyled list-py-1 mb-3">
+          <li><a class="link-sm link-light" href="#">Số 24 khu phố 3 Thị trấn Liễu Đề, huyện Nghĩa Hưng. </a></li>
+          <li><a class="link-sm link-light" href="#">Điện thoại: 0228.3713.456.</a></li>
+        </ul>
+
+        <h5 class="text-white mb-0">Văn phòng huyện Nam Trực</h5>
+        <!-- List -->
+        <ul class="list-unstyled list-py-1 mb-3">
+          <li><a class="link-sm link-light" href="#">Số 31 Tổ 3 (tổ 18 cũ) – TT. Xuân Trường huyện Xuân Trường.</a></li>
+          <li><a class="link-sm link-light" href="#">Điện thoại: 0228.3713.456.</a></li>
+          <li><a class="link-sm link-light" href="#">Email: vieclam@backan.com</a></li>
         </ul>
         <!-- End List -->
       </div>
       <!-- End Col -->
 
-      <div class="col-6 col-sm mb-7 mb-sm-0">
-        <h5 class="text-white mb-3">Documentation</h5>
+      <div class="col-6 col-lg-2  col-sm mb-7 mb-sm-0">
+        <h5 class="text-white mb-3">Xây dựng sự nghiệp</h5>
 
         <!-- List -->
         <ul class="list-unstyled list-py-1 mb-0">
-          <li><a class="link-sm link-light" href="#">Support</a></li>
-          <li><a class="link-sm link-light" href="#">Docs</a></li>
-          <li><a class="link-sm link-light" href="#">Status</a></li>
-          <li><a class="link-sm link-light" href="#">API Reference</a></li>
-          <li><a class="link-sm link-light" href="#">Tech Requirements</a></li>
-        </ul>
-        <!-- End List -->
-      </div>
-      <!-- End Col -->
-
-      <div class="col-6 col-sm">
-        <h5 class="text-white mb-3">Resources</h5>
-
-        <!-- List -->
-        <ul class="list-unstyled list-py-1 mb-5">
-          <li><a class="link-sm link-light" href="#"><i class="bi-question-circle-fill me-1"></i> Help</a></li>
-          <li><a class="link-sm link-light" href="#"><i class="bi-person-circle me-1"></i> Your Account</a></li>
+          <li><a class="link-sm link-light" href="#">Việc làm tốt nhất <i class="bi-box-arrow-up-right small ms-1"></i></a></li>
+          <li><a class="link-sm link-light" href="#">Việc làm lương cao</a></li>
+          <li><a class="link-sm link-light" href="#">Việc làm quản lý</a></li>
+          <li><a class="link-sm link-light" href="#">Việc làm bán thời gian</a></li>
+          <li><a class="link-sm link-light" href="#">Việc làm quản lý</a></li>
         </ul>
         <!-- End List -->
       </div>
@@ -92,7 +92,7 @@
         <!-- End Socials -->
       </div>
 
-      <div class="col-sm-auto">
+      <div class="col-sm-auto ml-5">
         <!-- Socials -->
         <ul class="list-inline mb-0">
           <li class="list-inline-item">
@@ -138,5 +138,9 @@
 .navbar-brand-logo {
   width: auto;
   max-width: 15rem;
+}
+.list-py-1 > li {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 </style>

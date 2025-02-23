@@ -29,12 +29,12 @@
 </template>
 
 <script>
-import Searchform from "./TemplateParts/SearchForm.vue";
+import SearchForm from "./TemplateParts/SearchForm.vue";
 import Slickcarousel from "./TemplateParts/SlickCarousel.vue";
 
 export default {
   components: {
-    Searchform,
+    SearchForm,
     Slickcarousel
   }
 };

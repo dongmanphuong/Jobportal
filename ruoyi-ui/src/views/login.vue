@@ -54,9 +54,9 @@
         </div>
       </el-form-item>
     </el-form>
-    
+    <!--  底部  -->
     <div class="el-login-footer">
-      <span>Copyright © 2025 Trung tâm việc làm Bắc Kạn.</span>
+      <span>Copyright © 2025 Trung tâm việc làm Bắc Kan.</span>
     </div>
   </div>
 </template>
@@ -72,8 +72,8 @@ export default {
     return {
       codeUrl: "",
       loginForm: {
-        username: "",
-        password: "",
+        username: "admin",
+        password: "admin123",
         rememberMe: false,
         code: "",
         uuid: ""

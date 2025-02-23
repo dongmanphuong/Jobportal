@@ -1,5 +1,5 @@
 <template>
-  <header id="header" class="navbar navbar-expand-lg navbar-end navbar-light">
+  <header id="header" class="navbar navbar-expand-lg navbar-start navbar-light">
     <TopBar />
     <Navbar />
 </header>
