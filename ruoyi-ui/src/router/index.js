@@ -41,6 +41,16 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/home',
+    component: HomeLayout,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/HomePage.vue'),
+      }
+    ]
+  },
+  {
     path: '',
     component: Layout,
     redirect: 'index',
@@ -127,7 +137,7 @@ export const dynamicRoutes = [
       }
     ]
   },
-  
+
   {
     path: '/recruitment/employer',
     component: Layout,
@@ -145,68 +155,68 @@ export const dynamicRoutes = [
     component: Layout,
     component: () => import('@/views/recruitment/JobListing'),
     hidden: true
-  }, 
+  },
   {
     path: '/candidateprofile/list',
     component: Layout,
     component: () => import('@/views/candidateprofile/CandidateList'),
     hidden: true
-  }, 
+  },
   {
     path: '/candidateprofile/ApplicantList',
     component: Layout,
     component: () => import('@/views/candidateprofile/ApplicantList'),
     hidden: true
-  }, 
+  },
   {
     path: '/candidateprofile/SavedCandidates',
     component: Layout,
     component: () => import('@/views/candidateprofile/SavedCandidates'),
     hidden: true
-  }, 
+  },
   {
     path: '/candidateprofile/InvitedCandidates',
     component: () => import('@/views/candidateprofile/InvitedCandidates'),
     hidden: true
-  }, 
+  },
   {
     path: '/candidateprofile/ViewedCandidates',
     component: Layout,
     component: () => import('@/views/candidateprofile/ViewedCandidates'),
     hidden: true
-  }, 
+  },
   {
     path: '/candidateprofile/BlacklistedCandidates',
     component: () => import('@/views/candidateprofile/BlacklistedCandidates'),
     hidden: true
-  }, 
+  },
   {
     path: '/candidateprofile/TransactionList',
     component: () => import('@/views/candidateprofile/TransactionList'),
     hidden: true
-  }, 
+  },
   {
     path: '/candidateprofile/EmployerDashboard',
     component: () => import('@/views/candidateprofile/EmployerDashboard'),
     hidden: true
-  }, 
-  
+  },
+
   {
     path: '/jobseeker/Dashboard',
     component: () => import('@/views/jobseeker/Dashboard'),
     hidden: true
-  }, 
+  },
   {
     path: '/jobseeker/ResumeManagement',
     component: () => import('@/views/jobseeker/ResumeManagement'),
     hidden: true
-  }, 
-  
+  },
+
   {
     path: '/jobseeker/WorkPreferences',
     component: () => import('@/views/jobseeker/WorkPreferences'),
     hidden: true
-  }, 
+  },
   {
     path: '/tool/gen-edit',
     component: Layout,
@@ -235,7 +245,7 @@ Router.prototype.replace = function push(location) {
 }
 
 export default new Router({
-  mode: 'history', 
+  mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
