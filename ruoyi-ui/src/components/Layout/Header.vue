@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Topbar from './Header/Topbar.vue'
+import Topbar from './Header/Topbar.vue';
 import Navbar from "./Header/NavBar.vue";
 export default {
   components: {

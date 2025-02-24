@@ -51,6 +51,24 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/viec-lam',
+    component: DefaultLayout,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/JobList.vue'),
+      },
+      {
+        path: 'view-grid',
+        component: () => import('@/views/JobGrid.vue'),
+      },
+      {
+        path: 'detail',
+        component: () => import('@/views/JobDetail.vue'),
+      }
+    ]
+  },
+  {
     path: '',
     component: Layout,
     redirect: 'index',
