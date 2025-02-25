@@ -61,6 +61,7 @@
     "screenfull": "5.0.2",
     "sortablejs": "1.10.2",
     "swiper": "^7.4.1",
+    "vform-builds": "^2.2.9",
     "vue": "2.6.12",
     "vue-burger-menu": "^2.0.5",
     "vue-count-to": "1.0.13",
