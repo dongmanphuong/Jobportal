@@ -1,245 +1,83 @@
 <template>
 
-<div class="container-fluid">
+<div class="container-fluid border-bottom">
     <nav class="js-mega-menu navbar-nav-wrap">
-      <!-- Default Logo -->
-      <a class="navbar-brand" href="../index.html" aria-label="Front">
-        <img class="navbar-brand-logo" src="@/assets/logo/backan-logo.png" alt="Logo">
-      </a>
-      <!-- End Default Logo -->
+    <!-- Default Logo -->
+    <a class="navbar-brand" href="/home" aria-label="Front">
+      <img class="navbar-brand-logo" src="@/assets/logo/backan-logo.png" alt="Logo" />
+    </a>
+    <!-- End Default Logo -->
 
-      <!-- Secondary Content -->
-      <div class="navbar-nav-wrap-secondary-content">
-        <!-- Search -->
-        <div class="dropdown dropdown-course-search d-lg-none d-inline-block">
-          <a class="btn btn-ghost-secondary btn-sm btn-icon" href="#" id="navbarCourseSearchDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi-search"></i>
-          </a>
-
-          <div class="dropdown-menu dropdown-card" aria-labelledby="navbarCourseSearchDropdown">
-            <!-- Card -->
-            <div class="card card-sm">
-              <div class="card-body">
-                <form class="input-group input-group-merge">
-                  <input type="text" class="form-control" placeholder="What do you want to learn?" aria-label="What do you want to learn?">
-                  <div class="input-group-append input-group-text">
-                    <i class="bi-search"></i>
-                  </div>
-                </form>
-              </div>
+    <!-- Secondary Content -->
+    <div class="navbar-nav-wrap-secondary-content">
+      <!-- Search -->
+      <div class="dropdown dropdown-course-search d-lg-none d-inline-block">
+        <button
+          class="btn btn-ghost-secondary btn-sm btn-icon"
+          id="navbarCourseSearchDropdown"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="bi-search"></i>
+        </button>
+        <div class="dropdown-menu dropdown-card">
+          <div class="card card-sm">
+            <div class="card-body">
+              <form class="input-group input-group-merge">
+                <input type="text" class="form-control" placeholder="What do you want to learn?" />
+                <div class="input-group-append input-group-text">
+                  <i class="bi-search"></i>
+                </div>
+              </form>
             </div>
-            <!-- End Card -->
           </div>
         </div>
-        <!-- End Search -->
+      </div>
+      <!-- End Search -->
 
-        <!-- Account -->
-        <div class="dropdown">
-          <a href="#" id="navbarShoppingCartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation>
-            <img class="avatar avatar-xs avatar-circle" src="/assets/img/160x160/img9.jpg" alt="Image Description">
+      <!-- Account -->
+      <div class="dropdown">
+        <a href="#" id="navbarShoppingCartDropdown" data-bs-toggle="dropdown">
+          <img class="avatar avatar-xs avatar-circle" src="/assets/img/160x160/img9.jpg" alt="User" />
+        </a>
+        <div class="dropdown-menu dropdown-menu-end" style="min-width: 16rem;">
+          <a class="d-flex align-items-center p-2" href="#">
+            <img class="avatar" src="/assets/img/160x160/img9.jpg" alt="User" />
+            <div class="ms-3">
+              <span class="fw-semibold">Lida Reidy <span class="badge bg-primary ms-1">Pro</span></span>
+              <span class="d-block text-muted small">lidareidy@gmail.com</span>
+            </div>
           </a>
-
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarShoppingCartDropdown" style="min-width: 16rem;">
-            <a class="d-flex align-items-center p-2" href="#">
-              <div class="flex-shrink-0">
-                <img class="avatar" src="/assets/img/160x160/img9.jpg" alt="Image Description">
-              </div>
-              <div class="flex-grow-1 ms-3">
-                <span class="d-block fw-semibold">Lida Reidy <span class="badge bg-primary ms-1">Pro</span></span>
-                <span class="d-block text-muted small">lidareidy@gmail.com</span>
-              </div>
-            </a>
-
-            <div class="dropdown-divider my-3"></div>
-
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-chat-left-dots"></i>
-              </span> Messages
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-wallet2"></i>
-              </span> Purchase history
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-person"></i>
-              </span> Account
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-credit-card"></i>
-              </span> Payment methods
-            </a>
-
-            <div class="dropdown-divider"></div>
-
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-question-circle"></i>
-              </span> Help
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-box-arrow-right"></i>
-              </span> Log out
-            </a>
-          </div>
+          <div class="dropdown-divider my-3"></div>
+          <a v-for="item in accountMenu" :key="item.text" class="dropdown-item" :href="item.link">
+            <span class="dropdown-item-icon"><i :class="item.icon"></i></span> {{ item.text }}
+          </a>
         </div>
-        <!-- End Account -->
       </div>
-      <!-- End Secondary Content -->
+      <!-- End Account -->
+    </div>
+    <!-- End Secondary Content -->
 
-      <!-- Toggler -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-default">
-          <i class="bi-list"></i>
-        </span>
-        <span class="navbar-toggler-toggled">
-          <i class="bi-x"></i>
-        </span>
-      </button>
-      <!-- End Toggler -->
+    <!-- Toggler -->
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-default"><i class="bi-list"></i></span>
+      <span class="navbar-toggler-toggled"><i class="bi-x"></i></span>
+    </button>
+    <!-- End Toggler -->
 
-      <!-- Collapse -->
-      <div class="collapse navbar-collapse mx-5" id="navbarNavDropdown">
-        <ul class="navbar-nav ">
-          <!-- Landings -->
-          <li class="hs-has-mega-menu nav-item">
-            <a id="landingsMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Trung tâm VLBK</a>
-
-            <!-- Mega Menu -->
-            <div class="hs-mega-menu dropdown-menu w-100" aria-labelledby="landingsMegaMenu" style="min-width: 30rem;">
-              <div class="row">
-                <div class="col-lg-6 d-none d-lg-block">
-                  <!-- Banner Image -->
-                  <div class="navbar-dropdown-menu-banner" style="background-image: url(/assets/svg/components/shape-3.svg);">
-                    <div class="navbar-dropdown-menu-banner-content">
-                      <div class="mb-4">
-                        <span class="h2 d-block">Sàn việc làm</span>
-                        <p class="fw-bold">PHIÊN GIAO DỊCH VIỆC LÀM NAM ĐỊNH T10</p>
-                        <p>Số 64 đường Trần Phú, phường Trần Hưng Đạo, TP.Nam Định</p>
-                      </div>
-                      <a class="btn btn-primary btn-transition" href="#">Xem thêm <i class="bi-chevron-right small"></i></a>
-                    </div>
-                  </div>
-                  <!-- End Banner Image -->
-                </div>
-                <!-- End Col -->
-
-                <div class="col-lg-6">
-                  <div class="navbar-dropdown-menu-inner">
-                    <div class="row">
-                      <div class="col-sm mb-3 mb-sm-0">
-                        <div class="mb-3">
-
-                          <span class="dropdown-header">Tin tức & Sự kiện</span>
-                          <a class="dropdown-item" href="#">Văn bản</a>
-                          <a class="dropdown-item" href="#">Bản tin thị trường</a>
-                          <a class="dropdown-item" href="#">Báo cáo & Phân tích <span class="badge bg-primary rounded-pill ms-1">Hot</span></a>
-                          <a class="dropdown-item" href="#">Bảo hiểm thất nghiệp</a>
-                        </div>
-                        <div class="dropdown-divider"></div>
-                        <span class="dropdown-header">Đa phương tiện</span>
-                        <a class="dropdown-item" href="#">Hình ảnh</a>
-                        <a class="dropdown-item" href="#">Video </a>
-                        <a class="dropdown-item" href="#">Văn bản </a>
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-sm">
-                        <div class="mb-3">
-                          <span class="dropdown-header">Về trung tâm</span>
-                          <a class="dropdown-item" href="#">Tư vấn việc làm</a>
-                          <a class="dropdown-item" href="#">Góc báo chí</a>
-                          <a class="dropdown-item" href="#">Tuyển dụng</a>
-                          <a class="dropdown-item" href="#">Liên hệ</a>
-                          <a class="dropdown-item" href="#">Hỏi đáp <span class="badge bg-primary rounded-pill ms-1">Hot</span></a>
-                        </div>
-
-
-                      </div>
-                      <!-- End Col -->
-                    </div>
-                    <!-- End Row -->
-                  </div>
-                </div>
-                <!-- End Col -->
-              </div>
-              <!-- End Row -->
-            </div>
-            <!-- End Mega Menu -->
-          </li>
-          <!-- End Landings -->
-
-          <!-- Blog -->
-          <li class="hs-has-sub-menu nav-item">
-            <a id="blogMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tìm việc làm</a>
-
-            <!-- Mega Menu -->
-            <div class="hs-sub-menu dropdown-menu" aria-labelledby="blogMegaMenu" style="min-width: 14rem;">
-              <a class="dropdown-item" href="#">Tìm việc làm</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Việc làm phù hợp</a>
-              <a class="dropdown-item" href="#">Việc làm IT</a>
-              <a class="dropdown-item" href="#">Việc làm Bắc Kạn</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Danh sách công ty</a>
-              <a class="dropdown-item" href="#">Top công ty</a>
-            </div>
-            <!-- End Mega Menu -->
-          </li>
-          <!-- End Blog -->
-
-          <!-- Company -->
-          <li class="hs-has-sub-menu nav-item">
-            <a id="companyMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hồ sơ & CV</a>
-
-            <!-- Mega Menu -->
-            <div class="hs-sub-menu dropdown-menu" aria-labelledby="companyMegaMenu" style="min-width: 14rem;">
-              <a class="dropdown-item" href="#">Tạo CV</a>
-              <a class="dropdown-item" href="#">Tạo cover letter</a>
-              <a class="dropdown-item" href="#">Thư viện CV theo ngành nghề <span class="badge bg-primary rounded-pill ms-1">Hot</span></a>
-              <a class="dropdown-item" href="#">Hướng dẫn viết CV</a>
-              <a class="dropdown-item" href="#">Tạo CV profile</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Tư vấn việc làm</a>
-            </div>
-            <!-- End Mega Menu -->
-          </li>
-          <!-- End Company -->
-
-          <!-- Account -->
-          <li class="hs-has-sub-menu nav-item">
-            <a id="accountMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cẩm nang nghề nghiệp</a>
-
-            <!-- Mega Menu -->
-            <div class="hs-sub-menu dropdown-menu" aria-labelledby="accountMegaMenu" style="min-width: 14rem;">
-              <a class="dropdown-item" href="#">Định hướng nghề nghiệp</a>
-              <a class="dropdown-item" href="#">Bí kíp tìm việc</a>
-              <a class="dropdown-item" href="#">Chế độ lương thưởng</a>
-              <a class="dropdown-item" href="#">Kiến thức chuyên ngành</a>
-              <a class="dropdown-item" href="#">Hành trang nghề nghiệp</a>
-              <a class="dropdown-item" href="#">Thị trường & Xu hướng tuyển dụng</a>
-            </div>
-            <!-- End Mega Menu -->
-          </li>
-          <!-- End Account -->
-
-          <!-- Pages -->
-          <li class="hs-has-sub-menu nav-item">
-            <a id="pagesMegaMenu" class="hs-mega-menu-invoker nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Công cụ</a>
-            <div class="hs-sub-menu dropdown-menu" aria-labelledby="pagesMegaMenu" style="min-width: 14rem;">
-              <a class="dropdown-item" href="#">Mobile App Bắc Kạn</a>
-            </div>
-          </li>
-          <!-- End Pages -->
-        </ul>
-      </div>
-      <!-- End Collapse -->
-
-    </nav>
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse mx-5" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li v-for="menu in menus" :key="menu.title" class="nav-item hs-has-sub-menu">
+          <a class="nav-link dropdown-toggle" :href="menu.link" data-bs-toggle="dropdown">{{ menu.title }}</a>
+          <div class="dropdown-menu" :style="{ minWidth: menu.minWidth }">
+            <a v-for="sub in menu.items" :key="sub.text" class="dropdown-item" :href="sub.link">{{ sub.text }}</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- End Collapse -->
+  </nav>
   </div>
 </template>
 
@@ -255,11 +93,35 @@ export default {
     this.$nextTick(() => {
       new HSMegaMenu(".js-mega-menu");
     });
+  },
+  data() {
+    return {
+      menus: [
+        { title: "Trung tâm VLBK", minWidth: "30rem", items: [{ text: "Xem thêm", link: "#" }] },
+        { title: "Tìm việc làm", link: "/viec-lam", minWidth: "14rem", items: [{ text: "Việc làm IT", link: "/viec-lam" }] },
+        { title: "Hồ sơ & CV", minWidth: "14rem", items: [{ text: "Tạo CV", link: "#" }] },
+        { title: "Cẩm nang nghề nghiệp", minWidth: "14rem", items: [{ text: "Định hướng nghề nghiệp", link: "#" }] },
+        { title: "Công cụ", minWidth: "14rem", items: [{ text: "Mobile App Bắc Kạn", link: "#" }] }
+      ],
+      accountMenu: [
+        { text: "Messages", icon: "bi-chat-left-dots", link: "#" },
+        { text: "Purchase history", icon: "bi-wallet2", link: "#" },
+        { text: "Account", icon: "bi-person", link: "#" },
+        { text: "Payment methods", icon: "bi-credit-card", link: "#" },
+        { text: "Help", icon: "bi-question-circle", link: "#" },
+        { text: "Log out", icon: "bi-box-arrow-right", link: "#" }
+      ]
+    };
   }
 };
 </script>
 
 <style scoped>
+header,
+#header{
+  padding: 0;
+  margin: 0;
+}
 .dropdown-toggle::after {
   border: 0;
 }

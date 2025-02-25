@@ -22,7 +22,6 @@
         <!-- End Col -->
 
         <div class="col-lg-9">
-    <!-- Header -->
     <div class="row align-items-center mb-5">
       <div class="col-sm mb-3 mb-sm-0">
         <h3 class="mb-0">{{ totalJobs }} jobs for <span class="fw-normal">{{ country }}</span></h3>
@@ -46,12 +45,12 @@
 
           <ul class="nav nav-segment">
             <li class="nav-item">
-              <a class="nav-link" href="/viec-lam/view-grid">
+              <a class="nav-link active" href="#" >
                 <i class="bi-grid-fill"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" :class="{ active: viewMode === 'list' }" href="#">
+              <a class="nav-link"  href="/viec-lam" >
                 <i class="bi-list"></i>
               </a>
             </li>
@@ -61,8 +60,8 @@
     </div>
 
     <!-- Job List -->
-    <div class="d-grid gap-5 mb-10">
-      <JobCard v-for="job in jobs" :key="job.id" :job="job" />
+    <div class="row row-cols-1 row-cols-sm-2 mb-5">
+      <JobGridCard v-for="job in jobs" :key="job.id" :job="job" />
     </div>
 
     <!-- Pagination -->
@@ -96,15 +95,14 @@
 <script>
 import JobUrgent from '../components/HomeSection/JobTab/JobUrgent.vue';
 import Rightbar from '../components/Joblist/Rightbar.vue';
-import JobCard from '../components/Joblist/JobCard.vue';
-import SearchForm from '../components/Layout/HeroSection/TemplateParts/SearchForm.vue';
+import JobGridCard from '../components/Joblist/JobGridCard.vue';
 
 export default {
   name: 'Index',
   components: {
     JobUrgent,
     Rightbar,
-    JobCard
+    JobGridCard
   },
   data() {
     return {
@@ -116,6 +114,36 @@ export default {
       currentPage: 1,
       totalPages: 3,
       jobs: [
+        {
+          id: 1,
+          company: "Mailchimp",
+          position: "Senior B2B sales consultant",
+          salary: "$125k-$135k yearly",
+          location: "Oxford",
+          type: "Full time",
+          posted: "7 hours ago",
+          image: "/assets/svg/brands/mailchimp-icon.svg"
+        },
+        {
+          id: 2,
+          company: "Capsule",
+          position: "Office assistant/Social media assistant",
+          salary: "$50-$135 hourly",
+          location: "Newcastle",
+          type: "Part time",
+          posted: "21 hours ago",
+          image: "/assets/svg/brands/capsule-icon.svg"
+        },
+        {
+          id: 3,
+          company: "Dropbox",
+          position: "Marketing and Communications Manager",
+          salary: "$5k monthly",
+          location: "London",
+          type: "Full time",
+          posted: "1 day ago",
+          image: "/assets/svg/brands/dropbox-icon.svg"
+        },
         {
           id: 1,
           company: "Mailchimp",
