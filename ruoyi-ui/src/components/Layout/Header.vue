@@ -7,7 +7,7 @@
 
 <script>
 import Topbar from './Header/Topbar.vue';
-import Navbar from "./Header/NavBar.vue";
+import Navbar from "./Header/NavBarStatic.vue";
 export default {
   components: {
     Navbar,

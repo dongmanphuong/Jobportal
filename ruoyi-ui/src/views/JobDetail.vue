@@ -1,971 +1,288 @@
 <template>
   <div>
-    <!-- Hero -->
-    <div class="gradient-x-three-sm-primary">
-      <div class="container content-space-2">
-        <form>
-          <!-- Input Card -->
-          <div class="input-card input-card-sm mb-3">
-            <div class="input-card-form">
-              <label for="jobTitleForm" class="form-label visually-hidden">Job, title, skills, or company</label>
-              <div class="input-group input-group-merge">
-                <span class="input-group-prepend input-group-text">
-                  <i class="bi-search"></i>
-                </span>
-                <input type="text" class="form-control" id="jobTitleForm" placeholder="Job, title, skills, or company"
-                  aria-label="Job, title, skills, or company">
-              </div>
-            </div>
-
-            <div class="input-card-form">
-              <label for="cityForm" class="form-label visually-hidden">City, state, or zip</label>
-              <div class="input-group input-group-merge">
-                <span class="input-group-prepend input-group-text">
-                  <i class="bi-geo-alt"></i>
-                </span>
-                <input type="text" class="form-control" id="cityForm" placeholder="City, state, or zip"
-                  aria-label="City, state, or zip">
-              </div>
-            </div>
-            <button type="button" class="btn btn-primary">Search</button>
-          </div>
-          <!-- End Input Card -->
-        </form>
-
-        <div class="row align-items-center">
-          <div class="col-md-auto mb-3 mb-lg-0">
-            <h6 class="mb-1">Limit search to:</h6>
-          </div>
-          <!-- End Col -->
-
-          <div class="col-md mb-3 mb-lg-0">
-            <!-- Check -->
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="jobSearchToCheckbox1" value="option1" checked>
-              <label class="form-check-label" for="jobSearchToCheckbox1">Job title</label>
-            </div>
-            <!-- End Check -->
-
-            <!-- Check -->
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="jobSearchToCheckbox2" value="option2">
-              <label class="form-check-label" for="jobSearchToCheckbox2">Skills</label>
-            </div>
-            <!-- End Check -->
-
-            <!-- Check -->
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="jobSearchToCheckbox3" value="option3">
-              <label class="form-check-label" for="jobSearchToCheckbox3">Companies</label>
-            </div>
-            <!-- End Check -->
-
-            <!-- Check -->
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="jobSearchToCheckbox4" value="option4">
-              <label class="form-check-label" for="jobSearchToCheckbox4">Field of study</label>
-            </div>
-            <!-- End Check -->
-          </div>
-
-          <div class="col-md-auto">
-            <!-- Switch -->
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="remoteOnlySwitch">
-              <label class="form-check-label" for="remoteOnlySwitch">Remote only</label>
-            </div>
-            <!-- End Switch -->
-          </div>
-          <!-- End Col -->
-        </div>
-        <!-- End Row -->
-      </div>
-    </div>
-    <!-- End Hero -->
-
-    <!-- Breadcrumb -->
-    <div class="container-fluid bg-light border-bottom border-top">
-      <div class="container">
-        <div class="row align-items-lg-center">
-          <div class="col-lg mb-2 mb-lg-0">
-            <!-- Breadcrumb -->
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="#">For Sale</a></li>
-                <li class="breadcrumb-item"><a href="#">England</a></li>
-                <li class="breadcrumb-item"><a href="#">London</a></li>
-                <li class="breadcrumb-item"><a href="#">Studio</a></li>
-                <li class="breadcrumb-item active" aria-current="page">470 Lucy Forks, Patriciafurt, YC7B</li>
-              </ol>
-            </nav>
-            <!-- End Breadcrumb -->
-          </div>
-          <!-- End Col -->
-
-          <div class="col-lg-auto">
-            <a class="btn btn-sm btn-ghost-secondary" href="javascript:;">
-              <i class="bi-heart me-2"></i> Save
-            </a>
-
-            <a class="btn btn-sm btn-ghost-secondary" href="javascript:;">
-              <i class="bi-share-fill me-2"></i> Share
-            </a>
-          </div>
-          <!-- End Col -->
-        </div>
-        <!-- End Row -->
-      </div>
-    </div>
-    <!-- End Breadcrumb -->
-
-    <!-- Card Grid -->
-    <div class="container content-space-t-1 content-space-t-md-2 content-space-b-2 content-space-b-lg-3">
+      <JobBreadCrumb />
+    <!-- Content -->
+    <div class="container content-space-2">
       <div class="row">
-        <div class="col-lg-3 order-lg-2">
-          <!-- Navbar -->
-          <div class="navbar-expand-lg mb-5">
-            <!-- Navbar Toggle -->
-            <div class="d-grid">
-              <button type="button" class="navbar-toggler btn btn-white mb-3" data-bs-toggle="collapse"
-                data-bs-target="#navbarVerticalNavMenu" aria-label="Toggle navigation" aria-expanded="false"
-                aria-controls="navbarVerticalNavMenu">
-                <span class="d-flex justify-content-between align-items-center">
-                  <span class="text-dark">Filter</span>
+        <div class="col-lg-8">
 
-                  <span class="navbar-toggler-default">
-                    <i class="bi-list"></i>
-                  </span>
+          <div class="mx-lg-auto">
+            <div class="page-header">
+              <!-- Media -->
+              <div class="d-sm-flex mb-3">
+                <div class="flex-shrink-0 mb-2 mb-sm-0">
+                  <a href="../demo-jobs/employer.html">
+                    <img class="avatar avatar-lg mb-3" src="/assets/svg/brands/capsule-icon.svg"
+                      alt="Image Description">
+                  </a>
+                </div>
 
-                  <span class="navbar-toggler-toggled">
-                    <i class="bi-x"></i>
-                  </span>
-                </span>
-              </button>
-            </div>
-            <!-- End Navbar Toggle -->
-
-            <!-- Navbar Collapse -->
-            <div id="navbarVerticalNavMenu" class="collapse navbar-collapse">
-              <div class="w-100">
-                <!-- Form -->
-                <form>
-                  <div class="mb-5">
-                    <h5 class="mb-3">Distance</h5>
-
-                    <p class="form-text">Within <span id="rangeSliderDistance"></span> miles of <span
-                        class="fw-semibold text-dark">London</span></p>
-
-                    <!-- Range Slider -->
-                    <div class="range-slider">
-                      <div class="js-nouislider" data-hs-nouislider-options='{
-                               "range": {
-                                 "min": 0,
-                                 "max": 100
-                               },
-                               "connect": [true, false],
-                               "start": 25,
-                               "result_min_target_el": "#rangeSliderDistance"
-                             }'>
-                      </div>
+                <div class="flex-grow-1 ms-sm-4">
+                  <div class="row">
+                    <div class="col">
+                      <h1 class="page-header-title h2">UX/UI Designer</h1>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center mt-5">
-                      <span class="text-body">5 miles</span>
-                      <span class="text-body">100 miles</span>
-                    </div>
-                    <!-- End Range Slider -->
+                    <!-- End Col -->
+
+
                   </div>
+                  <!-- End Row -->
 
-                  <div class="mb-5">
-                    <h5 class="mb-3">Last updated</h5>
+                  <ul class="list-inline list-separator d-flex align-items-center mb-2">
+                    <li class="list-inline-item">
+                      <a class="link" href="../demo-jobs/employer.html">Capsule</a>
+                    </li>
 
-                    <!-- Select -->
-                    <select class="form-select form-select-sm">
-                      <option value="within last day">within last day</option>
-                      <option value="within last week">within last week</option>
-                      <option value="within last month">within last month</option>
-                      <option value="within last 3 months">within last 3 months</option>
-                      <option value="within last 6 months" selected>within last 6 months</option>
-                      <option value="show all resumes">show all resumes</option>
-                    </select>
-                    <!-- End Select -->
-                  </div>
+                    <li class="list-inline-item">
+                      <!-- Rating -->
+                      <a class="d-flex gap-1" href="../demo-jobs/employer.html">
+                        <img src="/assets/svg/illustrations/star.svg" alt="Review rating" width="14">
+                        <img src="/assets/svg/illustrations/star.svg" alt="Review rating" width="14">
+                        <img src="/assets/svg/illustrations/star.svg" alt="Review rating" width="14">
+                        <img src="/assets/svg/illustrations/star.svg" alt="Review rating" width="14">
+                        <img src="/assets/svg/illustrations/star-half.svg" alt="Review rating" width="14">
+                        <span class="ms-1">2,391 reviews</span>
+                      </a>
+                      <!-- End Rating -->
+                    </li>
+                  </ul>
 
-                  <div class="mb-5">
-                    <h5 class="mb-3">Job titles</h5>
-
-                    <div class="d-grid gap-2">
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobTitleCheckbox1">
-                        <label class="form-check-label d-flex" for="jobTitleCheckbox1">Graphic Designer <span
-                            class="ms-auto">2</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobTitleCheckbox2" checked>
-                        <label class="form-check-label d-flex" for="jobTitleCheckbox2">UI/UX Designer <span
-                            class="ms-auto">2</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobTitleCheckbox3" checked>
-                        <label class="form-check-label d-flex" for="jobTitleCheckbox3">Full Stack Developer <span
-                            class="ms-auto">1</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobTitleCheckbox4">
-                        <label class="form-check-label d-flex" for="jobTitleCheckbox4">Information Associate <span
-                            class="ms-auto">1</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-                    </div>
-                  </div>
-
-                  <div class="mb-5">
-                    <h5 class="mb-3">Company</h5>
-
-                    <div class="d-grid gap-2">
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobCompanyCheckbox1">
-                        <label class="form-check-label d-flex" for="jobCompanyCheckbox1">Capsule <span
-                            class="ms-auto">2</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobCompanyCheckbox2">
-                        <label class="form-check-label d-flex" for="jobCompanyCheckbox2">Dropbox <span
-                            class="ms-auto">18</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobCompanyCheckbox3">
-                        <label class="form-check-label d-flex" for="jobCompanyCheckbox3">Mailchimp <span
-                            class="ms-auto">1</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobCompanyCheckbox4">
-                        <label class="form-check-label d-flex" for="jobCompanyCheckbox4">Google <span
-                            class="ms-auto">1</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobCompanyCheckbox5">
-                        <label class="form-check-label d-flex" for="jobCompanyCheckbox5">Prosperops <span
-                            class="ms-auto">2</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobCompanyCheckbox6">
-                        <label class="form-check-label d-flex" for="jobCompanyCheckbox6">Figam <span
-                            class="ms-auto">6</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-                    </div>
-                  </div>
-
-                  <div class="mb-5">
-                    <h5 class="mb-3">Years of experience</h5>
-
-                    <div class="d-grid gap-2">
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobYearExperienceCheckbox1"
-                          checked>
-                        <label class="form-check-label d-flex" for="jobYearExperienceCheckbox1">6-10 years <span
-                            class="ms-auto">73</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobYearExperienceCheckbox2">
-                        <label class="form-check-label d-flex" for="jobYearExperienceCheckbox2">3-5 years <span
-                            class="ms-auto">3</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobYearExperienceCheckbox3">
-                        <label class="form-check-label d-flex" for="jobYearExperienceCheckbox3">More than 10 years <span
-                            class="ms-auto">1</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-                    </div>
-                  </div>
-
-                  <div class="mb-5">
-                    <h5 class="mb-3">Education</h5>
-
-                    <div class="d-grid gap-2">
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobEducationCheckbox1">
-                        <label class="form-check-label d-flex" for="jobEducationCheckbox1">Bachelors <span
-                            class="ms-auto">6</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobEducationCheckbox2">
-                        <label class="form-check-label d-flex" for="jobEducationCheckbox2">Masters <span
-                            class="ms-auto">1</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobEducationCheckbox3">
-                        <label class="form-check-label d-flex" for="jobEducationCheckbox3">Associates <span
-                            class="ms-auto">1</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-                    </div>
-                  </div>
-
-                  <div class="mb-5">
-                    <h5 class="mb-3">Assessment <i class="bi-question-circle text-body ml-1" data-bs-toggle="tooltip"
-                        data-bs-placement="top"
-                        title="Assessments shown her6 are summarized for convenience only. View the candidate’s profile for more information, including score ranges for each assessment. Indeed makes no statement as to the skill level of any candidate."></i>
-                    </h5>
-
-                    <div class="d-grid gap-2">
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobAssessmentCheckbox1">
-                        <label class="form-check-label d-flex" for="jobAssessmentCheckbox1">Attention to detail <span
-                            class="ms-auto">3</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobAssessmentCheckbox2">
-                        <label class="form-check-label d-flex" for="jobAssessmentCheckbox2">Graphic design <span
-                            class="ms-auto">7</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobAssessmentCheckbox3">
-                        <label class="form-check-label d-flex" for="jobAssessmentCheckbox3">Social Media <span
-                            class="ms-auto">1</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-
-                      <!-- Checkboxes -->
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="jobAssessmentCheckbox4">
-                        <label class="form-check-label d-flex" for="jobAssessmentCheckbox4">Marketing <span
-                            class="ms-auto">1</span></label>
-                      </div>
-                      <!-- End Checkboxes -->
-                    </div>
-                  </div>
-
-                  <div class="d-grid">
-                    <button type="button" class="btn btn-white btn-transition">Clear all</button>
-                  </div>
-                </form>
-                <!-- End Form -->
+                  <ul class="list-inline list-separator small text-body mb-2">
+                    <li class="list-inline-item">Posted 7 hours ago</li>
+                    <li class="list-inline-item">Oxford, England, United Kingdom</li>
+                    <li class="list-inline-item">Full time</li>
+                  </ul>
+                </div>
               </div>
+              <!-- End Media -->
+
+              <!-- Footer -->
+    <div class="d-flex justify-content-end d-print-none gap-3">
+      <a class="btn btn-primary" href="javascript:;" onclick="window.print(); return false;">
+        <i class="bi-printer me-1"></i> Ứng tuyển
+      </a>
+      <a class="btn btn-white" href="#">
+        <i class="bi-file-earmark-arrow-down me-1"></i> Lưu tin
+      </a>
+
+
+    </div>
             </div>
-            <!-- End Navbar Collapse -->
+
+
           </div>
-          <!-- End Navbar -->
+
+          <div class="my-8">
+            <h3>Chi tiết tin tuyển dụng</h3>
+
+            <p>A Frontend developer, and UI/UX Designer offering over 8 years of success in various leadership roles in
+              the areas of Web design and development and customer support. I love coding and problem solving. Love
+              working on both server and client side code. I like to get to know my clients closely to facilitate better
+              communication.</p>
+
+            <ul class="mb-4">
+              <li>Authorized to work in the UK for any employer</li>
+              <li>Willing to relocate to anywhere</li>
+            </ul>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="mb-4">
+                  <h5>Desired job title</h5>
+                  <p>UI Designer/Developer</p>
+                </div>
+
+                <div class="mb-4">
+                  <h5>Desired job types</h5>
+                  <p>Full time</p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="col-sm-6">
+                <div class="mb-4">
+                  <h5>Desired work schedule</h5>
+                  <p>Monday to Friday</p>
+                </div>
+
+                <div class="mb-4">
+                  <h5>Desired salary</h5>
+                  <p>$90k per year</p>
+                </div>
+              </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+          </div>
+
+          <div class="mb-8">
+            <div class="mb-4">
+              <h3>Work experience</h3>
+            </div>
+
+            <!-- Step -->
+            <ul class="step step-icon-sm">
+              <li class="step-item">
+                <div class="step-content-wrapper">
+                  <div class="step-avatar step-avatar-sm">
+                    <img class="step-avatar-img" src="/assets/svg/brands/dropbox-icon.svg" alt="Image Description">
+                  </div>
+                  <div class="step-content">
+                    <h5 class="step-title">Head of IT Department</h5>
+                    <span class="d-block text-dark">Dropbox - London</span>
+                    <small class="d-block mb-4">December 2016 to Present</small>
+                    <p class="text-body mb-0">The company has high expectations and using OKRs there is a mutual
+                      understanding of expectations and performance.</p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-content-wrapper">
+                  <div class="step-avatar step-avatar-sm">
+                    <img class="step-avatar-img" src="/assets/svg/brands/mailchimp-icon.svg" alt="Image Description">
+                  </div>
+                  <div class="step-content">
+                    <h5 class="step-title">Senior Software Engineer</h5>
+                    <span class="d-block text-dark">Mailchimp - London</span>
+                    <small class="d-block mb-4">November 2014 to December 2016</small>
+                    <p class="text-body mb-0">This is an excellent company and they reward their employees. It's
+                      becoming a big company but it's still private, so the culture is as good as it gets at 1,000+
+                      employees if you ask me. Managers are still adapting to the growth I think, but everyone has to.
+                      Great place to work.</p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-content-wrapper">
+                  <div class="step-avatar step-avatar-sm">
+                    <img class="step-avatar-img" src="/assets/svg/brands/google-icon.svg" alt="Image Description">
+                  </div>
+                  <div class="step-content">
+                    <h5 class="step-title">Junior Software Engineer</h5>
+                    <span class="d-block text-dark">Google - London</span>
+                    <small class="d-block mb-4">January 2014 to November 2014</small>
+                    <p class="text-body mb-0">Work in Google is one of the beautiful experience I can do in my entire
+                      life. There are a lot of interesting thing to learn and manager respect your time and your
+                      personality.</p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-content-wrapper">
+                  <span class="step-icon step-icon-soft-dark">
+                    <i class="bi-briefcase-fill"></i>
+                  </span>
+                  <div class="step-content">
+                    <h5 class="step-title">Internship</h5>
+                    <span class="d-block text-dark">Htmlstream under Pixeel Ltd. - London</span>
+                    <small class="d-block mb-4">December 2013 to January 2014</small>
+                    <p class="text-body mb-0">My first steps...</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!-- End Step -->
+          </div>
+
+          <div class="mb-8">
+            <div class="mb-3">
+              <h3>Education</h3>
+            </div>
+
+            <!-- Step -->
+            <ul class="step step-icon-sm">
+              <li class="step-item">
+                <div class="step-content-wrapper">
+                  <div class="step-avatar step-avatar-sm">
+                    <img class="step-avatar-img" src="/assets/svg/brands/the-university-of-manchester.svg"
+                      alt="Image Description">
+                  </div>
+                  <div class="step-content">
+                    <h5 class="step-title">Master's degree in Computer Software Engineering</h5>
+                    <span class="d-block text-dark">The University of Manchester - Manchester</span>
+                    <small class="d-block">October 2012 to December 2013</small>
+                  </div>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-content-wrapper">
+                  <span class="step-icon step-icon-soft-dark">
+                    <i class="bi-award"></i>
+                  </span>
+                  <div class="step-content">
+                    <h5 class="step-title">Bachelor's degree in Computer Software Engineering</h5>
+                    <span class="d-block text-dark">University of Oxford - Oxford</span>
+                    <small class="d-block">October 2009 to May 2012</small>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!-- End Step -->
+          </div>
+
+          <div class="mb-8">
+            <div class="mb-3">
+              <h3>Skills</h3>
+            </div>
+
+            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">Bootstrap (8 years)</span>
+            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">HTML5 (8 years)</span>
+            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">CSS3 (8 years)</span>
+            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">SASS (7 years)</span>
+            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">User Interface (UI) (8 years)</span>
+            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">Adobe Photoshop (3 years)</span>
+            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">Adobe Illustrator (5 years)</span>
+            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">Figma (1 year)</span>
+          </div>
+
+          <div class="mb-8">
+            <div class="mb-3">
+              <h3>Languages</h3>
+            </div>
+
+            <ul class="list-unstyled list-py-1">
+              <li><span class="text-dark">English <span class="text-body small ms-1">— Native</span></span></li>
+              <li><span class="text-dark">Deutsch <span class="text-body small ms-1">— Fluent</span></span></li>
+              <li><span class="text-dark">French <span class="text-body small ms-1">— Beginner</span></span></li>
+            </ul>
+          </div>
+
+          <div class="mb-3">
+            <h3>Links</h3>
+          </div>
+
+          <ul class="list-unstyled list-py-1">
+            <li><a href="#">www.github.com/maria-w</a></li>
+            <li><a href="#">www.twitter.com/maria-w</a></li>
+          </ul>
+
+          <!-- Sticky Block End Point -->
+          <div id="stickyBlockEndPointEg4"></div>
         </div>
         <!-- End Col -->
 
-        <div class="col-lg-9">
-          <div class="row align-items-center mb-5">
-            <div class="col-sm mb-3 mb-sm-0">
-              <h3 class="mb-0">90 jobs for <span class="fw-normal">UK</span></h3>
-            </div>
-
-            <div class="col-sm-auto">
-              <div class="d-sm-flex justify-content-sm-end align-items-center">
-                <!-- Select -->
-                <div class="mb-2 mb-sm-0 me-sm-2">
-                  <select class="form-select form-select-sm">
-                    <option value="Relevance" selected>Relevance</option>
-                    <option value="mostRecent">Most recent</option>
-                  </select>
-                </div>
-                <!-- End Select -->
-
-                <!-- Select -->
-                <div class="mb-2 mb-sm-0 me-sm-2">
-                  <select class="form-select form-select-sm">
-                    <option value="alphabeticalOrderSelect1" selected>A-to-Z</option>
-                    <option value="alphabeticalOrderSelect2">Z-to-A</option>
-                  </select>
-                </div>
-                <!-- End Select -->
-
-                <!-- Nav -->
-                <ul class="nav nav-segment">
-                  <li class="nav-item">
-                    <a class="nav-link" href="../demo-jobs/job-grid.html">
-                      <i class="bi-grid-fill"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="../demo-jobs/job-list.html">
-                      <i class="bi-list"></i>
-                    </a>
-                  </li>
-                </ul>
-                <!-- End Nav -->
-              </div>
-            </div>
-          </div>
-          <!-- End Row -->
-
-          <!-- Card List -->
-          <div class="d-grid gap-5 mb-10">
-            <!-- Card -->
-            <div class="card card-bordered">
-              <div class="card-body">
-                <!-- Media -->
-                <div class="d-sm-flex">
-                  <!-- Media -->
-                  <div class="d-flex align-items-center align-items-sm-start mb-3">
-                    <div class="flex-shrink-0">
-                      <img class="avatar avatar-sm avatar-4x3" src="/assets/svg/brands/mailchimp-icon.svg"
-                        alt="Image Description">
-                    </div>
-                    <div class="d-sm-none flex-grow-1 ms-3">
-                      <h6 class="card-title">
-                        <a class="text-dark" href="../demo-jobs/employer.html">Mailchimp</a>
-                        <img class="avatar avatar-xss ms-1" src="/assets/svg/illustrations/top-vendor.svg"
-                          alt="Review rating" data-toggle="tooltip" data-placement="top" title="Claimed profile">
-                      </h6>
-                    </div>
-                  </div>
-                  <!-- End Media -->
-
-                  <div class="flex-grow-1 ms-sm-3">
-                    <div class="row">
-                      <div class="col col-md-8">
-                        <h3 class="card-title">
-                          <a class="text-dark" href="../demo-jobs/employer.html">Senior B2B sales consultant</a>
-                        </h3>
-                        <div class="d-none d-sm-inline-block">
-                          <h6 class="card-title">
-                            <a class="text-dark" href="../demo-jobs/employer.html">Mailchimp</a>
-                            <img class="avatar avatar-xss ms-1" src="/assets/svg/illustrations/top-vendor.svg"
-                              alt="Review rating" data-toggle="tooltip" data-placement="top" title="Claimed profile">
-                          </h6>
-                        </div>
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-auto order-md-3">
-                        <!-- Checkbbox Bookmark -->
-                        <div class="form-check form-check-bookmark">
-                          <input class="form-check-input" type="checkbox" value="" id="jobsCardBookmarkCheck1">
-                          <label class="form-check-label" for="jobsCardBookmarkCheck1">
-                            <span class="form-check-bookmark-default" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Save this job">
-                              <i class="bi-star"></i>
-                            </span>
-                            <span class="form-check-bookmark-active" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Saved">
-                              <i class="bi-star-fill"></i>
-                            </span>
-                          </label>
-                        </div>
-                        <!-- End Checkbbox Bookmark -->
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-12 col-md mt-3 mt-md-0">
-                        <span class="d-block small text-body mb-1">$125k-$135k yearly</span>
-
-                        <span class="badge bg-soft-info text-info me-2">
-                          <span class="legend-indicator bg-info"></span>Remote
-                        </span>
-                      </div>
-                      <!-- End Col -->
-                    </div>
-                    <!-- End Row -->
-                  </div>
-                </div>
-                <!-- End Media -->
-              </div>
-
-              <div class="card-footer pt-0">
-                <ul class="list-inline list-separator small text-body">
-                  <li class="list-inline-item">Posted 7 hours ago</li>
-                  <li class="list-inline-item">Oxford</li>
-                  <li class="list-inline-item">Full time</li>
-                </ul>
-              </div>
-            </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card card-bordered">
-              <div class="card-body">
-                <!-- Media -->
-                <div class="d-sm-flex">
-                  <!-- Media -->
-                  <div class="d-flex align-items-center align-items-sm-start mb-3">
-                    <div class="flex-shrink-0">
-                      <img class="avatar avatar-sm avatar-4x3" src="/assets/svg/brands/capsule-icon.svg"
-                        alt="Image Description">
-                    </div>
-                    <div class="d-sm-none flex-grow-1 ms-3">
-                      <h6 class="card-title">
-                        <a class="text-dark" href="../demo-jobs/employer.html">Capsule</a>
-                      </h6>
-                    </div>
-                  </div>
-                  <!-- End Media -->
-
-                  <div class="flex-grow-1 ms-sm-3">
-                    <div class="row">
-                      <div class="col col-md-8">
-                        <h3 class="card-title">
-                          <a class="text-dark" href="../demo-jobs/employer.html">Office assistant/Social media
-                            assistant</a>
-                        </h3>
-                        <div class="d-none d-sm-inline-block">
-                          <h6 class="card-title">
-                            <a class="text-dark" href="../demo-jobs/employer.html">Capsule</a>
-                          </h6>
-                        </div>
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-auto order-md-3">
-                        <!-- Checkbbox Bookmark -->
-                        <div class="form-check form-check-bookmark">
-                          <input class="form-check-input" type="checkbox" value="" id="jobsCardBookmarkCheck2">
-                          <label class="form-check-label" for="jobsCardBookmarkCheck2">
-                            <span class="form-check-bookmark-default" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Save this job">
-                              <i class="bi-star"></i>
-                            </span>
-                            <span class="form-check-bookmark-active" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Saved">
-                              <i class="bi-star-fill"></i>
-                            </span>
-                          </label>
-                        </div>
-                        <!-- End Checkbbox Bookmark -->
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-12 col-md mt-3 mt-md-0">
-                        <span class="d-block small text-body mb-1">$50-$135 hourly</span>
-                      </div>
-                      <!-- End Col -->
-                    </div>
-                    <!-- End Row -->
-                  </div>
-                </div>
-                <!-- End Media -->
-              </div>
-
-              <div class="card-footer pt-0">
-                <ul class="list-inline list-separator small text-body">
-                  <li class="list-inline-item">Posted 21 hours ago</li>
-                  <li class="list-inline-item">Newcastle</li>
-                  <li class="list-inline-item">Part time</li>
-                </ul>
-              </div>
-            </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card card-bordered">
-              <div class="card-body">
-                <!-- Media -->
-                <div class="d-sm-flex">
-                  <!-- Media -->
-                  <div class="d-flex align-items-center align-items-sm-start mb-3">
-                    <div class="flex-shrink-0">
-                      <img class="avatar avatar-sm avatar-4x3" src="/assets/svg/brands/dropbox-icon.svg"
-                        alt="Image Description">
-                    </div>
-                    <div class="d-sm-none flex-grow-1 ms-3">
-                      <h6 class="card-title">
-                        <a class="text-dark" href="../demo-jobs/employer.html">Dropbox</a>
-                      </h6>
-                    </div>
-                  </div>
-                  <!-- End Media -->
-
-                  <div class="flex-grow-1 ms-sm-3">
-                    <div class="row">
-                      <div class="col col-md-8">
-                        <h3 class="card-title">
-                          <a class="text-dark" href="../demo-jobs/employer.html">Marketing and Communications
-                            Manager</a>
-                        </h3>
-                        <div class="d-none d-sm-inline-block">
-                          <h6 class="card-title">
-                            <a class="text-dark" href="../demo-jobs/employer.html">Dropbox</a>
-                            <img class="avatar avatar-xss ms-1" src="/assets/svg/illustrations/top-vendor.svg"
-                              alt="Review rating" data-toggle="tooltip" data-placement="top" title="Claimed profile">
-                          </h6>
-                        </div>
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-auto order-md-3">
-                        <!-- Checkbbox Bookmark -->
-                        <div class="form-check form-check-bookmark">
-                          <input class="form-check-input" type="checkbox" value="" id="jobsCardBookmarkCheck3">
-                          <label class="form-check-label" for="jobsCardBookmarkCheck3">
-                            <span class="form-check-bookmark-default" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Save this job">
-                              <i class="bi-star"></i>
-                            </span>
-                            <span class="form-check-bookmark-active" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Saved">
-                              <i class="bi-star-fill"></i>
-                            </span>
-                          </label>
-                        </div>
-                        <!-- End Checkbbox Bookmark -->
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-12 col-md mt-3 mt-md-0">
-                        <span class="d-block small text-body mb-1">$5k monthly</span>
-                      </div>
-                      <!-- End Col -->
-                    </div>
-                    <!-- End Row -->
-                  </div>
-                </div>
-                <!-- End Media -->
-              </div>
-
-              <div class="card-footer pt-0">
-                <ul class="list-inline list-separator small text-body">
-                  <li class="list-inline-item">Posted 1 day ago</li>
-                  <li class="list-inline-item">London</li>
-                  <li class="list-inline-item">Full time</li>
-                </ul>
-              </div>
-            </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card card-bordered">
-              <div class="card-body">
-                <!-- Media -->
-                <div class="d-sm-flex">
-                  <!-- Media -->
-                  <div class="d-flex align-items-center align-items-sm-start mb-3">
-                    <div class="flex-shrink-0">
-                      <img class="avatar avatar-sm avatar-4x3" src="/assets/svg/brands/prosperops-icon.svg"
-                        alt="Image Description">
-                    </div>
-                    <div class="d-sm-none flex-grow-1 ms-3">
-                      <h6 class="card-title">
-                        <a class="text-dark" href="../demo-jobs/employer.html">Prosperops</a>
-                      </h6>
-                    </div>
-                  </div>
-                  <!-- End Media -->
-
-                  <div class="flex-grow-1 ms-sm-3">
-                    <div class="row">
-                      <div class="col col-md-8">
-                        <h3 class="card-title">
-                          <a class="text-dark" href="../demo-jobs/employer.html">Senior backend developer</a>
-                        </h3>
-                        <div class="d-none d-sm-inline-block">
-                          <h6 class="card-title">
-                            <a class="text-dark" href="../demo-jobs/employer.html">Prosperops</a>
-                          </h6>
-                        </div>
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-auto order-md-3">
-                        <!-- Checkbbox Bookmark -->
-                        <div class="form-check form-check-bookmark">
-                          <input class="form-check-input" type="checkbox" value="" id="jobsCardBookmarkCheck4">
-                          <label class="form-check-label" for="jobsCardBookmarkCheck4">
-                            <span class="form-check-bookmark-default" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Save this job">
-                              <i class="bi-star"></i>
-                            </span>
-                            <span class="form-check-bookmark-active" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Saved">
-                              <i class="bi-star-fill"></i>
-                            </span>
-                          </label>
-                        </div>
-                        <!-- End Checkbbox Bookmark -->
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-12 col-md mt-3 mt-md-0">
-                        <span class="d-block small text-body mb-1">$75k-$85k yearly</span>
-
-                        <span class="badge bg-soft-info text-info me-2">
-                          <span class="legend-indicator bg-info"></span>Remote
-                        </span>
-                      </div>
-                      <!-- End Col -->
-                    </div>
-                    <!-- End Row -->
-                  </div>
-                </div>
-                <!-- End Media -->
-              </div>
-
-              <div class="card-footer pt-0">
-                <ul class="list-inline list-separator small text-body">
-                  <li class="list-inline-item">Posted 7 hours ago</li>
-                  <li class="list-inline-item">Oxford</li>
-                  <li class="list-inline-item">Full time</li>
-                </ul>
-              </div>
-            </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card card-bordered">
-              <div class="card-body">
-                <!-- Media -->
-                <div class="d-sm-flex">
-                  <!-- Media -->
-                  <div class="d-flex align-items-center align-items-sm-start mb-3">
-                    <div class="flex-shrink-0">
-                      <img class="avatar avatar-sm avatar-4x3" src="/assets/svg/brands/airbnb-icon.svg"
-                        alt="Image Description">
-                    </div>
-                    <div class="d-sm-none flex-grow-1 ms-3">
-                      <h6 class="card-title">
-                        <a class="text-dark" href="../demo-jobs/employer.html">Airbnb</a>
-                        <img class="avatar avatar-xss ms-1" src="/assets/svg/illustrations/top-vendor.svg"
-                          alt="Review rating" data-toggle="tooltip" data-placement="top" title="Claimed profile">
-                      </h6>
-                    </div>
-                  </div>
-                  <!-- End Media -->
-
-                  <div class="flex-grow-1 ms-sm-3">
-                    <div class="row">
-                      <div class="col col-md-8">
-                        <h3 class="card-title">
-                          <a class="text-dark" href="../demo-jobs/employer.html">Senior product manager</a>
-                        </h3>
-                        <div class="d-none d-sm-inline-block">
-                          <h6 class="card-title">
-                            <a class="text-dark" href="../demo-jobs/employer.html">Airbnb</a>
-                            <img class="avatar avatar-xss ms-1" src="/assets/svg/illustrations/top-vendor.svg"
-                              alt="Review rating" data-toggle="tooltip" data-placement="top" title="Claimed profile">
-                          </h6>
-                        </div>
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-auto order-md-3">
-                        <!-- Checkbbox Bookmark -->
-                        <div class="form-check form-check-bookmark">
-                          <input class="form-check-input" type="checkbox" value="" id="jobsCardBookmarkCheck5">
-                          <label class="form-check-label" for="jobsCardBookmarkCheck5">
-                            <span class="form-check-bookmark-default" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Save this job">
-                              <i class="bi-star"></i>
-                            </span>
-                            <span class="form-check-bookmark-active" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Saved">
-                              <i class="bi-star-fill"></i>
-                            </span>
-                          </label>
-                        </div>
-                        <!-- End Checkbbox Bookmark -->
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-12 col-md mt-3 mt-md-0">
-                        <span class="d-block small text-body mb-1">$76k-$98k yearly</span>
-                      </div>
-                      <!-- End Col -->
-                    </div>
-                    <!-- End Row -->
-                  </div>
-                </div>
-                <!-- End Media -->
-              </div>
-
-              <div class="card-footer pt-0">
-                <ul class="list-inline list-separator small text-body">
-                  <li class="list-inline-item">Posted 2 days ago</li>
-                  <li class="list-inline-item">London</li>
-                  <li class="list-inline-item">Full time</li>
-                </ul>
-              </div>
-            </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card card-bordered">
-              <div class="card-body">
-                <!-- Media -->
-                <div class="d-sm-flex">
-                  <!-- Media -->
-                  <div class="d-flex align-items-center align-items-sm-start mb-3">
-                    <div class="flex-shrink-0">
-                      <img class="avatar avatar-sm avatar-4x3" src="/assets/svg/brands/figma-icon.svg"
-                        alt="Image Description">
-                    </div>
-                    <div class="d-sm-none flex-grow-1 ms-3">
-                      <h6 class="card-title">
-                        <a class="text-dark" href="../demo-jobs/employer.html">Figma</a>
-                      </h6>
-                    </div>
-                  </div>
-                  <!-- End Media -->
-
-                  <div class="flex-grow-1 ms-sm-3">
-                    <div class="row">
-                      <div class="col col-md-8">
-                        <h3 class="card-title">
-                          <a class="text-dark" href="../demo-jobs/employer.html">Administrative Business Partner</a>
-                        </h3>
-                        <div class="d-none d-sm-inline-block">
-                          <h6 class="card-title">
-                            <a class="text-dark" href="../demo-jobs/employer.html">Figma</a>
-                          </h6>
-                        </div>
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-auto order-md-3">
-                        <!-- Checkbbox Bookmark -->
-                        <div class="form-check form-check-bookmark">
-                          <input class="form-check-input" type="checkbox" value="" id="jobsCardBookmarkCheck6">
-                          <label class="form-check-label" for="jobsCardBookmarkCheck6">
-                            <span class="form-check-bookmark-default" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Save this job">
-                              <i class="bi-star"></i>
-                            </span>
-                            <span class="form-check-bookmark-active" data-bs-toggle="tooltip" data-bs-placement="top"
-                              title="Saved">
-                              <i class="bi-star-fill"></i>
-                            </span>
-                          </label>
-                        </div>
-                        <!-- End Checkbbox Bookmark -->
-                      </div>
-                      <!-- End Col -->
-
-                      <div class="col-12 col-md mt-3 mt-md-0">
-                        <span class="d-block small text-body mb-1">$50k-$100k yearly</span>
-                      </div>
-                      <!-- End Col -->
-                    </div>
-                    <!-- End Row -->
-                  </div>
-                </div>
-                <!-- End Media -->
-              </div>
-
-              <div class="card-footer pt-0">
-                <ul class="list-inline list-separator small text-body">
-                  <li class="list-inline-item">Posted 2 days ago</li>
-                  <li class="list-inline-item">Liverpool</li>
-                  <li class="list-inline-item">Part time</li>
-                </ul>
-              </div>
-            </div>
-            <!-- End Card -->
-          </div>
-          <!-- End Card List -->
-
-          <!-- Pagination -->
-          <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">
-                    <i class="bi-chevron-double-left small"></i>
-                  </span>
-                </a>
-              </li>
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
-              <li class="page-item"><a class="page-link" href="#">5</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">
-                    <i class="bi-chevron-double-right small"></i>
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <!-- End Pagination -->
+        <div class="col-lg-4">
+          <StickyBlock />
         </div>
         <!-- End Col -->
       </div>
       <!-- End Row -->
     </div>
-    <!-- End Card Grid -->
-    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- Content -->
   </div>
 </template>
-
 <script>
-import JobUrgent from '../components/HomeSection/JobTab/JobUrgent.vue';
+import JobBreadCrumb from '../components/Joblist/TemplateParts/JobBreadCrumb.vue';
+import StickyBlock from '../components/Joblist/TemplateParts/StickyBlock.vue';
 
 export default {
-  name: 'Index',
   components: {
-    JobUrgent
+    JobBreadCrumb,
+    StickyBlock
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.dashboard-editor-container {
-  padding: 32px;
-  background-color: rgb(240, 242, 245);
-  position: relative;
-
-  .chart-wrapper {
-    background: #fff;
-    padding: 16px 16px 0;
-    margin-bottom: 32px;
-  }
-}
-
-@media (max-width:1024px) {
-  .chart-wrapper {
-    padding: 8px;
-  }
-}
-</style>

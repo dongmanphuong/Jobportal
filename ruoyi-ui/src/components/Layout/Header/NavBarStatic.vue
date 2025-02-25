@@ -260,6 +260,9 @@ export default {
 </script>
 
 <style scoped>
+.navbar-expand-lg .dropdown-menu {
+    margin-top: 0;
+}
 header,
 #header{
   padding: 0;
