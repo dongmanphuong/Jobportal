@@ -9,13 +9,13 @@ namespace RuoYi.Data.Entities
         /// <summary>
         /// 创建人
         /// </summary>
-        [SugarColumn(ColumnName = "create_by", ColumnDescription = "创建人")]
+        [SugarColumn(ColumnName = "create_by", ColumnDescription = "Người tạo")]
         public string? CreateBy { get; set; }
 
         /// <summary>
         /// 创建时间
         /// </summary>
-        [SugarColumn(ColumnName = "create_time", ColumnDescription = "创建时间")]
+        [SugarColumn(ColumnName = "create_time", ColumnDescription = "Thời gian tạo")]
         public DateTime? CreateTime { get; set; }
     }
 
@@ -24,25 +24,25 @@ namespace RuoYi.Data.Entities
         /// <summary>
         /// 创建人
         /// </summary>
-        [SugarColumn(ColumnName = "create_by", ColumnDescription = "创建人")]
+        [SugarColumn(ColumnName = "create_by", ColumnDescription = "Người tạo")]
         public string? CreateBy { get; set; }
 
         /// <summary>
         /// 创建时间
         /// </summary>
-        [SugarColumn(ColumnName = "create_time", ColumnDescription = "创建时间")]
+        [SugarColumn(ColumnName = "create_time", ColumnDescription = "Thời gian tạo")]
         public DateTime? CreateTime { get; set; }
 
         /// <summary>
         /// 更新人
         /// </summary>
-        [SugarColumn(ColumnName = "update_by", ColumnDescription = "更新人")]
+        [SugarColumn(ColumnName = "update_by", ColumnDescription = "Người cập nhập")]
         public string? UpdateBy { get; set; }
 
         /// <summary>
         /// 更新时间
         /// </summary>
-        [SugarColumn(ColumnName = "update_time", ColumnDescription = "更新时间")]
+        [SugarColumn(ColumnName = "update_time", ColumnDescription = "Thời gian cập nhập")]
         public DateTime? UpdateTime { get; set; }
     }
 }

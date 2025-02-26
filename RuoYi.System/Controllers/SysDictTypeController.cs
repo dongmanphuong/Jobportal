@@ -23,6 +23,18 @@ namespace RuoYi.System.Controllers
             _sysDictTypeService = sysDictTypeService;
         }
 
+
+        /// <summary>
+        /// 查询字典类型表列表
+        /// </summary>
+        [HttpGet("listdicttype")]
+       // [AppAuthorize("system:dict:list")]
+        public async Task<List<SysDictData>> GetSysDictTypeList(string dictType)
+        {
+            return await _sysDictTypeService.SelectDictDataByTypeAsync(dictType);
+        }
+
+
         /// <summary>
         /// 查询字典类型表列表
         /// </summary>
@@ -50,12 +62,12 @@ namespace RuoYi.System.Controllers
         [HttpPost("")]
         [AppAuthorize("system:dict:add")]
         [TypeFilter(typeof(RuoYi.Framework.DataValidation.DataValidationFilter))]
-        [Log(Title = "字典类型", BusinessType = BusinessType.INSERT)]
+        [Log(Title = "Loại từ điển", BusinessType = BusinessType.INSERT)]
         public async Task<AjaxResult> Add([FromBody] SysDictTypeDto dto)
         {
             if (!await _sysDictTypeService.CheckDictTypeUniqueAsync(dto))
             {
-                return AjaxResult.Error("新增字典'" + dto.DictName + "'失败，字典类型已存在");
+                return AjaxResult.Error("Thêm từ điển mới '" + dto.DictName + "' Không thành công, loại từ điển đã tồn tại");
             }
             var data = await _sysDictTypeService.InsertDictTypeAsync(dto);
             return AjaxResult.Success(data);

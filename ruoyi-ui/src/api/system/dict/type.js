@@ -58,3 +58,12 @@ export function optionselect() {
     method: 'get'
   })
 }
+
+
+export function listDictType(query) {
+  return request({
+    url: 'system/dict/type/listdicttype',
+    method: 'get',
+    params: query
+  })
+}
