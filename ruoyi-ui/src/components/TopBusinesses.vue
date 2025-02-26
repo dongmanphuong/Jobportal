@@ -32,7 +32,7 @@
 
 <script>
 import Swiper from "swiper";
-import "swiper/css/swiper.min.css"; // Swiper v5
+import "swiper/swiper.min.css"; // Swiper v5
 
 export default {
   data() {
@@ -105,7 +105,7 @@ export default {
 }
 
 /* 📌 Nút điều hướng nhỏ hơn */
-.swiper-button-next, 
+.swiper-button-next,
 .swiper-button-prev {
   width: 35px;
   height: 35px;
@@ -115,12 +115,12 @@ export default {
   font-size: 16px;
 }
 
-.swiper-button-next::after, 
+.swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 14px;
 }
 
-.swiper-button-next:hover, 
+.swiper-button-next:hover,
 .swiper-button-prev:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -159,7 +159,7 @@ export default {
     height: 110px;
   }
 
-  .swiper-button-next, 
+  .swiper-button-next,
   .swiper-button-prev {
     width: 30px;
     height: 30px;
@@ -171,7 +171,7 @@ export default {
     height: 90px;
   }
 
-  .swiper-button-next, 
+  .swiper-button-next,
   .swiper-button-prev {
     display: none;
   }

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <BreadCrumb />
     <div class="container-fluid bg-light">
       <div class="container content-space-t-1 content-space-t-md-2 content-space-b-1 content-space-b-lg-1">
         <!-- Title Section -->
@@ -98,10 +99,12 @@ import JobUrgent from '../components/HomeSection/JobTab/JobUrgent.vue';
 import Rightbar from '../components/Joblist/Rightbar.vue';
 import JobCard from '../components/Joblist/JobCard.vue';
 import SearchForm from '../components/Layout/HeroSection/TemplateParts/SearchForm.vue';
+import JobBreadCrumb from '../components/Joblist/TemplateParts/JobBreadCrumb.vue';
 
 export default {
   name: 'Index',
   components: {
+    JobBreadCrumb,
     JobUrgent,
     Rightbar,
     JobCard
