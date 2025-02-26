@@ -2,20 +2,28 @@ import request from '@/utils/request'
 
 
 
-export function employmentOptions() {
+export function listProvince() {
     return request({
-      url: '/recruitment/employmentOptions/' ,
+      url: '/api/employer/listprovince' ,
       method: 'get'
     })
   }
   
-export function getEmployer(employerId) {
-  return request({
-    url: '/recruitment/employer/' + deptId,
-    method: 'get'
-  })
-}
+export function listDistrict(provinceId) {
+    return request({
+      url: '/api/employer/listdistrict' ,
+      method: 'get',
+      params: provinceId
+    })
+  }
 
+  export function listWard(districtId) {
+    return request({
+      url: '/api/employer/listward' ,
+      method: 'get',
+      params: districtId
+    })
+  }
 
 export function addEmployer(data) {
   return request({
@@ -41,3 +49,11 @@ export function delEmployer(deptId) {
     method: 'delete'
   })
 }
+
+export function listDictType(query) {
+    return request({
+      url: '/system/dict/type/listdicttype',
+      method: 'get',
+      params: query
+    })
+  }

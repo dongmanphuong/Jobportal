@@ -13,8 +13,9 @@
 
       <!-- Chủ thể tuyển dụng -->
       <label class="label small-label">Chủ thể tuyển dụng *</label>
+
       <v-select v-model="employmentType" :options="employmentOptions" label="label" placeholder="Chọn loại..."
-        class="custom-select" clearable></v-select>
+        class="custom-select" clearable :reduce="option => option.value"></v-select>
       <div v-if="errors.employmentType" class="error">{{ errors.employmentType }}</div>
 
       <!-- Mã số CMND/CCCD -->
@@ -56,8 +57,8 @@
           Thuộc KCN
         </label>
       </div>
-      <input v-if="Isindustryzone" v-model="industryzone" type="text" class="input" placeholder="Nhập tên KCN" />
-
+      <v-select v-if="Isindustryzone" v-model="industryzone" placeholder="Nhập tên KCN" :options="industryzoneOptions"
+        label="label" class="custom-select" clearable></v-select>
       <!-- Điện thoại + Email -->
       <div class="contact-group">
         <div class="contact-item">
@@ -106,10 +107,10 @@
       <div class="service-group">
         <div class="service-item">
           <v-select v-model="dangkydichvu" :options="dangkydichvuOptions" label="label" placeholder="Chọn dịch vụ..."
-            class="custom-select" clearable></v-select>
+            class="custom-select" :reduce="option => option.value" clearable></v-select>
           <div v-if="errors.dangkydichvu" class="error">{{ errors.dangkydichvu }}</div>
         </div>
-        <div class="service-item" v-if="dangkydichvu === 'K'">
+        <div class="service-item" v-if="dangkydichvu === 2">
           <input v-model="dangkydichvunote" type="text" placeholder="Nhập chi tiết dịch vụ khác" class="input" />
         </div>
       </div>
@@ -155,7 +156,8 @@
 <script>
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
-import { listDictType } from "@/api/system/dict/type";
+import { listDictType } from "@/api/recruitment/employer";
+
 
 export default {
   components: { vSelect },
@@ -173,7 +175,7 @@ export default {
       phone: "",
       email: "",
       Isindustryzone: false, // CheckBox "Thuộc KCN"
-      industryzone: "",      // Tên KCN nếu tick checkbox
+      industryzoneOptions: [],      // Tên KCN nếu tick checkbox
 
       mainBusiness: "",      // Ngành kinh doanh chính
       mainProduct: "",       // Mặt hàng/sản phẩm chính (1)
@@ -188,53 +190,91 @@ export default {
       registertime: new Date().toISOString().slice(0, 16),
       loading: true,
       // Tuỳ chọn cho v-select
-      employmentOptions: [
-        { value: "Cá nhân", label: "Cá nhân (Bắt buộc CMND/CCCD)" },
-        { value: "Doanh nghiệp", label: "Doanh nghiệp (Bắt buộc mã số thuế)" },
-      ],
-      companyTypeOptions: [
-        { value: "Nhà nước", label: "Doanh nghiệp Nhà nước" },
-        { value: "Tư nhân", label: "Doanh nghiệp Tư nhân" },
-      ],
-      provinceOptions: [
-        { value: "HCM", label: "Hồ Chí Minh" },
-        { value: "HN", label: "Hà Nội" },
-        { value: "DN", label: "Đà Nẵng" },
-      ],
-      districtOptions: [
-        { value: "Q1", label: "Quận 1" },
-        { value: "Q2", label: "Quận 2" },
-      ],
-      wardOptions: [
-        { value: "P1", label: "Phường 1" },
-        { value: "P2", label: "Phường 2" },
-      ],
-      businessOptions: [
-        { value: "NongLam", label: "Nông lâm nghiệp thủy sản" },
-        { value: "KhaiKhoang", label: "Khai khoáng" },
-      ],
-      scaleOptions: [
-        { value: "duoi10", label: "Dưới 10 lao động" },
-        { value: "10-50", label: "10 đến 50 lao động" },
-      ],
-      dangkydichvuOptions: [
-        { value: "TVPL", label: "Tư vấn pháp luật" },
-        { value: "K", label: "Khác" },
-      ],
+      employmentOptions: [],
+
+      companyTypeOptions: [],
+
+      provinceOptions: [],
+
+      districtOptions: [],
+
+      wardOptions: [],
+
+      businessOptions: [],
+
+      scaleOptions: [],
+
+      dangkydichvuOptions: [],
 
       // Lưu lỗi
       errors: {}
     };
   },
   mounted() {
-    this.listDictType();
+    this.fetchDictTypeList();
   },
   methods: {
-    listDictType() {
-      this.listDictType("business_type").then(response => {
-        this.employmentOptions = response.data;
-        this.loading = false;
-      });
+    fetchDictTypeList() {
+      this.loading = true;
+      // Call the imported listDictType function
+      listDictType({ dictType: "recruit_subject" })
+        .then(response => {
+          this.employmentOptions = response;
+          this.loading = false;
+        })
+        .catch(error => {
+          this.loading = false;
+        });
+
+      listDictType({ dictType: "business_type" })
+        .then(response => {
+          this.companyTypeOptions = response;
+          this.loading = false;
+        })
+        .catch(error => {
+          console.error("Error fetching companyTypeOptions", error);
+          this.loading = false;
+        });
+
+      listDictType({ dictType: "industrial_zone" })
+        .then(response => {
+          this.industryzoneOptions = response;
+          this.loading = false;
+        })
+        .catch(error => {
+          console.error("Error fetching industryzoneOptions", error);
+          this.loading = false;
+        });
+
+      listDictType({ dictType: "service_registration" })
+        .then(response => {
+          this.dangkydichvuOptions = response;
+          this.loading = false;
+        })
+        .catch(error => {
+          console.error("Error fetching dangkydichvuOptions", error);
+          this.loading = false;
+        });
+
+      listDictType({ dictType: "workforce_scale" })
+        .then(response => {
+          this.scaleOptions = response;
+          this.loading = false;
+        })
+        .catch(error => {
+          console.error("Error fetching scaleOptions", error);
+          this.loading = false;
+        });
+
+      listDictType({ dictType: "business_sector" })
+        .then(response => {
+          this.businessOptions = response;
+          this.loading = false;
+        })
+        .catch(error => {
+          console.error("Error fetching scaleOptions", error);
+          this.loading = false;
+        });
     },
     submitForm() {
       // Reset lỗi trước khi kiểm tra
