@@ -26,22 +26,22 @@
       <!-- Loại hình doanh nghiệp -->
       <label class="label small-label">Loại hình doanh nghiệp *</label>
       <v-select v-model="companyType" :options="companyTypeOptions" label="label" placeholder="Chọn loại hình..."
-        class="custom-select" clearable></v-select>
+        class="custom-select" :reduce="option => option.value" clearable></v-select>
       <div v-if="errors.companyType" class="error">{{ errors.companyType }}</div>
 
       <!-- Địa chỉ (Tỉnh, Huyện, Xã) -->
       <label class="label small-label">Địa chỉ *</label>
       <div class="address-group">
         <v-select v-model="province" :options="provinceOptions" label="label" placeholder="Chọn tỉnh/thành phố..."
-          class="custom-select" clearable></v-select>
+          class="custom-select" :reduce="option => option.value" clearable></v-select>
         <div v-if="errors.province" class="error">{{ errors.province }}</div>
 
         <v-select v-model="district" :options="districtOptions" label="label" placeholder="Chọn quận/huyện..."
-          class="custom-select" clearable></v-select>
+          class="custom-select" :reduce="option => option.value" clearable></v-select>
         <div v-if="errors.district" class="error">{{ errors.district }}</div>
 
         <v-select v-model="ward" :options="wardOptions" label="label" placeholder="Chọn phường/xã..."
-          class="custom-select" clearable></v-select>
+          class="custom-select" :reduce="option => option.value" clearable></v-select>
         <!-- ward không bắt buộc, nên không check lỗi -->
       </div>
 
@@ -58,7 +58,7 @@
         </label>
       </div>
       <v-select v-if="Isindustryzone" v-model="industryzone" placeholder="Nhập tên KCN" :options="industryzoneOptions"
-        label="label" class="custom-select" clearable></v-select>
+        label="label" class="custom-select" :reduce="option => option.value" clearable></v-select>
       <!-- Điện thoại + Email -->
       <div class="contact-group">
         <div class="contact-item">
@@ -77,7 +77,7 @@
       <!-- Ngành kinh doanh chính -->
       <label class="label small-label">Ngành kinh doanh chính *</label>
       <v-select v-model="mainBusiness" :options="businessOptions" label="label" placeholder="Chọn ngành..."
-        class="custom-select" clearable></v-select>
+        class="custom-select" :reduce="option => option.value" clearable></v-select>
       <div v-if="errors.mainBusiness" class="error">{{ errors.mainBusiness }}</div>
 
       <!-- Mặt hàng/sản phẩm chính (1) -->
@@ -90,7 +90,7 @@
         <div class="contact-item">
           <label class="label small-label">Quy mô lao động *</label>
           <v-select v-model="workforceScale" :options="scaleOptions" label="label" placeholder="Chọn quy mô..."
-            class="custom-select" clearable></v-select>
+            class="custom-select" :reduce="option => option.value" clearable></v-select>
           <div v-if="errors.workforceScale" class="error">{{ errors.workforceScale }}</div>
         </div>
         <div class="contact-item">
@@ -156,8 +156,7 @@
 <script>
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
-import { listDictType } from "@/api/recruitment/employer";
-
+import { listDictType, listProvince, listDistrict, listWard, addEmployer} from "@/api/recruitment/employer";
 
 export default {
   components: { vSelect },
@@ -175,6 +174,7 @@ export default {
       phone: "",
       email: "",
       Isindustryzone: false, // CheckBox "Thuộc KCN"
+      industryzone: "",
       industryzoneOptions: [],      // Tên KCN nếu tick checkbox
 
       mainBusiness: "",      // Ngành kinh doanh chính
@@ -212,6 +212,38 @@ export default {
   },
   mounted() {
     this.fetchDictTypeList();
+    // Also load province options
+    listProvince()
+      .then(response => {
+        this.provinceOptions = response;
+        this.loading = false;
+      })
+      .catch(error => {
+        console.error("Error fetching provinceOptions", error);
+        this.loading = false;
+      });
+  },
+  watch: {
+    // When province changes, load districts
+    province(newProvince) {
+      if (newProvince) {
+        this.fetchDistrictOptions(newProvince);
+      } else {
+        this.districtOptions = [];
+        this.district = "";
+        this.wardOptions = [];
+        this.ward = "";
+      }
+    },
+    // When district changes, load wards
+    district(newDistrict) {
+      if (newDistrict) {
+        this.fetchWardOptions(newDistrict);
+      } else {
+        this.wardOptions = [];
+        this.ward = "";
+      }
+    }
   },
   methods: {
     fetchDictTypeList() {
@@ -276,64 +308,82 @@ export default {
           this.loading = false;
         });
     },
+    fetchDistrictOptions(provinceId) {
+      // Call the API function for districts, passing provinceId
+      listDistrict({ proviceId: provinceId })
+        .then(response => {
+          console.log("District options:", response);
+          this.districtOptions = response;
+        })
+        .catch(error => {
+          console.error("Error fetching district options", error);
+        });
+    },
+    fetchWardOptions(districtId) {
+      // Call the API function for wards, passing districtId
+      listWard({ districtId: districtId })
+        .then(response => {
+          console.log("Ward options:", response);
+          this.wardOptions = response;
+        })
+        .catch(error => {
+          console.error("Error fetching ward options", error);
+        });
+    },
+    saveEmployerData() {
+      // Build the payload based on your form data
+      const employerData = {
+        companyName: this.companyName,
+        employmentType: this.employmentType,
+        idNumber: this.idNumber,
+        companyType: this.companyType,
+        province: this.province,
+        district: this.district,
+        ward: this.ward,
+        address: this.address,
+        phone: this.phone,
+        email: this.email,
+        industryZone: this.industryzone,
+        mainBusiness: this.mainBusiness,
+        mainProduct: this.mainProduct,
+        next6Month: this.next6month,
+        workforceScale: this.workforceScale,
+        dangkydichvu: this.dangkydichvu,
+        dangkydichvunote: this.dangkydichvunote,
+        representativeName: this.name,
+        position: this.position,
+        representativePhone: this.telephone,
+        otherContact: this.othercontact,
+        registerTime: this.registertime
+      };
+      addEmployer(employerData).then(response => {
+        this.$modal.msgSuccess("Đã thêm thành công");
+      });
+    },
     submitForm() {
       // Reset lỗi trước khi kiểm tra
       this.errors = {};
 
       // Kiểm tra các trường bắt buộc
-      if (!this.companyName) {
-        this.errors.companyName = "Cần nhập thông tin";
-      }
-      if (!this.employmentType) {
-        this.errors.employmentType = "Cần nhập thông tin";
-      }
-      if (!this.idNumber) {
-        this.errors.idNumber = "Cần nhập thông tin";
-      }
-      if (!this.companyType) {
-        this.errors.companyType = "Cần nhập thông tin";
-      }
-      if (!this.province) {
-        this.errors.province = "Cần nhập thông tin";
-      }
-      if (!this.district) {
-        this.errors.district = "Cần nhập thông tin";
-      }
-      if (!this.address) {
-        this.errors.address = "Cần nhập thông tin";
-      }
-      if (!this.phone) {
-        this.errors.phone = "Cần nhập thông tin";
-      }
-      if (!this.email) {
-        this.errors.email = "Cần nhập thông tin";
-      }
-      if (!this.mainBusiness) {
-        this.errors.mainBusiness = "Cần nhập thông tin";
-      }
-      if (!this.mainProduct) {
-        this.errors.mainProduct = "Cần nhập thông tin";
-      }
-      if (!this.next6month) {
-        this.errors.next6month = "Cần nhập thông tin";
-      }
-      if (!this.workforceScale) {
-        this.errors.workforceScale = "Cần nhập thông tin";
-      }
-      if (!this.dangkydichvu) {
-        this.errors.dangkydichvu = "Cần nhập thông tin";
-      }
-      if (!this.name) {
-        this.errors.name = "Cần nhập thông tin";
-      }
-      if (!this.telephone) {
-        this.errors.telephone = "Cần nhập thông tin";
-      }
-
+      if (!this.companyName) this.errors.companyName = "Cần nhập thông tin";
+      if (!this.employmentType) this.errors.employmentType = "Cần nhập thông tin";
+      if (!this.idNumber) this.errors.idNumber = "Cần nhập thông tin";
+      if (!this.companyType) this.errors.companyType = "Cần nhập thông tin";
+      if (!this.province) this.errors.province = "Cần nhập thông tin";
+      if (!this.district) this.errors.district = "Cần nhập thông tin";
+      if (!this.address) this.errors.address = "Cần nhập thông tin";
+      if (!this.phone) this.errors.phone = "Cần nhập thông tin";
+      if (!this.email) this.errors.email = "Cần nhập thông tin";
+      if (!this.mainBusiness) this.errors.mainBusiness = "Cần nhập thông tin";
+      if (!this.mainProduct) this.errors.mainProduct = "Cần nhập thông tin";
+      if (!this.next6month) this.errors.next6month = "Cần nhập thông tin";
+      if (!this.workforceScale) this.errors.workforceScale = "Cần nhập thông tin";
+      if (!this.dangkydichvu) this.errors.dangkydichvu = "Cần nhập thông tin";
+      if (!this.name) this.errors.name = "Cần nhập thông tin";
+      if (!this.telephone) this.errors.telephone = "Cần nhập thông tin";
       // Nếu không có lỗi => xử lý tiếp
       if (Object.keys(this.errors).length === 0) {
-        alert("Lưu thành công!");
-        // Thực hiện gửi dữ liệu lên server, v.v.
+        this.saveEmployerData();
       }
     }
   }

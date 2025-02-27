@@ -27,7 +27,7 @@ export function listDistrict(provinceId) {
 
 export function addEmployer(data) {
   return request({
-    url: '/recruitment/employer',
+    url: '/api/employer/save',
     method: 'post',
     data: data
   })
@@ -36,7 +36,7 @@ export function addEmployer(data) {
 
 export function updateEmployer(data) {
   return request({
-    url: '/recruitment/employer',
+    url: '/api/employer/save',
     method: 'put',
     data: data
   })
