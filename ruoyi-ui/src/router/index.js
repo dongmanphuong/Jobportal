@@ -235,6 +235,24 @@ export const dynamicRoutes = [
     component: () => import('@/views/jobseeker/WorkPreferences'),
     hidden: true
   },
+
+  {
+    path: '/AppliedJobs/Dashboard',
+    component: () => import('@/views/AppliedJobs/Dashboard'),
+    hidden: true
+  },
+  {
+    path: '/AppliedJobs/AppliedJobsManagement',
+    component: () => import('@/views/AppliedJobs/AppliedJobsManagement'),
+    hidden: true
+  },
+
+  {
+    path: '/AppliedJobs/AppliedJobs',
+    component: () => import('@/views/AppliedJobs/AppliedJobs'),
+    hidden: true
+  },
+
   {
     path: '/tool/gen-edit',
     component: Layout,
