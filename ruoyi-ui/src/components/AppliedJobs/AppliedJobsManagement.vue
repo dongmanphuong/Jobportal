@@ -1,44 +1,43 @@
 <template>
-  <div class="job-list-container">
-    <h3 class="title">Quản lý tủ hồ sơ xin việc cá nhân ({{ resumes.length }})</h3>      
-      <div class="search-filter">
-        <select v-model="selectedSort" class="form-control">
-          <option value="0">Mặc định</option>
-          <option value="1">Đã phê duyệt</option>
-          <option value="2">Chưa phê duyệt</option>
-        </select>
-
-        <select v-model="selectedPageSize" class="form-control">
-          <option value="35">35</option>
-          <option value="50">50</option>
-          <option value="70">70</option>
-          <option value="100">100</option>
-          <option value="200">200</option>
-        </select>
+    <div class="box">
+      <div class="box-header">
+        <div class="title">Quản lý tủ hồ sơ xin việc cá nhân ({{ resumes.length }})</div>
+  
+        <div class="filters">
+          <select v-model="selectedSort" class="form-control">
+            <option value="0">Mặc định</option>
+            <option value="1">Đã phê duyệt</option>
+            <option value="2">Chưa phê duyệt</option>
+          </select>
+  
+          <select v-model="selectedPageSize" class="form-control">
+            <option value="35">35</option>
+            <option value="50">50</option>
+            <option value="70">70</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+          </select>
+  
+          <input v-model="searchQuery" type="text" class="search-input" placeholder="Tìm kiếm..." />
+        </div>
       </div>
-      <div class="search-filter">
-        <input v-model="searchQuery" type="text" class="search-input" placeholder="Tìm kiếm..." />
-      
+  
+      <div class="filters-row">
         <select v-model="selectedProvince" class="form-control">
           <option value="0">Tất cả tỉnh thành</option>
           <option v-for="(province, index) in provinces" :key="index" :value="province">{{ province }}</option>
         </select>
-
+  
         <select v-model="selectedDistrict" class="form-control">
           <option value="">- - Quận/ huyện - -</option>
           <option v-for="(district, index) in districts" :key="index" :value="district">{{ district }}</option>
         </select>
-
+  
         <select v-model="selectedSalary" class="form-control">
           <option value="">- - Mức lương - -</option>
           <option v-for="(salary, index) in salaries" :key="index" :value="salary">{{ salary }}</option>
         </select>
-
-        <select v-model="selectedSalary" class="form-control">
-          <option value="">- - Ngành nghề - -</option>
-          <option v-for="(salary, index) in salaries" :key="index" :value="salary">{{ industry }}</option>
-        </select>
-
+  
         <select v-model="selectedExperience" class="form-control">
           <option value="">- - Kinh nghiệm - -</option>
           <option v-for="(exp, index) in experiences" :key="index" :value="exp">{{ exp }}</option>
@@ -75,10 +74,9 @@
             </tr>
           </tbody>
         </table>
-        <button class="back-button">Quay lại</button>
-      </div>    
-  </div>
-</template>
+      </div>
+    </div>
+  </template>
   
   <script>
   export default {
@@ -142,11 +140,6 @@
   </script>
   
   <style scoped>
-
-  .job-list-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
   /* Box tổng */
   .box {
     background: #fff;
@@ -154,78 +147,30 @@
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
-
-  .box-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .search-filter {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
   
   /* Tiêu đề */
   .title {
-    color: #007bff;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 15px;
-    text-align: left;
   }
   
   /* Bộ lọc */
-  .filters {
+  .filters, .filters-row {
     display: flex;
     gap: 10px;
-    align-items: center;
-  }
-
-  .filters-row {
-    display: flex;
-    gap: 10px;
-    padding: 15px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
   }
   
-  .form-control, .search-input { 
-    padding: 8px;
+  .form-control, .search-input {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+    border-radius: 5px;
   }
-
-  .search-input {
-    width: 200px;
-  }
-
-  .back-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-
-  option {
-    padding: 5px;
-    color: #333;
-  }
-
-  select[multiple] {
-    height: auto;
-  }
-
+  
   /* Bảng */
   .table-container {
     overflow-x: auto;
@@ -262,25 +207,6 @@
     th, td {
       font-size: 14px;
     }
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
-
-  .button-group {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-  }
-
-  .placeholder {
-    width: 100px; /* Điều chỉnh kích thước theo ý muốn */
-    height: 30px; /* Điều chỉnh kích thước theo ý muốn */
-    background-color: #ccc;
   }
   </style>
   
