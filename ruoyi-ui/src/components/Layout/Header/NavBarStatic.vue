@@ -121,7 +121,7 @@
                         <p class="fw-bold">PHIÊN GIAO DỊCH VIỆC LÀM NAM ĐỊNH T10</p>
                         <p>Số 64 đường Trần Phú, phường Trần Hưng Đạo, TP.Nam Định</p>
                       </div>
-                      <a class="btn btn-primary btn-transition" href="#">Xem thêm <i class="bi-chevron-right small"></i></a>
+                      <a class="btn btn-primary btn-transition" href="/san-viec-lam">Xem thêm <i class="bi-chevron-right small"></i></a>
                     </div>
                   </div>
                   <!-- End Banner Image -->
@@ -135,8 +135,7 @@
                         <div class="mb-3">
 
                           <span class="dropdown-header">Tin tức & Sự kiện</span>
-                          <a class="dropdown-item" href="#">Văn bản</a>
-                          <a class="dropdown-item" href="#">Bản tin thị trường</a>
+                          <a class="dropdown-item" href="/tin-tuc">Bản tin thị trường</a>
                           <a class="dropdown-item" href="#">Báo cáo & Phân tích <span class="badge bg-primary rounded-pill ms-1">Hot</span></a>
                           <a class="dropdown-item" href="#">Bảo hiểm thất nghiệp</a>
                         </div>
@@ -151,6 +150,7 @@
                       <div class="col-sm">
                         <div class="mb-3">
                           <span class="dropdown-header">Về trung tâm</span>
+                          <a class="dropdown-item" href="/gioi-thieu">Giới thiệu</a>
                           <a class="dropdown-item" href="#">Tư vấn việc làm</a>
                           <a class="dropdown-item" href="#">Góc báo chí</a>
                           <a class="dropdown-item" href="#">Tuyển dụng</a>
@@ -179,14 +179,14 @@
 
             <!-- Mega Menu -->
             <div class="hs-sub-menu dropdown-menu" aria-labelledby="blogMegaMenu" style="min-width: 14rem;">
-              <a class="dropdown-item" href="#">Tìm việc làm</a>
+              <a class="dropdown-item" href="/viec-lam">Tìm việc làm</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Việc làm phù hợp</a>
+              <a class="dropdown-item" href="/viec-lam">Việc làm phù hợp</a>
               <a class="dropdown-item" href="#">Việc làm IT</a>
               <a class="dropdown-item" href="#">Việc làm Bắc Kạn</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Danh sách công ty</a>
-              <a class="dropdown-item" href="#">Top công ty</a>
+              <a class="dropdown-item" href="/top-cong-ty">Top công ty</a>
             </div>
             <!-- End Mega Menu -->
           </li>
@@ -198,7 +198,7 @@
 
             <!-- Mega Menu -->
             <div class="hs-sub-menu dropdown-menu" aria-labelledby="companyMegaMenu" style="min-width: 14rem;">
-              <a class="dropdown-item" href="#">Tạo CV</a>
+              <a class="dropdown-item" href="/tao-cv">Tạo CV</a>
               <a class="dropdown-item" href="#">Tạo cover letter</a>
               <a class="dropdown-item" href="#">Thư viện CV theo ngành nghề <span class="badge bg-primary rounded-pill ms-1">Hot</span></a>
               <a class="dropdown-item" href="#">Hướng dẫn viết CV</a>

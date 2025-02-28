@@ -1,23 +1,25 @@
 <template>
   <!-- ========== FOOTER ========== -->
   <div>
-    <!-- Card Grid -->
+    <div class="container-fluid  bg-light border-top">
     <div class="container content-space-t-1 content-space-b-1">
       <div class="row">
         <div class="col-lg-6 mb-3 mb-lg-0">
           <!-- Card -->
-          <div class="card bg-primary h-100 overflow-hidden">
-            <div class="card-body">
-              <div class="w-75 pe-2">
-                <h2 class="card-title text-white">Hỗ trợ Nhà tuyển dụng</h2>
-                <p class="card-text text-white mb-0">Hotline: 0972489899</p>
-                <p class="card-text text-white">Email: tunghatrang@gmail.com</p>
+          <div class="card h-100 overflow-hidden">
+            <div class="row align-items-center">
+              <div class="col-7">
+                <div class="card-body">
+                  <h3 class="card-title">Hỗ trợ Nhà tuyển dụng</h3>
+                  <p class="card-text">Hotline: 0972489899<br />Email: tunghatrang@gmail.com</p>
+                  <a class="card-link" href="#">Xem thêm <i class="bi-chevron-right small ms-1"></i></a>
+                </div>
               </div>
+              <!-- End Col -->
 
-              <div class="position-absolute end-0 bottom-0 w-50 mb-n3 me-n7">
-                <img class="card-img" src="/assets/img/web/Recruiter.png" alt="Image Description">
-              </div>
+              <div class="col-5 bg-img-start h-100 px-0" style="background-image: url(/assets/svg/illustrations/oc-looking-for-answers.svg);"></div>
             </div>
+            <!-- End Row -->
           </div>
           <!-- End Card -->
         </div>
@@ -25,18 +27,20 @@
 
         <div class="col-lg-6">
           <!-- Card -->
-          <div class="card bg-success h-100 overflow-hidden">
-            <div class="card-body">
-              <div class="w-75 pe-2">
-                <h2 class="card-title text-white">Hỗ trợ Người tìm việc</h2>
-                <p class="card-text text-white  mb-0">Hotline: 0948111429</p>
-                <p class="card-text text-white">Email: huytung25051985@gmail.com</p>
+          <div class="card h-100 overflow-hidden">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <div class="card-body">
+                  <h3 class="card-title">Hỗ trợ Người tìm việc</h3>
+                  <p class="card-text">Hotline: 0948111429<br />Email: huytung25051985@gmail.com</p>
+                  <a class="card-link" href="#">Xem thêm <i class="bi-chevron-right small ms-1"></i></a>
+                </div>
               </div>
+              <!-- End Col -->
 
-              <div class="position-absolute end-0 bottom-0 w-50 mb-n3 me-n7">
-                <img class="card-img" src="/assets/img/web/Job-seekers.png" alt="Image Description">
-              </div>
+              <div class="col-4 bg-img-start h-100 px-0" style="background-image: url(/assets/svg/illustrations/oc-hi-five.svg);"></div>
             </div>
+            <!-- End Row -->
           </div>
           <!-- End Card -->
         </div>
@@ -44,8 +48,9 @@
       </div>
       <!-- End Row -->
     </div>
-    <!-- End Card Grid -->
 
+  </div>
+    <!-- Card Grid -->
 
     <footer class="bg-dark">
       <div class="container pb-1 pb-lg-5">

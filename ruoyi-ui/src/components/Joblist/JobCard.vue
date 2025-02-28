@@ -17,7 +17,7 @@
           <div class="row">
             <div class="col col-md-8">
               <h3 class="card-title">
-                <a class="text-dark" href="#">{{ job.position }}</a>
+                <a class="text-dark" :href="job.jobLink">{{ job.position }}</a>
               </h3>
               <div class="d-none d-sm-inline-block">
                 <h6 class="card-title">
