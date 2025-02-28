@@ -8,7 +8,7 @@ import { isRelogin } from '@/utils/request'
 
 NProgress.configure({ showSpinner: false })
 
-const whiteList = ['/home','/login', '/register']
+const whiteList = ['/tin-tuc','/gioi-thieu','/viec-lam','/home','/login', '/register']
 
 router.beforeEach((to, from, next) => {
   NProgress.start()
@@ -24,8 +24,8 @@ router.beforeEach((to, from, next) => {
         store.dispatch('GetInfo').then(() => {
           isRelogin.show = false
           store.dispatch('GenerateRoutes').then(accessRoutes => {
-            router.addRoutes(accessRoutes) 
-            next({ ...to, replace: true }) 
+            router.addRoutes(accessRoutes)
+            next({ ...to, replace: true })
           })
         }).catch(err => {
             store.dispatch('LogOut').then(() => {
@@ -38,9 +38,9 @@ router.beforeEach((to, from, next) => {
       }
     }
   } else {
-    
+
     if (whiteList.indexOf(to.path) !== -1) {
-      
+
       next()
     } else {
       // [WDY] redirect 保留当前地址

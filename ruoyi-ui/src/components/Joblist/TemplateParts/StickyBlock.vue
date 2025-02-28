@@ -8,12 +8,13 @@
           <div class="card card-bordered">
             <div class="card-body">
               <div class="mb-5">
-                <h3>Search millions of resumes across your industry and location.</h3>
+                <h3>Thông tin liên hệ</h3>
               </div>
 
-              <div class="d-grid mb-5">
-                <a class="btn btn-primary" href="#">Select a subscription</a>
-              </div>
+              <p class="fw-bold">Trần Thị Khánh Ly</p>
+              <p>Lô số 59-69, Cụm công nghiệp An Xá, xã Lộc An, TP. Nam Định, tỉnh Nam Định</p>
+              <p>Điện thoại: <br />0932261979</p>
+              <p>Email: <br />lyttk@lengerseafoodsvietnam.com</p>
 
               <img class="card-img-bottom" src="/assets/svg/illustrations/oc-chatting.svg" alt="Image Description">
             </div>

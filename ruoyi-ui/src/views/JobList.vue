@@ -26,22 +26,22 @@
     <!-- Header -->
     <div class="row align-items-center mb-5">
       <div class="col-sm mb-3 mb-sm-0">
-        <h3 class="mb-0">{{ totalJobs }} jobs for <span class="fw-normal">{{ country }}</span></h3>
+        <h3 class="mb-0">Việc làm phù hợp</h3>
       </div>
 
       <div class="col-sm-auto">
         <div class="d-sm-flex justify-content-sm-end align-items-center">
           <div class="mb-2 mb-sm-0 me-sm-2">
             <select v-model="sortOption" class="form-select form-select-sm">
-              <option value="Relevance">Relevance</option>
-              <option value="mostRecent">Most recent</option>
+              <option value="Relevance">Lương cao</option>
+              <option value="mostRecent">Mới nhất</option>
             </select>
           </div>
 
           <div class="mb-2 mb-sm-0 me-sm-2">
             <select v-model="alphabetOption" class="form-select form-select-sm">
-              <option value="A-to-Z">A-to-Z</option>
-              <option value="Z-to-A">Z-to-A</option>
+              <option value="A-to-Z">A-Z</option>
+              <option value="Z-to-A">Z-A</option>
             </select>
           </div>
 
@@ -98,7 +98,6 @@
 import JobUrgent from '../components/HomeSection/JobTab/JobUrgent.vue';
 import Rightbar from '../components/Joblist/Rightbar.vue';
 import JobCard from '../components/Joblist/JobCard.vue';
-import SearchForm from '../components/Layout/HeroSection/TemplateParts/SearchForm.vue';
 import JobBreadCrumb from '../components/Joblist/TemplateParts/JobBreadCrumb.vue';
 
 export default {
@@ -121,33 +120,69 @@ export default {
       jobs: [
         {
           id: 1,
-          company: "Mailchimp",
-          position: "Senior B2B sales consultant",
-          salary: "$125k-$135k yearly",
-          location: "Oxford",
+          company: "Công ty Cổ phần Giáo dục và Đào tạo Quốc tế Sydney",
+          position: "Công nhân may mẫu",
+          salary: "Thoả thuận ",
+          location: "Bắc Kạn",
           type: "Full time",
           posted: "7 hours ago",
-          image: "/assets/svg/brands/mailchimp-icon.svg"
+          jobLink: "/viec-lam/detail",
+          image: "/images/company/cong-ty-tnhh-dau-tu-va-thuong-mai-an-lanh.jpg"
         },
         {
           id: 2,
-          company: "Capsule",
-          position: "Office assistant/Social media assistant",
-          salary: "$50-$135 hourly",
-          location: "Newcastle",
+          company: "CÔNG TY TNHH UNIKO",
+          position: "Nhân viên kho",
+          salary: "12-15 triệu/tháng",
+          location: "Bắc Kạn",
           type: "Part time",
           posted: "21 hours ago",
-          image: "/assets/svg/brands/capsule-icon.svg"
+          jobLink: "/viec-lam/detail",
+          image: "/images/company/cong-ty-cp-bao-linh.jpg"
         },
         {
           id: 3,
-          company: "Dropbox",
-          position: "Marketing and Communications Manager",
-          salary: "$5k monthly",
-          location: "London",
+          company: "CÔNG TY TNHH FENGXIN SPORTSWEAR VIỆT NAM",
+          position: "Kế toán thuế",
+          salary: "9 triệu/tháng",
+          location: "Bắc Kạn",
           type: "Full time",
           posted: "1 day ago",
-          image: "/assets/svg/brands/dropbox-icon.svg"
+          jobLink: "/viec-lam/detail",
+          image: "/images/company/cong-ty-tnhh-dien-tu-tin-hoc-phi-dung.png"
+        },
+        {
+          id: 4,
+          company: "Công ty Cổ phần Giáo dục và Đào tạo Quốc tế Sydney",
+          position: "Công nhân may mẫu",
+          salary: "Thoả thuận ",
+          location: "Bắc Kạn",
+          type: "Full time",
+          posted: "7 hours ago",
+          jobLink: "/viec-lam/detail",
+          image: "/images/company/cong-ty-tnhh-dau-tu-va-thuong-mai-an-lanh.jpg"
+        },
+        {
+          id: 5,
+          company: "CÔNG TY TNHH UNIKO",
+          position: "Nhân viên kho",
+          salary: "12-15 triệu/tháng",
+          location: "Bắc Kạn",
+          type: "Part time",
+          posted: "21 hours ago",
+          jobLink: "/viec-lam/detail",
+          image: "/images/company/cong-ty-cp-bao-linh.jpg"
+        },
+        {
+          id: 6,
+          company: "CÔNG TY TNHH FENGXIN SPORTSWEAR VIỆT NAM",
+          position: "Kế toán thuế",
+          salary: "9 triệu/tháng",
+          location: "Bắc Kạn",
+          type: "Full time",
+          posted: "1 day ago",
+          jobLink: "/viec-lam/detail",
+          image: "/images/company/cong-ty-tnhh-dien-tu-tin-hoc-phi-dung.png"
         }
       ]
     };
