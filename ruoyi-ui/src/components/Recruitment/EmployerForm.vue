@@ -452,6 +452,7 @@ export default {
         this.saveEmployerData();
       }
     },
+    
     goBack() {
     this.$router.push('/index');   
   }
