@@ -32,23 +32,23 @@
       </div>
 
       <div class="tab-pane fade" id="nav-two-eg1" role="tabpanel" aria-labelledby="nav-two-eg1-tab">
-        <p>Second tab content...</p>
+        <JobLatest />
       </div>
 
       <div class="tab-pane fade" id="nav-three-eg1" role="tabpanel" aria-labelledby="nav-three-eg1-tab">
-        <p>Third tab content...</p>
+        <JobLatest />
       </div>
     </div>
     <!-- End Tab Content -->
 
     <div class="text-center">
-      <a class="btn btn-outline-primary" href="../demo-jobs/job-list.html">Danh sách việc làm <i
+      <a class="btn btn-outline-primary" href="/viec-lam">Danh sách việc làm <i
           class="bi-chevron-right small ms-1"></i></a>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
 import JobLatest from './JobTab/JobLatest.vue';
 export default {
   components: {
