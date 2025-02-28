@@ -25,6 +25,13 @@ export function listDistrict(provinceId) {
     })
   }
 
+  export function getEmployer(userName) {
+    return request({
+      url: '/api/employer/getEmployer' ,
+      method: 'get',
+      params: userName
+    })
+  }
 export function addEmployer(data) {
   return request({
     url: '/api/employer/save',
@@ -36,7 +43,7 @@ export function addEmployer(data) {
 
 export function updateEmployer(data) {
   return request({
-    url: '/api/employer/save',
+    url: '/api/employer/update',
     method: 'put',
     data: data
   })

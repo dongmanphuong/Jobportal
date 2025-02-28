@@ -28,7 +28,15 @@ namespace RuoYi.System.Repositories
         {
             await base.FillRelatedDataAsync(dtos);
 
-           
+        }
+
+        public async Task<List<SysEmployer>> SelectEmployerAsync(string userName)
+        {
+            if (string.IsNullOrEmpty(userName))
+                return null!;
+
+            var query = new SysEmployerDto { CreateBy = userName };
+            return await base.GetListAsync(query);
         }
     }
 }

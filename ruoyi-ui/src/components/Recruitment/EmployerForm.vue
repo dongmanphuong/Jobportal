@@ -147,7 +147,7 @@
 
     <!-- Nút Lưu -->
     <div class="buttons">
-      <button class="btn cancel">Quay lại</button>
+      <button class="btn cancel" @click="goBack">Quay lại</button>
       <button class="btn save" @click="submitForm">Lưu lại</button>
     </div>
   </div>
@@ -156,7 +156,8 @@
 <script>
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
-import { listDictType, listProvince, listDistrict, listWard, addEmployer} from "@/api/recruitment/employer";
+import { listDictType, listProvince, listDistrict, listWard, addEmployer, getEmployer, updateEmployer } from "@/api/recruitment/employer";
+import Cookies from "js-cookie";
 
 export default {
   components: { vSelect },
@@ -189,7 +190,7 @@ export default {
       othercontact: "",
       registertime: new Date().toISOString().slice(0, 16),
       loading: true,
-      
+
       // Tuỳ chọn cho v-select
       employmentOptions: [],
 
@@ -207,8 +208,13 @@ export default {
 
       dangkydichvuOptions: [],
 
+      isUpdate: false,
+
+      employerId: null,
+
       // Lưu lỗi
       errors: {}
+
     };
   },
   mounted() {
@@ -223,6 +229,8 @@ export default {
         console.error("Error fetching provinceOptions", error);
         this.loading = false;
       });
+    // Fetch employer data for the current username
+    this.fetchEmployerData();
   },
   watch: {
     // When province changes, load districts
@@ -331,6 +339,52 @@ export default {
           console.error("Error fetching ward options", error);
         });
     },
+    fetchEmployerData() {
+      // Call an API function that returns the employer information for the current username.
+      this.loading = true;
+      const username = Cookies.get("username");
+      getEmployer({ userName: username })
+        .then(dataArray => {  // 'dataArray' is the returned data array directly
+          console.log("Employer data:", dataArray);
+          if (dataArray && dataArray.length > 0) {
+            const data = dataArray[0];
+
+            // Fill the form with the retrieved data
+            this.companyName = data.companyName;
+            this.employmentType = data.employmentType;
+            this.idNumber = data.idNumber;
+            this.companyType = data.companyType;
+            this.province = data.province;
+            this.district = data.district;
+            this.ward = data.ward;
+            this.address = data.address;
+            this.phone = data.phone;
+            this.email = data.email;
+            this.industryzone = data.industryZone;
+            if (data.industryZone > 0) {
+              this.Isindustryzone = true;
+            }
+            this.mainBusiness = data.mainBusiness;
+            this.mainProduct = data.mainProduct;
+            this.next6month = data.next6Month;
+            this.workforceScale = data.workforceScale;
+            this.dangkydichvu = data.dangkyDichvu;
+            this.dangkydichvunote = data.dangkyDichvunote;
+            this.name = data.representativeName;
+            this.position = data.position;
+            this.telephone = data.representativePhone;
+            this.othercontact = data.otherContact;
+            this.registertime = data.registerTime;
+            this.isUpdate = true;
+            this.employerId = data.id;
+          }
+          this.loading = false;
+        })
+        .catch(error => {
+          console.error("Error fetching employer data", error);
+          this.loading = false;
+        });
+    },
     saveEmployerData() {
       // Build the payload based on your form data
       const employerData = {
@@ -357,9 +411,20 @@ export default {
         otherContact: this.othercontact,
         registerTime: this.registertime
       };
-      addEmployer(employerData).then(response => {
-        this.$modal.msgSuccess("Đã thêm thành công");
-      });
+      if (this.isUpdate) {
+        // Update existing employer data
+        updateEmployer({ id: this.employerId, ...employerData })
+          .then(response => {
+            this.$modal.msgSuccess("Cập nhật thành công");
+          })
+          .catch(error => {
+            console.error("Error updating employer data:", error);
+          });
+      } else {
+        addEmployer(employerData).then(response => {
+          this.$modal.msgSuccess("Đã thêm thành công");
+        });
+      }
     },
     submitForm() {
       // Reset lỗi trước khi kiểm tra
@@ -386,7 +451,10 @@ export default {
       if (Object.keys(this.errors).length === 0) {
         this.saveEmployerData();
       }
-    }
+    },
+    goBack() {
+    this.$router.push('/index');   
+  }
   }
 };
 </script>

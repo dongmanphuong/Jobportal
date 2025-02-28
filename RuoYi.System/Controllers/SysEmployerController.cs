@@ -5,6 +5,7 @@ using RuoYi.Data.Dtos;
 using RuoYi.Data.Models;
 using RuoYi.Framework;
 using RuoYi.System.Services;
+using SqlSugar;
 using Location = RuoYi.Data.Models.Location;
 
 namespace RuoYi.System.Controllers
@@ -126,6 +127,43 @@ namespace RuoYi.System.Controllers
             }
         }
 
+        [HttpPut("update")]
+        [Log(Title = "Doanh nghiệp tuyển dụng", BusinessType = BusinessType.UPDATE)]
+        public async Task<IActionResult> UpdateEmployer([FromBody] SysEmployerDto employerDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await _sysEmployerService.UpdateAsync(employerDto);
+                return Ok(new { status = 1, msg = "Lưu thành công!" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error update employer data");
+                return StatusCode(500, new { status = 0, msg = "Lỗi khi lưu dữ liệu" });
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("getEmployer")]
+        // [AppAuthorize("system:dict:list")]
+        public async Task<List<SysEmployer>> GetEmployerByUser(string userName)
+        {
+            
+            List<SysEmployer> data = await _sysEmployerService.SelectEmployerAsync(userName);
+            if (data == null)
+            {
+                data = new List<SysEmployer>();
+            }
+            return data;
+        }
     }
 
 }

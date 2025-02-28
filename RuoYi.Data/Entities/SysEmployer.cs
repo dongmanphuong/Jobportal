@@ -58,7 +58,7 @@ namespace RuoYi.Data.Entities
         public int DangkyDichvu { get; set; }
 
         [SugarColumn(ColumnName = "dangkydichvunote", ColumnDescription = "dangkydichvunote")]
-        public string DangkyDichvunote { get; set; }
+        public string? DangkyDichvunote { get; set; }
 
         [SugarColumn(ColumnName = "registertime", ColumnDescription = "registertime")]
         public DateTime RegisterTime { get; set; }

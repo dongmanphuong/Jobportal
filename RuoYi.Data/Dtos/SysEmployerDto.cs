@@ -27,12 +27,14 @@ namespace RuoYi.Data.Dtos
         public string Next6Month { get; set; }
         public int WorkforceScale { get; set; }
         public int DangkyDichvu { get; set; }
-        public string DangkyDichvunote { get; set; }
+        public string? DangkyDichvunote { get; set; }
         public DateTime RegisterTime { get; set; }
         public string RepresentativeName { get; set; }
         public string Position { get; set; }
         public string RepresentativePhone { get; set; }
         public string OtherContact { get; set; }
+
+        public int Id { get; set; }
        
 
     }
