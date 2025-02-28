@@ -37,9 +37,9 @@
         <div class="d-flex gap-2">
           <!-- Hiển thị khi chưa đăng nhập -->
           <template v-if="!isLoggedIn">
-            <button class="btn btn-outline-primary px-3" href="/login?redirect=%2Fhome">Đăng nhập</button>
-            <button class="btn btn-primary px-3" href="/register">Đăng ký</button>
-            <button class="btn btn-dark px-3" href="#">Đăng tuyển & tìm hồ sơ</button>
+            <a class="btn btn-outline-primary px-3" href="/login?redirect=%2Fhome">Đăng nhập</a>
+            <a class="btn btn-primary px-3" href="/register">Đăng ký</a>
+            <a class="btn btn-dark px-3" href="#">Đăng tuyển & tìm hồ sơ</a>
           </template>
 
           <!-- Hiển thị khi đã đăng nhập -->
