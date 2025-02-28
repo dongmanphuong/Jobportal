@@ -51,6 +51,28 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/gioi-thieu',
+    component: DefaultLayout,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/AboutUs.vue'),
+      }
+    ],
+    hidden: true
+  },
+  {
+    path: '/tin-tuc',
+    component: DefaultLayout,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/News.vue'),
+      }
+    ],
+    hidden: true
+  },
+  {
     path: '/viec-lam',
     component: DefaultLayout,
     children: [

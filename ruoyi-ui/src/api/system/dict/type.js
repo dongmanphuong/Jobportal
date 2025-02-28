@@ -62,7 +62,7 @@ export function optionselect() {
 
 export function listDictType(query) {
   return request({
-    url: 'system/dict/type/listdicttype',
+    url: '/system/dict/type/listdicttype',
     method: 'get',
     params: query
   })
