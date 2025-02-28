@@ -45,60 +45,60 @@
           <!-- Hiển thị khi đã đăng nhập -->
           <template v-else>
             <!-- Account -->
-        <div class="dropdown">
-          <a href="#" id="navbarShoppingCartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation>
-            <img class="avatar avatar-xs avatar-circle" src="/assets/img/160x160/img9.jpg" alt="Image Description">
-          </a>
+              <div class="dropdown">
+                <a href="#" id="navbarShoppingCartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation>
+                  <img class="avatar avatar-xs avatar-circle" src="/assets/img/160x160/img9.jpg" alt="Image Description">
+                </a>
 
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarShoppingCartDropdown" style="min-width: 16rem;">
-            <a class="d-flex align-items-center p-2" href="#">
-              <div class="flex-shrink-0">
-                <img class="avatar" src="/assets/img/160x160/img9.jpg" alt="Image Description">
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarShoppingCartDropdown" style="min-width: 16rem;">
+                  <a class="d-flex align-items-center p-2" href="#">
+                    <div class="flex-shrink-0">
+                      <img class="avatar" src="/assets/img/160x160/img9.jpg" alt="Image Description">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <span class="d-block fw-semibold">Lida Reidy <span class="badge bg-primary ms-1">Pro</span></span>
+                      <span class="d-block text-muted small">lidareidy@gmail.com</span>
+                    </div>
+                  </a>
+
+                  <div class="dropdown-divider my-3"></div>
+
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-chat-left-dots"></i>
+                    </span> Messages
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-wallet2"></i>
+                    </span> Purchase history
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-person"></i>
+                    </span> Account
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-credit-card"></i>
+                    </span> Payment methods
+                  </a>
+
+                  <div class="dropdown-divider"></div>
+
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-question-circle"></i>
+                    </span> Help
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-box-arrow-right"></i>
+                    </span> Log out
+                  </a>
+                </div>
               </div>
-              <div class="flex-grow-1 ms-3">
-                <span class="d-block fw-semibold">Lida Reidy <span class="badge bg-primary ms-1">Pro</span></span>
-                <span class="d-block text-muted small">lidareidy@gmail.com</span>
-              </div>
-            </a>
-
-            <div class="dropdown-divider my-3"></div>
-
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-chat-left-dots"></i>
-              </span> Messages
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-wallet2"></i>
-              </span> Purchase history
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-person"></i>
-              </span> Account
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-credit-card"></i>
-              </span> Payment methods
-            </a>
-
-            <div class="dropdown-divider"></div>
-
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-question-circle"></i>
-              </span> Help
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-box-arrow-right"></i>
-              </span> Log out
-            </a>
-          </div>
-        </div>
-        <!-- End Account -->
+              <!-- End Account -->
           </template>
         </div>
 

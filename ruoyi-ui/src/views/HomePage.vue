@@ -1,6 +1,8 @@
 <template>
   <div>
     <HeroJob />
+    <SwiperSlide />
+
     <JobCategories />
     <div class="bg-light">
       <JobTabs />
@@ -24,10 +26,12 @@ import MobileApp from '../components/HomeSection/MobileApp.vue';
 import TopCompanies from '../components/HomeSection/TopCompanies.vue';
 import TopCv from '../components/HomeSection/TopCv.vue';
 import HeroJob from '../components/Layout/HeroSection/HeroJob.vue';
+import SwiperSlide from '../components/Layout/HeroSection/TemplateParts/SwiperSlide.vue';
 
 export default {
   components: {
     HeroJob,
+    SwiperSlide,
     JobCategories,
     JobTabs,
     TopCv,

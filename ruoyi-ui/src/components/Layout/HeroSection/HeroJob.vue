@@ -22,20 +22,16 @@
         <!-- End Row -->
       </div>
     </div>
-    <div class="container py-3">
-      <Slickcarousel />
-    </div>
+
   </div>
 </template>
 
 <script>
 import SearchForm from "./TemplateParts/SearchForm.vue";
-import Slickcarousel from "./TemplateParts/SlickCarousel.vue";
 
 export default {
   components: {
-    SearchForm,
-    Slickcarousel
+    SearchForm
   }
 };
 </script>
