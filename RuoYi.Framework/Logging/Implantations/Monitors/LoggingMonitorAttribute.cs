@@ -440,11 +440,11 @@ public sealed class LoggingMonitorAttribute : Attribute, IAsyncActionFilter, IAs
 
         templates.AddRange(new[]
         {
-            $"━━━━━━━━━━━━━━━  返回信息 ━━━━━━━━━━━━━━━"
-            , $"##HTTP响应状态码## {httpStatusCode}"
-            , $"##原始类型## {returnTypeName}"
-            , $"##最终类型## {finalReturnTypeName}"
-            , $"##最终返回值## {displayValue}"
+          $"━━━━━━━━━━━━━━━━ Return information ━━━━━━━━━━━━━━━"
+        , $"##HTTP response status code## {httpStatusCode}"
+        , $"##Original type## {returnTypeName}"
+        , $"##Final type## {finalReturnTypeName}"
+        , $"##Final return value## {displayValue}"
         });
 
         writer.WritePropertyName("returnInformation");

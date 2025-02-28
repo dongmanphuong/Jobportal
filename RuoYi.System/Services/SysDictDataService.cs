@@ -3,11 +3,6 @@ using RuoYi.System.Repositories;
 
 namespace RuoYi.System.Services;
 
-/// <summary>
-///  字典数据表 Service
-///  author ruoyi
-///  date   2023-09-04 17:49:59
-/// </summary>
 public class SysDictDataService : BaseService<SysDictData, SysDictDataDto>, ITransient
 {
     private readonly ILogger<SysDictDataService> _logger;

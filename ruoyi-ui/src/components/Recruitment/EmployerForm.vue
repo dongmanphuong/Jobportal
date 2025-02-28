@@ -189,6 +189,7 @@ export default {
       othercontact: "",
       registertime: new Date().toISOString().slice(0, 16),
       loading: true,
+      
       // Tuỳ chọn cho v-select
       employmentOptions: [],
 

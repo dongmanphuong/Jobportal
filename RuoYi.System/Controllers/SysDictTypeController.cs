@@ -1,6 +1,7 @@
 using RuoYi.Common.Enums;
 using RuoYi.Common.Utils;
 using RuoYi.Data.Dtos;
+using RuoYi.Data.Models;
 using RuoYi.Framework;
 using RuoYi.System.Services;
 
@@ -28,11 +29,23 @@ namespace RuoYi.System.Controllers
         /// 查询字典类型表列表
         /// </summary>
         [HttpGet("listdicttype")]
-       // [AppAuthorize("system:dict:list")]
-        public async Task<List<SysDictData>> GetSysDictTypeList(string dictType)
+        // [AppAuthorize("system:dict:list")]
+        public async Task<List<SelectBox>> GetSysDictTypeList(string dictType)
         {
-            return await _sysDictTypeService.SelectDictDataByTypeAsync(dictType);
+            List<SysDictData> ls = await _sysDictTypeService.SelectDictDataByTypeAsync(dictType);
+            List<SelectBox> lsSelectBox = new List<SelectBox>();
+
+            for (int i = 0; i < ls.Count; i++)
+            {
+                SelectBox slBox = new SelectBox();
+                slBox.Value = Convert.ToInt16(ls[i].DictValue);
+                slBox.Label = ls[i].DictLabel;
+                lsSelectBox.Add(slBox);
+            }
+
+            return lsSelectBox;
         }
+
 
 
         /// <summary>
@@ -79,12 +92,12 @@ namespace RuoYi.System.Controllers
         [HttpPut("")]
         [AppAuthorize("system:dict:edit")]
         [TypeFilter(typeof(RuoYi.Framework.DataValidation.DataValidationFilter))]
-        [Log(Title = "字典类型", BusinessType = BusinessType.UPDATE)]
+        [Log(Title = "Loại từ điển", BusinessType = BusinessType.UPDATE)]
         public async Task<AjaxResult> Edit([FromBody] SysDictTypeDto dto)
         {
             if (!await _sysDictTypeService.CheckDictTypeUniqueAsync(dto))
             {
-                return AjaxResult.Error("修改字典'" + dto.DictName + "'失败，字典类型已存在");
+                return AjaxResult.Error("Sửa đổi từ điển'" + dto.DictName + "'Không thành công, loại từ điển đã tồn tại");
             }
             var data = await _sysDictTypeService.UpdateDictTypeAsync(dto);
             return AjaxResult.Success(data);
@@ -95,7 +108,7 @@ namespace RuoYi.System.Controllers
         /// </summary>
         [HttpDelete("{ids}")]
         [AppAuthorize("system:dict:remove")]
-        [Log(Title = "字典类型", BusinessType = BusinessType.DELETE)]
+        [Log(Title = "Loại từ điển", BusinessType = BusinessType.DELETE)]
         public async Task<AjaxResult> Remove(long[] ids)
         {
             await _sysDictTypeService.DeleteDictTypeByIdsAsync(ids);
@@ -107,7 +120,7 @@ namespace RuoYi.System.Controllers
         /// </summary>
         [HttpDelete("refreshCache")]
         [AppAuthorize("system:dict:remove")]
-        [Log(Title = "字典类型", BusinessType = BusinessType.CLEAN)]
+        [Log(Title = "Loại từ điển", BusinessType = BusinessType.CLEAN)]
         public AjaxResult RefreshCache()
         {
             _sysDictTypeService.ResetDictCache();
@@ -129,7 +142,7 @@ namespace RuoYi.System.Controllers
         /// </summary>
         [HttpPost("export")]
         [AppAuthorize("system:dict:export")]
-        [Log(Title = "字典类型", BusinessType = BusinessType.EXPORT)]
+        [Log(Title = "Loại từ điển", BusinessType = BusinessType.EXPORT)]
         public async Task Export(SysDictTypeDto dto)
         {
             var list = await _sysDictTypeService.GetDtoListAsync(dto);
