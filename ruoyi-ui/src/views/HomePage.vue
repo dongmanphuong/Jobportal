@@ -4,6 +4,7 @@
     <JobCategories />
     <div class="bg-light">
       <JobTabs />
+      <TopCv />
     </div>
     <TopCompanies />
     <LatestNews />
@@ -21,6 +22,7 @@ import JobTabs from '../components/HomeSection/JobTabs.vue';
 import LatestNews from '../components/HomeSection/LatestNews.vue';
 import MobileApp from '../components/HomeSection/MobileApp.vue';
 import TopCompanies from '../components/HomeSection/TopCompanies.vue';
+import TopCv from '../components/HomeSection/TopCv.vue';
 import HeroJob from '../components/Layout/HeroSection/HeroJob.vue';
 
 export default {
@@ -28,6 +30,7 @@ export default {
     HeroJob,
     JobCategories,
     JobTabs,
+    TopCv,
     TopCompanies,
     LatestNews,
     MobileApp

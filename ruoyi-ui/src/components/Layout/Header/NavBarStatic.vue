@@ -9,6 +9,8 @@
       <!-- End Default Logo -->
 
       <!-- Secondary Content -->
+
+
       <div class="navbar-nav-wrap-secondary-content">
         <!-- Search -->
         <div class="dropdown dropdown-course-search d-lg-none d-inline-block">
@@ -32,8 +34,17 @@
           </div>
         </div>
         <!-- End Search -->
+        <div class="d-flex gap-2">
+          <!-- Hiển thị khi chưa đăng nhập -->
+          <template v-if="!isLoggedIn">
+            <button class="btn btn-outline-primary px-3" href="/login?redirect=%2Fhome">Đăng nhập</button>
+            <button class="btn btn-primary px-3" href="/register">Đăng ký</button>
+            <button class="btn btn-dark px-3" href="#">Đăng tuyển & tìm hồ sơ</button>
+          </template>
 
-        <!-- Account -->
+          <!-- Hiển thị khi đã đăng nhập -->
+          <template v-else>
+            <!-- Account -->
         <div class="dropdown">
           <a href="#" id="navbarShoppingCartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation>
             <img class="avatar avatar-xs avatar-circle" src="/assets/img/160x160/img9.jpg" alt="Image Description">
@@ -88,6 +99,10 @@
           </div>
         </div>
         <!-- End Account -->
+          </template>
+        </div>
+
+
       </div>
       <!-- End Secondary Content -->
 
@@ -251,6 +266,28 @@ import '@/assets/front4/vendor/hs-mega-menu/dist/hs-mega-menu.min.css';
 import HSMegaMenu from "@/assets/front4/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"; // Import file JS
 
 export default {
+  data() {
+    return {
+      isLoggedIn: false, // Giả lập trạng thái đăng nhập
+    };
+  },
+  methods: {
+    login() {
+      // Thực hiện hành động đăng nhập
+      this.isLoggedIn = true;
+      console.log("User logged in");
+    },
+    register() {
+      console.log("Redirect to register page");
+    },
+    manage() {
+      console.log("Redirect to manage jobs");
+    },
+    logout() {
+      this.isLoggedIn = false;
+      console.log("User logged out");
+    }
+  },
   mounted() {
     this.$nextTick(() => {
       new HSMegaMenu(".js-mega-menu");

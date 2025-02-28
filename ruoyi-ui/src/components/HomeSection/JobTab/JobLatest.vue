@@ -38,7 +38,7 @@
           <!-- Card Footer -->
           <div class="card-footer py-2">
             <ul class="list-inline list-separator small text-body">
-              <li class="list-inline-item">{{ job.timePosted }}</li>
+              <li class="list-inline-item">{{ job.postedTime }}</li>
               <li class="list-inline-item">{{ job.location }}</li>
             </ul>
           </div>
