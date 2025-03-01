@@ -1,6 +1,8 @@
 <template>
 
 <div class="container-fluid border-bottom">
+
+
     <nav class="js-mega-menu navbar-nav-wrap">
       <!-- Default Logo -->
       <a class="navbar-brand" href="/home" aria-label="Front">
@@ -11,7 +13,7 @@
       <!-- Secondary Content -->
 
 
-      <div class="navbar-nav-wrap-secondary-content">
+      <div class="navbar-nav-wrap-secondary-content d-none d-sm-block">
         <!-- Search -->
         <div class="dropdown dropdown-course-search d-lg-none d-inline-block">
           <a class="btn btn-ghost-secondary btn-sm btn-icon" href="#" id="navbarCourseSearchDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

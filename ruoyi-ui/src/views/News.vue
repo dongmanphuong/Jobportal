@@ -73,6 +73,7 @@ export default {
         title: "Trung tâm Lao động ngoài nước ký kết các hợp đồng cung ứng lao động có tay nghề đi làm việc Cộng hòa Liên bang Đức, Nhật Bản",
         description: "Được sự đồng ý của Lãnh đạo Bộ Lao động – Thương binh và Xã hội, sau một thời gian đàm phán, Trung...",
         image: "/images/news-1.jpg",
+        newsLink: "/tin-tuc/chi-tiet",
         date: "July 15",
         authors: [
           { name: "Aaron Larsson", avatar: "/assets/img/160x160/img3.jpg" },
@@ -84,6 +85,7 @@ export default {
           title: "Đơn hàng Công ty HHCP kim loại Đại Hoa",
           description: "Thông báo tuyển chọn lao động đi làm việc tại Đài Loan Đơn hàng Công ty HHCP kim loại Đại Hoa",
           image: "/images/news-2.jpg",
+          newsLink: "/tin-tuc/chi-tiet",
           date: "July 15",
           authors: [
             { name: "Nataly Gaga", avatar: "/assets/img/160x160/img9.jpg" },
@@ -94,6 +96,7 @@ export default {
           title: "Gia hạn thời gian Tuyển chọn thực tập sinh nữ đi thực tập kỹ thuật tại Nhật Bản",
           description: "Gia hạn thời gian Tuyển chọn thực tập sinh Theo Chương trình IM JAPAN Đợt 1/2025",
           image: "/assets/svg/components/shape-7.svg",
+          newsLink: "/tin-tuc/chi-tiet",
           date: "July 15",
           featured: true,
           authors: [
@@ -104,6 +107,7 @@ export default {
           title: "Hội nghị Tư vấn giới thiệu việc làm và tư vấn hướng nghiệp tại trường Cao đẳng Bắc Kạn",
           description: "Sáng ngày 19/02/2025, Trung tâm Dịch vụ việc làm Bắc Kạn phối hợp Trường Cao đẳng Bắc Kạn tổ chức...",
           image: "/images/news-3.jpg",
+          newsLink: "/tin-tuc/chi-tiet",
           date: "July 15",
           authors: [
             { name: "Hanna Wolfe", avatar: "/assets/img/160x160/img10.jpg" },
@@ -114,6 +118,7 @@ export default {
           title: "Đơn hàng Công ty HHCP kim loại Đại Hoa",
           description: "Thông báo tuyển chọn lao động đi làm việc tại Đài Loan Đơn hàng Công ty HHCP kim loại Đại Hoa",
           image: "/images/news-4.jpg",
+          newsLink: "/tin-tuc/chi-tiet",
           date: "July 15",
           authors: [
             { name: "Nataly Gaga", avatar: "/assets/img/160x160/img9.jpg" },
@@ -124,6 +129,7 @@ export default {
           title: "Đơn hàng Công ty HHCP kim loại Đại Hoa",
           description: "Thông báo tuyển chọn lao động đi làm việc tại Đài Loan Đơn hàng Công ty HHCP kim loại Đại Hoa",
           image: "/images/news-2.jpg",
+          newsLink: "/tin-tuc/chi-tiet",
           date: "July 15",
           authors: [
             { name: "Nataly Gaga", avatar: "/assets/img/160x160/img9.jpg" },
@@ -134,6 +140,7 @@ export default {
           title: "Đơn hàng Công ty HHCP kim loại Đại Hoa",
           description: "Thông báo tuyển chọn lao động đi làm việc tại Đài Loan Đơn hàng Công ty HHCP kim loại Đại Hoa",
           image: "/images/news-3.jpg",
+          newsLink: "/tin-tuc/chi-tiet",
           date: "July 15",
           authors: [
             { name: "Nataly Gaga", avatar: "/assets/img/160x160/img9.jpg" },

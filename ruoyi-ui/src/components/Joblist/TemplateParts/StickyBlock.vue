@@ -7,16 +7,35 @@
           <!-- Card -->
           <div class="card card-bordered">
             <div class="card-body">
-              <div class="mb-5">
-                <h3>Thông tin liên hệ</h3>
-              </div>
+              <!--Media-->
+              <div class="d-sm-flex mb-3 border-bottom">
+                <div class="flex-shrink-0 mb-2 mb-sm-0">
+                  <a href="#">
+                    <img class="avatar avatar-lg mb-3" src="/images/company/cty-sinte.png"
+                      alt="Image Description">
+                  </a>
+                </div>
 
+                <div class="flex-grow-1 ms-sm-4">
+
+
+                  <ul class="list-inline list-separator d-flex align-items-center mb-2">
+                    <li class="list-inline-item">
+                      <a class="link" href="../demo-jobs/employer.html">CÔNG TY TNHH CÔNG NGHIỆP SINTE NAM ĐỊNH</a>
+                    </li>
+
+                  </ul>
+
+
+                </div>
+              </div>
+              <!--End media-->
+              <h5>Thông tin liên hệ</h5>
               <p class="fw-bold">Trần Thị Khánh Ly</p>
               <p>Lô số 59-69, Cụm công nghiệp An Xá, xã Lộc An, TP. Nam Định, tỉnh Nam Định</p>
               <p>Điện thoại: <br />0932261979</p>
               <p>Email: <br />lyttk@lengerseafoodsvietnam.com</p>
 
-              <img class="card-img-bottom" src="/assets/svg/illustrations/oc-chatting.svg" alt="Image Description">
             </div>
           </div>
           <!-- End Card -->
