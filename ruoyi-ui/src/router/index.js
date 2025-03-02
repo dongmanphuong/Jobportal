@@ -51,6 +51,17 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/san-viec-lam',
+    component: DefaultLayout,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/JobBroker.vue'),
+      }
+    ],
+    hidden: true
+  },
+  {
     path: '/gioi-thieu',
     component: DefaultLayout,
     children: [
@@ -68,6 +79,10 @@ export const constantRoutes = [
       {
         path: '',
         component: () => import('@/views/News.vue'),
+      },
+      {
+        path: 'chi-tiet',
+        component: () => import('@/views/NewsDetail.vue'),
       }
     ],
     hidden: true

@@ -27,7 +27,7 @@
         <!-- Nội dung bài viết -->
         <div class="card-body">
           <h3 class="card-title">
-            <a class="text-dark" :href="article.link">{{ article.title }}</a>
+            <a class="text-dark" :href="article.newsLink">{{ article.title }}</a>
           </h3>
 
           <p class="card-text">{{ article.description }}</p>

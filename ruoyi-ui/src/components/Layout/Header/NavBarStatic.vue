@@ -1,6 +1,8 @@
 <template>
 
 <div class="container-fluid border-bottom">
+
+
     <nav class="js-mega-menu navbar-nav-wrap">
       <!-- Default Logo -->
       <a class="navbar-brand" href="/home" aria-label="Front">
@@ -9,7 +11,9 @@
       <!-- End Default Logo -->
 
       <!-- Secondary Content -->
-      <div class="navbar-nav-wrap-secondary-content">
+
+
+      <div class="navbar-nav-wrap-secondary-content d-none d-sm-block">
         <!-- Search -->
         <div class="dropdown dropdown-course-search d-lg-none d-inline-block">
           <a class="btn btn-ghost-secondary btn-sm btn-icon" href="#" id="navbarCourseSearchDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,62 +36,75 @@
           </div>
         </div>
         <!-- End Search -->
+        <div class="d-flex gap-2">
+          <!-- Hiển thị khi chưa đăng nhập -->
+          <template v-if="!isLoggedIn">
+            <a class="btn btn-outline-primary px-3" href="/login?redirect=%2Fhome">Đăng nhập</a>
+            <a class="btn btn-primary px-3" href="/register">Đăng ký</a>
+            <a class="btn btn-dark px-3" href="#">Đăng tuyển & tìm hồ sơ</a>
+          </template>
 
-        <!-- Account -->
-        <div class="dropdown">
-          <a href="#" id="navbarShoppingCartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation>
-            <img class="avatar avatar-xs avatar-circle" src="/assets/img/160x160/img9.jpg" alt="Image Description">
-          </a>
+          <!-- Hiển thị khi đã đăng nhập -->
+          <template v-else>
+            <!-- Account -->
+              <div class="dropdown">
+                <a href="#" id="navbarShoppingCartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation>
+                  <img class="avatar avatar-xs avatar-circle" src="/assets/img/160x160/img9.jpg" alt="Image Description">
+                </a>
 
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarShoppingCartDropdown" style="min-width: 16rem;">
-            <a class="d-flex align-items-center p-2" href="#">
-              <div class="flex-shrink-0">
-                <img class="avatar" src="/assets/img/160x160/img9.jpg" alt="Image Description">
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarShoppingCartDropdown" style="min-width: 16rem;">
+                  <a class="d-flex align-items-center p-2" href="#">
+                    <div class="flex-shrink-0">
+                      <img class="avatar" src="/assets/img/160x160/img9.jpg" alt="Image Description">
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <span class="d-block fw-semibold">Lida Reidy <span class="badge bg-primary ms-1">Pro</span></span>
+                      <span class="d-block text-muted small">lidareidy@gmail.com</span>
+                    </div>
+                  </a>
+
+                  <div class="dropdown-divider my-3"></div>
+
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-chat-left-dots"></i>
+                    </span> Messages
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-wallet2"></i>
+                    </span> Purchase history
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-person"></i>
+                    </span> Account
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-credit-card"></i>
+                    </span> Payment methods
+                  </a>
+
+                  <div class="dropdown-divider"></div>
+
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-question-circle"></i>
+                    </span> Help
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <span class="dropdown-item-icon">
+                      <i class="bi-box-arrow-right"></i>
+                    </span> Log out
+                  </a>
+                </div>
               </div>
-              <div class="flex-grow-1 ms-3">
-                <span class="d-block fw-semibold">Lida Reidy <span class="badge bg-primary ms-1">Pro</span></span>
-                <span class="d-block text-muted small">lidareidy@gmail.com</span>
-              </div>
-            </a>
-
-            <div class="dropdown-divider my-3"></div>
-
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-chat-left-dots"></i>
-              </span> Messages
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-wallet2"></i>
-              </span> Purchase history
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-person"></i>
-              </span> Account
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-credit-card"></i>
-              </span> Payment methods
-            </a>
-
-            <div class="dropdown-divider"></div>
-
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-question-circle"></i>
-              </span> Help
-            </a>
-            <a class="dropdown-item" href="#">
-              <span class="dropdown-item-icon">
-                <i class="bi-box-arrow-right"></i>
-              </span> Log out
-            </a>
-          </div>
+              <!-- End Account -->
+          </template>
         </div>
-        <!-- End Account -->
+
+
       </div>
       <!-- End Secondary Content -->
 
@@ -251,6 +268,28 @@ import '@/assets/front4/vendor/hs-mega-menu/dist/hs-mega-menu.min.css';
 import HSMegaMenu from "@/assets/front4/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"; // Import file JS
 
 export default {
+  data() {
+    return {
+      isLoggedIn: false, // Giả lập trạng thái đăng nhập
+    };
+  },
+  methods: {
+    login() {
+      // Thực hiện hành động đăng nhập
+      this.isLoggedIn = true;
+      console.log("User logged in");
+    },
+    register() {
+      console.log("Redirect to register page");
+    },
+    manage() {
+      console.log("Redirect to manage jobs");
+    },
+    logout() {
+      this.isLoggedIn = false;
+      console.log("User logged out");
+    }
+  },
   mounted() {
     this.$nextTick(() => {
       new HSMegaMenu(".js-mega-menu");

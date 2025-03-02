@@ -5,7 +5,7 @@
     </div>
     <div class="card-body">
       <h3 class="card-title">
-        <a :class="article.featured ? 'text-white' : 'text-dark'" href="#">
+        <a :class="article.featured ? 'text-white' : 'text-dark'" :href="article.newsLink">
           {{ article.title }}
         </a>
       </h3>
