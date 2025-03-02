@@ -157,7 +157,7 @@
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
 import { listDictType, listProvince, listDistrict, listWard, addEmployer, getEmployer, updateEmployer } from "@/api/recruitment/employer";
-import Cookies from "js-cookie";
+import { getUserProfile } from "@/api/system/user";
 
 export default {
   components: { vSelect },
@@ -211,7 +211,8 @@ export default {
       isUpdate: false,
 
       employerId: null,
-
+      
+      user: {},
       // Lưu lỗi
       errors: {}
 
@@ -342,8 +343,12 @@ export default {
     fetchEmployerData() {
       // Call an API function that returns the employer information for the current username.
       this.loading = true;
-      const username = Cookies.get("username");
-      getEmployer({ userName: username })
+      getUserProfile()
+        .then(response => {
+          this.user = response.data;
+          const username = this.user.userName; // Sử dụng this.user thay vì user
+          return getEmployer({ userName: username });
+        })
         .then(dataArray => {  // 'dataArray' is the returned data array directly
           console.log("Employer data:", dataArray);
           if (dataArray && dataArray.length > 0) {
