@@ -1,6 +1,7 @@
 import router from './router'
 import store from './store'
 import { Message } from 'element-ui'
+
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { getToken } from '@/utils/auth'
@@ -8,7 +9,9 @@ import { isRelogin } from '@/utils/request'
 
 NProgress.configure({ showSpinner: false })
 
-const whiteList = ['/tin-tuc','/gioi-thieu','/viec-lam','/home','/login','/register']
+const whiteList = ['top-cong-ty','/tin-tuc','/gioi-thieu','/viec-lam','/home','/login','/register']
+
+
 
 router.beforeEach((to, from, next) => {
   NProgress.start()

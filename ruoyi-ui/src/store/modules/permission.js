@@ -29,10 +29,10 @@ const permission = {
     },
   },
   actions: {
-    // 生成路由
+    
     GenerateRoutes({ commit }) {
       return new Promise(resolve => {
-        // 向后端请求路由数据
+        
         getRouters().then(res => {
           // console.log('getRouters', res);
           const sdata = JSON.parse(JSON.stringify(res.data))
@@ -106,7 +106,7 @@ function filterChildren(childrenMap, lastRouter = false) {
   return children
 }
 
-// 动态路由遍历，验证是否具备权限
+
 export function filterDynamicRoutes(routes) {
   const res = []
   routes.forEach(route => {
@@ -128,7 +128,8 @@ export const loadView = (view) => {
     return (resolve) => require([`@/views/${view}`], resolve)
   } else {
     // 使用 import 实现生产环境的路由懒加载
-    return () => import(`@/views/${view}`)
+    //return () => import(`@/views/${view}`)
+    return (resolve) => require([`@/views/${view}`], resolve)
   }
 }
 
