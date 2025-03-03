@@ -134,7 +134,7 @@ export const constantRoutes = [
   }
 ]
 
-// 动态路由，基于用户权限动态去加载
+// Dynamic routes – cấu trúc đã được sửa lỗi duplicate key "component"
 export const dynamicRoutes = [
   {
     path: '/system/user-auth',
@@ -192,104 +192,193 @@ export const dynamicRoutes = [
       }
     ]
   },
-
   {
     path: '/recruitment/employer',
     component: Layout,
-    component: () => import('@/views/recruitment/EmployerForm'),
-    hidden: true
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/recruitment/EmployerForm')
+      }
+    ]
   },
   {
     path: '/recruitment/postjob',
     component: Layout,
-    component: () => import('@/views/recruitment/PostJob'),
-    hidden: true
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/recruitment/PostJob')
+      }
+    ]
   },
   {
     path: '/recruitment/joblisting',
     component: Layout,
-    component: () => import('@/views/recruitment/JobListing'),
-    hidden: true
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/recruitment/JobListing')
+      }
+    ]
   },
   {
     path: '/candidateprofile/list',
     component: Layout,
-    component: () => import('@/views/candidateprofile/CandidateList'),
-    hidden: true
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/candidateprofile/CandidateList')
+      }
+    ]
   },
   {
     path: '/candidateprofile/ApplicantList',
     component: Layout,
-    component: () => import('@/views/candidateprofile/ApplicantList'),
-    hidden: true
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/candidateprofile/ApplicantList')
+      }
+    ]
   },
   {
     path: '/candidateprofile/SavedCandidates',
     component: Layout,
-    component: () => import('@/views/candidateprofile/SavedCandidates'),
-    hidden: true
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/candidateprofile/SavedCandidates')
+      }
+    ]
   },
   {
     path: '/candidateprofile/InvitedCandidates',
-    component: () => import('@/views/candidateprofile/InvitedCandidates'),
-    hidden: true
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/candidateprofile/InvitedCandidates')
+      }
+    ]
   },
   {
     path: '/candidateprofile/ViewedCandidates',
     component: Layout,
-    component: () => import('@/views/candidateprofile/ViewedCandidates'),
-    hidden: true
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/candidateprofile/ViewedCandidates')
+      }
+    ]
   },
   {
     path: '/candidateprofile/BlacklistedCandidates',
-    component: () => import('@/views/candidateprofile/BlacklistedCandidates'),
-    hidden: true
-  },
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/candidateprofile/BlacklistedCandidates')
+      }
+    ]
+  },  
   {
     path: '/candidateprofile/TransactionList',
-    component: () => import('@/views/candidateprofile/TransactionList'),
-    hidden: true
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/candidateprofile/TransactionList')
+      }
+    ]
   },
   {
     path: '/candidateprofile/EmployerDashboard',
-    component: () => import('@/views/candidateprofile/EmployerDashboard'),
-    hidden: true
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/candidateprofile/EmployerDashboard')
+      }
+    ]
   },
-
   {
     path: '/jobseeker/Dashboard',
-    component: () => import('@/views/jobseeker/Dashboard'),
-    hidden: true
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/jobseeker/Dashboard')
+      }
+    ]
   },
   {
     path: '/jobseeker/ResumeManagement',
-    component: () => import('@/views/jobseeker/ResumeManagement'),
-    hidden: true
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/jobseeker/ResumeManagement')
+      }
+    ]
   },
-
   {
     path: '/jobseeker/WorkPreferences',
-    component: () => import('@/views/jobseeker/WorkPreferences'),
-    hidden: true
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/jobseeker/WorkPreferences')
+      }
+    ]
   },
-
   {
     path: '/AppliedJobs/Dashboard',
-    component: () => import('@/views/AppliedJobs/Dashboard'),
-    hidden: true
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/AppliedJobs/Dashboard')
+      }
+    ]
   },
   {
     path: '/AppliedJobs/AppliedJobsManagement',
-    component: () => import('@/views/AppliedJobs/AppliedJobsManagement'),
-    hidden: true
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/AppliedJobs/AppliedJobsManagement')
+      }
+    ]
   },
-
   {
     path: '/AppliedJobs/AppliedJobs',
-    component: () => import('@/views/AppliedJobs/AppliedJobs'),
-    hidden: true
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/AppliedJobs/AppliedJobs')
+      }
+    ]
   },
-
   {
     path: '/tool/gen-edit',
     component: Layout,
@@ -308,12 +397,12 @@ export const dynamicRoutes = [
 
 let routerPush = Router.prototype.push;
 let routerReplace = Router.prototype.replace;
-// push
+// Xử lý lỗi khi gọi router.push
 Router.prototype.push = function push(location) {
   return routerPush.call(this, location).catch(err => err)
 }
-// replace
-Router.prototype.replace = function push(location) {
+// Xử lý lỗi khi gọi router.replace
+Router.prototype.replace = function replace(location) {
   return routerReplace.call(this, location).catch(err => err)
 }
 

@@ -3,6 +3,8 @@ import Vue from 'vue'
 import Cookies from 'js-cookie'
 
 import Element from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/vi'
+
 import vSelect from 'vue-select'
 
 import './assets/styles/element-variables.scss'
@@ -52,7 +54,7 @@ import VForm from 'vform-builds'  //引入VForm库
 import 'element-ui/lib/theme-chalk/index.css'  //引入element-ui样式
 import 'vform-builds/dist/VFormDesigner.css'  //引入VForm样式
 
-Vue.use(ElementUI)  //全局注册element-ui
+Vue.use(ElementUI,{locale})  //全局注册element-ui
 Vue.use(VForm)  //全局注册VForm(同时注册了v-form-designer和v-form-render组件)
 
 // 全局方法挂载
