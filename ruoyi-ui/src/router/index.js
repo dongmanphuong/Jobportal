@@ -10,6 +10,23 @@ import HomeLayout from '../layout/home.vue'
 
 export const constantRoutes = [
   {
+    path: '/',
+    redirect: '/home'
+  },
+  {
+    path: '/admin',
+    component: Layout,
+    redirect: '/admin/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/index'),
+        name: 'Index',
+        meta: { title: 'Trang chủ', icon: 'dashboard', affix: true }
+      }
+    ]
+  },
+  {
     path: '/redirect',
     component: Layout,
     hidden: true,
@@ -102,19 +119,6 @@ export const constantRoutes = [
       {
         path: 'chi-tiet',
         component: () => import('@/views/JobDetail.vue'),
-      }
-    ]
-  },
-  {
-    path: '',
-    component: Layout,
-    redirect: 'index',
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/index'),
-        name: 'Index',
-        meta: { title: 'Trang chủ', icon: 'dashboard', affix: true }
       }
     ]
   },
