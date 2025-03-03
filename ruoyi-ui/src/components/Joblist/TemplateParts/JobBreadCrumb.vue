@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="bg-light">
     <!-- Breadcrumb -->
-<div class="container">
+<div class="container py-3">
   <div class="row align-items-lg-center">
     <div class="col-lg mb-2 mb-lg-0">
       <!-- Breadcrumb -->
@@ -13,13 +13,6 @@
         </ol>
       </nav>
       <!-- End Breadcrumb -->
-    </div>
-    <!-- End Col -->
-
-    <div class="col-lg-auto">
-      <a class="btn btn-sm btn-ghost-secondary" href="javascript:;">
-        <i class="bi-share-fill me-2"></i> Share
-      </a>
     </div>
     <!-- End Col -->
   </div>

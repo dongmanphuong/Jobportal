@@ -1,288 +1,260 @@
 <template>
   <div>
-      <JobBreadCrumb />
-    <!-- Content -->
-    <div class="container content-space-2">
-      <div class="row">
-        <div class="col-lg-8">
-
-          <div class="mx-lg-auto">
-            <div class="page-header">
-              <!-- Media -->
-              <div class="d-sm-flex mb-3">
-                <div class="flex-shrink-0 mb-2 mb-sm-0">
-                  <a href="../demo-jobs/employer.html">
-                    <img class="avatar avatar-lg mb-3" src="/assets/svg/brands/capsule-icon.svg"
-                      alt="Image Description">
-                  </a>
-                </div>
-
-                <div class="flex-grow-1 ms-sm-4">
-                  <div class="row">
-                    <div class="col">
-                      <h1 class="page-header-title h2">UX/UI Designer</h1>
-                    </div>
-                    <!-- End Col -->
-
-
-                  </div>
-                  <!-- End Row -->
-
-                  <ul class="list-inline list-separator d-flex align-items-center mb-2">
-                    <li class="list-inline-item">
-                      <a class="link" href="../demo-jobs/employer.html">Capsule</a>
-                    </li>
-
-                    <li class="list-inline-item">
-                      <!-- Rating -->
-                      <a class="d-flex gap-1" href="../demo-jobs/employer.html">
-                        <img src="/assets/svg/illustrations/star.svg" alt="Review rating" width="14">
-                        <img src="/assets/svg/illustrations/star.svg" alt="Review rating" width="14">
-                        <img src="/assets/svg/illustrations/star.svg" alt="Review rating" width="14">
-                        <img src="/assets/svg/illustrations/star.svg" alt="Review rating" width="14">
-                        <img src="/assets/svg/illustrations/star-half.svg" alt="Review rating" width="14">
-                        <span class="ms-1">2,391 reviews</span>
-                      </a>
-                      <!-- End Rating -->
-                    </li>
-                  </ul>
-
-                  <ul class="list-inline list-separator small text-body mb-2">
-                    <li class="list-inline-item">Posted 7 hours ago</li>
-                    <li class="list-inline-item">Oxford, England, United Kingdom</li>
-                    <li class="list-inline-item">Full time</li>
-                  </ul>
-                </div>
-              </div>
-              <!-- End Media -->
-
-              <!-- Footer -->
-    <div class="d-flex justify-content-end d-print-none gap-3">
-      <a class="btn btn-primary" href="javascript:;" onclick="window.print(); return false;">
-        <i class="bi-printer me-1"></i> Ứng tuyển
-      </a>
-      <a class="btn btn-white" href="#">
-        <i class="bi-file-earmark-arrow-down me-1"></i> Lưu tin
-      </a>
-
-
-    </div>
-            </div>
-
-
+    <!-- Hero Section with Overlay -->
+    <div class="hero-section">
+      <div class="container content-space-2 content-space-lg-3">
+        <div class="w-md-75 w-lg-65">
+          <div class="mb-4">
+            <h1 class="h2 text-white">Trung tâm dịch vụ việc làm tỉnh Bắc Kạn</h1>
+            <p class="text-white">Tổ 8A, phường Phừng Chí Kiên, thành phố Bắc Kạn, tỉnh Bắc Kạn.</p>
           </div>
-
-          <div class="my-8">
-            <h3>Chi tiết tin tuyển dụng</h3>
-
-            <p>A Frontend developer, and UI/UX Designer offering over 8 years of success in various leadership roles in
-              the areas of Web design and development and customer support. I love coding and problem solving. Love
-              working on both server and client side code. I like to get to know my clients closely to facilitate better
-              communication.</p>
-
-            <ul class="mb-4">
-              <li>Authorized to work in the UK for any employer</li>
-              <li>Willing to relocate to anywhere</li>
-            </ul>
-
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="mb-4">
-                  <h5>Desired job title</h5>
-                  <p>UI Designer/Developer</p>
-                </div>
-
-                <div class="mb-4">
-                  <h5>Desired job types</h5>
-                  <p>Full time</p>
-                </div>
-              </div>
-              <!-- End Col -->
-
-              <div class="col-sm-6">
-                <div class="mb-4">
-                  <h5>Desired work schedule</h5>
-                  <p>Monday to Friday</p>
-                </div>
-
-                <div class="mb-4">
-                  <h5>Desired salary</h5>
-                  <p>$90k per year</p>
-                </div>
-              </div>
-              <!-- End Col -->
-            </div>
-            <!-- End Row -->
-          </div>
-
-          <div class="mb-8">
-            <div class="mb-4">
-              <h3>Work experience</h3>
-            </div>
-
-            <!-- Step -->
-            <ul class="step step-icon-sm">
-              <li class="step-item">
-                <div class="step-content-wrapper">
-                  <div class="step-avatar step-avatar-sm">
-                    <img class="step-avatar-img" src="/assets/svg/brands/dropbox-icon.svg" alt="Image Description">
-                  </div>
-                  <div class="step-content">
-                    <h5 class="step-title">Head of IT Department</h5>
-                    <span class="d-block text-dark">Dropbox - London</span>
-                    <small class="d-block mb-4">December 2016 to Present</small>
-                    <p class="text-body mb-0">The company has high expectations and using OKRs there is a mutual
-                      understanding of expectations and performance.</p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="step-item">
-                <div class="step-content-wrapper">
-                  <div class="step-avatar step-avatar-sm">
-                    <img class="step-avatar-img" src="/assets/svg/brands/mailchimp-icon.svg" alt="Image Description">
-                  </div>
-                  <div class="step-content">
-                    <h5 class="step-title">Senior Software Engineer</h5>
-                    <span class="d-block text-dark">Mailchimp - London</span>
-                    <small class="d-block mb-4">November 2014 to December 2016</small>
-                    <p class="text-body mb-0">This is an excellent company and they reward their employees. It's
-                      becoming a big company but it's still private, so the culture is as good as it gets at 1,000+
-                      employees if you ask me. Managers are still adapting to the growth I think, but everyone has to.
-                      Great place to work.</p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="step-item">
-                <div class="step-content-wrapper">
-                  <div class="step-avatar step-avatar-sm">
-                    <img class="step-avatar-img" src="/assets/svg/brands/google-icon.svg" alt="Image Description">
-                  </div>
-                  <div class="step-content">
-                    <h5 class="step-title">Junior Software Engineer</h5>
-                    <span class="d-block text-dark">Google - London</span>
-                    <small class="d-block mb-4">January 2014 to November 2014</small>
-                    <p class="text-body mb-0">Work in Google is one of the beautiful experience I can do in my entire
-                      life. There are a lot of interesting thing to learn and manager respect your time and your
-                      personality.</p>
-                  </div>
-                </div>
-              </li>
-
-              <li class="step-item">
-                <div class="step-content-wrapper">
-                  <span class="step-icon step-icon-soft-dark">
-                    <i class="bi-briefcase-fill"></i>
-                  </span>
-                  <div class="step-content">
-                    <h5 class="step-title">Internship</h5>
-                    <span class="d-block text-dark">Htmlstream under Pixeel Ltd. - London</span>
-                    <small class="d-block mb-4">December 2013 to January 2014</small>
-                    <p class="text-body mb-0">My first steps...</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <!-- End Step -->
-          </div>
-
-          <div class="mb-8">
-            <div class="mb-3">
-              <h3>Education</h3>
-            </div>
-
-            <!-- Step -->
-            <ul class="step step-icon-sm">
-              <li class="step-item">
-                <div class="step-content-wrapper">
-                  <div class="step-avatar step-avatar-sm">
-                    <img class="step-avatar-img" src="/assets/svg/brands/the-university-of-manchester.svg"
-                      alt="Image Description">
-                  </div>
-                  <div class="step-content">
-                    <h5 class="step-title">Master's degree in Computer Software Engineering</h5>
-                    <span class="d-block text-dark">The University of Manchester - Manchester</span>
-                    <small class="d-block">October 2012 to December 2013</small>
-                  </div>
-                </div>
-              </li>
-
-              <li class="step-item">
-                <div class="step-content-wrapper">
-                  <span class="step-icon step-icon-soft-dark">
-                    <i class="bi-award"></i>
-                  </span>
-                  <div class="step-content">
-                    <h5 class="step-title">Bachelor's degree in Computer Software Engineering</h5>
-                    <span class="d-block text-dark">University of Oxford - Oxford</span>
-                    <small class="d-block">October 2009 to May 2012</small>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <!-- End Step -->
-          </div>
-
-          <div class="mb-8">
-            <div class="mb-3">
-              <h3>Skills</h3>
-            </div>
-
-            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">Bootstrap (8 years)</span>
-            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">HTML5 (8 years)</span>
-            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">CSS3 (8 years)</span>
-            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">SASS (7 years)</span>
-            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">User Interface (UI) (8 years)</span>
-            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">Adobe Photoshop (3 years)</span>
-            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">Adobe Illustrator (5 years)</span>
-            <span class="badge bg-soft-dark text-dark py-2 px-3 m-1">Figma (1 year)</span>
-          </div>
-
-          <div class="mb-8">
-            <div class="mb-3">
-              <h3>Languages</h3>
-            </div>
-
-            <ul class="list-unstyled list-py-1">
-              <li><span class="text-dark">English <span class="text-body small ms-1">— Native</span></span></li>
-              <li><span class="text-dark">Deutsch <span class="text-body small ms-1">— Fluent</span></span></li>
-              <li><span class="text-dark">French <span class="text-body small ms-1">— Beginner</span></span></li>
-            </ul>
-          </div>
-
-          <div class="mb-3">
-            <h3>Links</h3>
-          </div>
-
-          <ul class="list-unstyled list-py-1">
-            <li><a href="#">www.github.com/maria-w</a></li>
-            <li><a href="#">www.twitter.com/maria-w</a></li>
-          </ul>
-
-          <!-- Sticky Block End Point -->
-          <div id="stickyBlockEndPointEg4"></div>
         </div>
-        <!-- End Col -->
-
-        <div class="col-lg-4">
-          <StickyBlock />
-        </div>
-        <!-- End Col -->
       </div>
-      <!-- End Row -->
     </div>
+    <!-- End Hero -->
+
     <!-- Content -->
+<div id="about-section" class="container content-space-t-1">
+  <h3>Giới thiệu về trung tâm</h3>
+
+  <div class="row mb-5">
+    <div class="col-md-3 order-md-2 mb-3 mb-md-0">
+      <div class="ps-md-4">
+        <!-- List -->
+        <ul class="list-unstyled list-py-2">
+          <li>
+            <h5>Thành lập</h5>
+            <p class="small mb-0">2009</p>
+          </li>
+          <li>
+            <h5>Việc làm đã giới thiệu</h5>
+            <p class="small mb-0">1 triệu +</p>
+          </li>
+          <li>
+            <h5>Ngành nghề tham gia</h5>
+            <p class="small mb-0">200 +</p>
+          </li>
+          <li>
+            <h5>Theo dõi chúng tôi trên</h5>
+
+            <!-- Socials -->
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a class="btn btn-soft-secondary btn-xs btn-icon rounded-circle" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Capsule on Facebook">
+                  <i class="bi-facebook"></i>
+                </a>
+              </li>
+
+              <li class="list-inline-item">
+                <a class="btn btn-soft-secondary btn-xs btn-icon rounded-circle" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Capsule on Twitter">
+                  <i class="bi-twitter"></i>
+                </a>
+              </li>
+
+              <li class="list-inline-item">
+                <a class="btn btn-soft-secondary btn-xs btn-icon rounded-circle" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Capsule on Github">
+                  <i class="bi-github"></i>
+                </a>
+              </li>
+            </ul>
+            <!-- End Socials -->
+          </li>
+        </ul>
+        <!-- End List -->
+      </div>
+    </div>
+    <!-- End Col -->
+
+    <div class="col-md-9">
+      <div class="mb-5">
+        <p>Capsule was launched in 2009 following the founders' frustration with existing CRM services that were either overly simplistic or far too complex for most businesses. We believe the value of a modern CRM lies in the ability to help businesses stay organized, know more about their customers, build strong relationships and to make the most of sales opportunities, all while minimizing user input. We built Capsule to deliver on these values and today Capsule is used by thousands of businesses of all sizes all over the world.</p>
+
+        <div class="collapse" id="employerOverviewDescriptionCollapse">
+          <p>We're based in Manchester, United Kingdom, a city with a creative heart that was founded on science and industry and the birthplace of the modern computer.</p>
+        </div>
+
+        <a class="link link-collapse" data-bs-toggle="collapse" href="#employerOverviewDescriptionCollapse" role="button" aria-expanded="false" aria-controls="employerOverviewDescriptionCollapse">
+          <span class="link-collapse-default">Read more</span>
+          <span class="link-collapse-active">Read less</span>
+        </a>
+      </div>
+
+      <div id="fancyboxGallery">
+        <div class="row gx-3">
+          <div class="col-4 col-sm px-2 mb-3 mb-sm-0">
+            <!-- Media Viewer -->
+            <a class="media-viewer" href="/assets/img/900x900/img1.jpg" data-fslightbox="jobOverviewGallery">
+              <img class="img-fluid rounded-2" src="/assets/img/900x900/img1.jpg" alt="Image Description">
+
+              <span class="media-viewer-container">
+                <span class="media-viewer-icon">
+                  <i class="bi-plus media-viewer-icon-inner"></i>
+                </span>
+              </span>
+            </a>
+            <!-- End Media Viewer -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-4 col-sm px-2 mb-3 mb-sm-0">
+            <!-- Media Viewer -->
+            <a class="media-viewer" href="/assets/img/900x900/img8.jpg" data-fslightbox="jobOverviewGallery">
+              <img class="img-fluid rounded-2" src="/assets/img/900x900/img8.jpg" alt="Image Description">
+
+              <span class="media-viewer-container">
+                <span class="media-viewer-icon">
+                  <i class="bi-plus media-viewer-icon-inner"></i>
+                </span>
+              </span>
+            </a>
+            <!-- End Media Viewer -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-4 col-sm px-2 mb-3 mb-sm-0">
+            <!-- Media Viewer -->
+            <a class="media-viewer" href="/assets/img/900x900/img7.jpg" data-fslightbox="jobOverviewGallery">
+              <img class="img-fluid rounded-2" src="/assets/img/900x900/img7.jpg" alt="Image Description">
+
+              <span class="media-viewer-container">
+                <span class="media-viewer-icon">
+                  <i class="bi-plus media-viewer-icon-inner"></i>
+                </span>
+              </span>
+            </a>
+            <!-- End Media Viewer -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-4 col-sm px-2 mb-3 mb-sm-0">
+            <!-- Media Viewer -->
+            <a class="media-viewer" href="/assets/img/900x900/img23.jpg" data-fslightbox="jobOverviewGallery">
+              <img class="img-fluid rounded-2" src="/assets/img/900x900/img23.jpg" alt="Image Description">
+
+              <span class="media-viewer-container">
+                <span class="media-viewer-icon">
+                  <i class="bi-plus media-viewer-icon-inner"></i>
+                </span>
+              </span>
+            </a>
+            <!-- End Media Viewer -->
+          </div>
+          <!-- End Col -->
+
+          <div class="col-4 col-sm px-2 mb-3 mb-sm-0">
+            <!-- Media Viewer -->
+            <a class="media-viewer" href="/assets/img/900x900/img9.jpg" data-fslightbox="jobOverviewGallery">
+              <img class="img-fluid rounded-2" src="/assets/img/900x900/img9.jpg" alt="Image Description">
+
+              <span class="media-viewer-container">
+                <span class="media-viewer-icon media-viewer-icon-active">
+                  <span class="media-viewer-icon-inner">+2</span>
+                </span>
+              </span>
+            </a>
+            <!-- End Media Viewer -->
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+
+        <a class="d-none" href="/assets/img/900x900/img2.jpg" data-fslightbox="jobOverviewGallery"></a>
+        <a class="d-none" href="/assets/img/900x900/img19.jpg" data-fslightbox="jobOverviewGallery"></a>
+      </div>
+
+      <!-- Content -->
+<div class="mt-5">
+  <!-- Card -->
+  <div class="card card-lg">
+    <!-- Header -->
+    <div class="card-header bg-dark py-sm-5">
+      <h1 class="card-title h2 text-white">Quyết định</h1>
+      <p class="card-text text-white">Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Trung tâm Dịch vụ việc làm thuộc Sở Lao động-Thương binh và Xã hội tỉnh Bắc Kạn</p>
+    </div>
+    <!-- End Header -->
+
+    <!-- Card Body -->
+    <div class="card-body">
+      <div class="mb-7">
+        <h4>Introduction</h4>
+
+        <p>Thanks for using our products and services ("Services"). The Services are provided by Pixeel Ltd. ("Space"), located at 153 Williamson Plaza, Maggieberg, MT 09514, England, United Kingdom.</p>
+
+        <p>By using our Services, you are agreeing to these terms. Please read them carefully.</p>
+
+        <p>Our Services are very diverse, so sometimes additional terms or product requirements (including age requirements) may apply. Additional terms will be available with the relevant Services, and those additional terms become part of your agreement with us if you use those Services.</p>
+      </div>
+
+      <div class="mb-7">
+        <h4>Using our services</h4>
+
+        <p>You must follow any policies made available to you within the Services.</p>
+
+        <p>Don't misuse our Services. For example, don't interfere with our Services or try to access them using a method other than the interface and the instructions that we provide. You may use our Services only as permitted by law, including applicable export and re-export control laws and regulations. We may suspend or stop providing our Services to you if you do not comply with our terms or policies or if we are investigating suspected misconduct.</p>
+
+        <p>Using our Services does not give you ownership of any intellectual property rights in our Services or the content you access. You may not use content from our Services unless you obtain permission from its owner or are otherwise permitted by law. These terms do not grant you the right to use any branding or logos used in our Services. Don't remove, obscure, or alter any legal notices displayed in or along with our Services.</p>
+      </div>
+
+      <div class="mb-7">
+        <h4>Privacy and copyright protection</h4>
+
+        <p>Space's privacy policies explain how we treat your personal data and protect your privacy when you use our Services. By using our Services, you agree that Space can use such data in accordance with our privacy policies.</p>
+
+        <p>We respond to notices of alleged copyright infringement and terminate accounts of repeat infringers according to the process set out in the U.S. Digital Millennium Copyright Act.</p>
+
+        <p>We provide information to help copyright holders manage their intellectual property online. If you think somebody is violating your copyrights and want to notify us, you can find information about submitting notices and Space's policy about responding to notices in our Help Center.</p>
+      </div>
+
+      <div class="mb-7">
+        <h4>Your content in our services</h4>
+
+        <p>Some of our Services allow you to upload, submit, store, send or receive content. You retain ownership of any intellectual property rights that you hold in that content. In short, what belongs to you stays yours.</p>
+
+        <p>When you upload, submit, store, send or receive content to or through our Services, you give Space (and those we work with) a worldwide license to use, host, store, reproduce, modify, create derivative works (such as those resulting from translations, adaptations or other changes we make so that your content works better with our Services), communicate, publish, publicly perform, publicly display and distribute such content. The rights you grant in this license are for the limited purpose of operating, promoting, and improving our Services, and to develop new ones. This license continues even if you stop using our Services (for example, for a business listing you have added to Space Maps). Some Services may offer you ways to access and remove content that has been provided to that Service. Also, in some of our Services, there are terms or settings that narrow the scope of our use of the content submitted in those Services. Make sure you have the necessary rights to grant us this license for any content that you submit to our Services.</p>
+      </div>
+    </div>
+    <!-- End Card Body -->
+  </div>
+  <!-- End Card -->
+</div>
+<!-- End Content -->
+    </div>
+    <!-- End Col -->
+  </div>
+  <!-- End Row -->
+</div>
+<!-- Content -->
+
+
   </div>
 </template>
-<script>
-import JobBreadCrumb from '../components/Joblist/TemplateParts/JobBreadCrumb.vue';
-import StickyBlock from '../components/Joblist/TemplateParts/StickyBlock.vue';
 
-export default {
-  components: {
-    JobBreadCrumb,
-    StickyBlock
-  }
+<style scoped>
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background-image: url(/images/backan-banner-1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  color: white;
 }
-</script>
+
+/* Overlay effect */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Màu đen với opacity 50% */
+}
+
+/* Đảm bảo nội dung hiển thị trên overlay */
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+</style>

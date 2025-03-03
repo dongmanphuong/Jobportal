@@ -27,7 +27,7 @@
                       <a class="text-dark" :href="topcv.seekerLink">{{ topcv.seekerTitle }}</a>
                     </h6>
                     <p class="fw-light">
-                      Ngành nghề: <a class="text-dark" href="#">{{ topcv.seekerTitle }}</a>
+                      Ngành nghề: <a class="text-dark" href="#">{{ topcv.seekerIndustry }}</a>
                     </p>
                     <span class="badge bg-soft-info text-info me-2">
                       <span class="legend-indicator bg-info"></span>{{ topcv.postedTime }}
@@ -60,44 +60,44 @@ export default {
     return {
       topcvs: [
         {
-          seekerName: "Công Ty TNHH Đầu Tư Và Thương Mại An Lành",
+          seekerIndustry: "Xây dựng",
           seekerImg: "/images/cv/u1.jpg",
-          seekerTitle: "Cơ điện",
+          seekerTitle: "Công nhân xây",
           seekerLink: "#",
           postedTime: "7 giờ trước",
         },
         {
-          seekerName: "Công Ty TNHH Đầu Tư Và Thương Mại An Lành",
+          seekerIndustry: "Vận chuyển",
           seekerImg: "/images/cv/u2.jpg",
-          seekerTitle: "Cơ điện",
+          seekerTitle: "Lái xe tải",
           seekerLink: "#",
           postedTime: "7 giờ trước",
         },
         {
-          seekerName: "Công Ty TNHH Đầu Tư Và Thương Mại An Lành",
+          seekerIndustry: "IT phần mềm",
           seekerImg: "/images/cv/u3.jpg",
-          seekerTitle: "Cơ điện",
+          seekerTitle: "Code backend C#, PHP, Java",
           seekerLink: "#",
           postedTime: "7 giờ trước",
         },
         {
-          seekerName: "Công Ty TNHH Đầu Tư Và Thương Mại An Lành",
+          seekerIndustry: "IT phần cứng",
           seekerImg: "/images/cv/u1.jpg",
-          seekerTitle: "Cơ điện",
+          seekerTitle: "Quản trị mạng",
           seekerLink: "#",
           postedTime: "7 giờ trước",
         },
         {
-          seekerName: "Công Ty TNHH Đầu Tư Và Thương Mại An Lành",
+          seekerIndustry: "Điện/Điện tử",
           seekerImg: "/images/cv/u2.jpg",
-          seekerTitle: "Cơ điện",
+          seekerTitle: "Kỹ sư cơ điện",
           seekerLink: "#",
           postedTime: "7 giờ trước",
         },
         {
-          seekerName: "Công Ty TNHH Đầu Tư Và Thương Mại An Lành",
+          seekerIndustry: "Marketing/Sale",
           seekerImg: "/images/cv/u3.jpg",
-          seekerTitle: "Cơ điện",
+          seekerTitle: "Bán hàng",
           seekerLink: "#",
           postedTime: "7 giờ trước",
         }

@@ -99,10 +99,12 @@ import JobUrgent from '../components/HomeSection/JobTab/JobUrgent.vue';
 import Rightbar from '../components/Joblist/Rightbar.vue';
 import JobCard from '../components/Joblist/JobCard.vue';
 import JobBreadCrumb from '../components/Joblist/TemplateParts/JobBreadCrumb.vue';
+import SearchFormInBanner from '../components/SearchFormInBanner.vue';
 
 export default {
   name: 'Index',
   components: {
+    SearchFormInBanner,
     JobBreadCrumb,
     JobUrgent,
     Rightbar,
@@ -126,7 +128,7 @@ export default {
           location: "Bắc Kạn",
           type: "Full time",
           posted: "7 hours ago",
-          jobLink: "/viec-lam/detail",
+          jobLink: "/viec-lam/chi-tiet",
           image: "/images/company/cong-ty-tnhh-dau-tu-va-thuong-mai-an-lanh.jpg"
         },
         {
@@ -137,7 +139,7 @@ export default {
           location: "Bắc Kạn",
           type: "Part time",
           posted: "21 hours ago",
-          jobLink: "/viec-lam/detail",
+          jobLink: "/viec-lam/chi-tiet",
           image: "/images/company/cong-ty-cp-bao-linh.jpg"
         },
         {
@@ -148,7 +150,7 @@ export default {
           location: "Bắc Kạn",
           type: "Full time",
           posted: "1 day ago",
-          jobLink: "/viec-lam/detail",
+          jobLink: "/viec-lam/chi-tiet",
           image: "/images/company/cong-ty-tnhh-dien-tu-tin-hoc-phi-dung.png"
         },
         {
@@ -159,7 +161,7 @@ export default {
           location: "Bắc Kạn",
           type: "Full time",
           posted: "7 hours ago",
-          jobLink: "/viec-lam/detail",
+          jobLink: "/viec-lam/chi-tiet",
           image: "/images/company/cong-ty-tnhh-dau-tu-va-thuong-mai-an-lanh.jpg"
         },
         {
@@ -170,7 +172,7 @@ export default {
           location: "Bắc Kạn",
           type: "Part time",
           posted: "21 hours ago",
-          jobLink: "/viec-lam/detail",
+          jobLink: "/viec-lam/chi-tiet",
           image: "/images/company/cong-ty-cp-bao-linh.jpg"
         },
         {
@@ -181,7 +183,7 @@ export default {
           location: "Bắc Kạn",
           type: "Full time",
           posted: "1 day ago",
-          jobLink: "/viec-lam/detail",
+          jobLink: "/viec-lam/chi-tiet",
           image: "/images/company/cong-ty-tnhh-dien-tu-tin-hoc-phi-dung.png"
         }
       ]

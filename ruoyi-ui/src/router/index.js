@@ -100,7 +100,7 @@ export const constantRoutes = [
         component: () => import('@/views/JobGrid.vue'),
       },
       {
-        path: 'detail',
+        path: 'chi-tiet',
         component: () => import('@/views/JobDetail.vue'),
       }
     ]
