@@ -49,6 +49,8 @@
     "element-ui": "2.15.13",
     "file-saver": "2.0.5",
     "font-awesome": "^4.7.0",
+    "fslightbox": "^3.5.1",
+    "fslightbox-vue": "^2.2.1",
     "fuse.js": "6.4.3",
     "highlight.js": "9.18.5",
     "jquery": "^3.7.1",

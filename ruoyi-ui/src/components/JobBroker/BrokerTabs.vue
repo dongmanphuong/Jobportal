@@ -32,7 +32,7 @@
     <!-- Tab Content -->
     <div class="tab-content">
       <div class="tab-pane fade show active" id="nav-one-eg1" role="tabpanel" aria-labelledby="nav-one-eg1-tab">
-        <JobBid />
+        <CompanyList />
       </div>
 
       <div class="tab-pane fade" id="nav-two-eg1" role="tabpanel" aria-labelledby="nav-two-eg1-tab">
@@ -40,7 +40,7 @@
       </div>
 
       <div class="tab-pane fade" id="nav-three-eg1" role="tabpanel" aria-labelledby="nav-three-eg1-tab">
-        <JobBid />
+        <SeekerBid />
       </div>
       <div class="tab-pane fade" id="nav-four-eg1" role="tabpanel" aria-labelledby="nav-four-eg1-tab">
         <JobBid />
@@ -56,10 +56,14 @@
 </template>
 
 <script>
+import CompanyList from './TemplateParts/CompanyList.vue';
 import JobBid from './TemplateParts/JobBid.vue';
+import SeekerBid from './TemplateParts/SeekerBid.vue';
 export default {
   components: {
-    JobBid
+    CompanyList,
+    JobBid,
+    SeekerBid
   }
 }
 </script>

@@ -10,14 +10,8 @@
             <div class="page-header">
               <!-- Media -->
               <div class="d-sm-flex mb-3">
-                <div class="flex-shrink-0 mb-2 mb-sm-0">
-                  <a href="#">
-                    <img class="avatar avatar-lg mb-3" src="/images/company/cty-sinte.png"
-                      alt="Image Description">
-                  </a>
-                </div>
 
-                <div class="flex-grow-1 ms-sm-4">
+                <div class="flex-grow-1">
                   <div class="row">
                     <div class="col">
                       <h1 class="page-header-title h2">Lao động kỹ thuật - Nhân viên kiểm định chất lượng</h1>
@@ -46,6 +40,20 @@
 
               <!-- Footer -->
               <div class="d-flex justify-content-end d-print-none gap-3">
+
+                <div class="d-flex justify-content-sm-start align-items-center">
+                    <span class="text-cap mb-0 me-2">Share:</span>
+
+                    <div class="d-flex gap-2">
+                      <a class="btn btn-soft-secondary btn-sm btn-icon rounded-circle" href="#">
+                        <i class="bi-facebook"></i>
+                      </a>
+                      <a class="btn btn-soft-secondary btn-sm btn-icon rounded-circle" href="#">
+                        <i class="bi-twitter"></i>
+                      </a>
+
+                    </div>
+                  </div>
 
                 <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal"><i class="bi-send me-1"></i> Ứng tuyển</a>
 
