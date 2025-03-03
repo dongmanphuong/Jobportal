@@ -4,7 +4,7 @@
 
       <ul class="nav  justify-content-end">
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Đăng ký</a>
+          <a class="nav-link text-white" href="/register">Đăng ký</a>
 
         </li>
         <li class="nav-item">
@@ -12,7 +12,7 @@
 
           <!-- Hiển thị khi chưa đăng nhập -->
           <template v-if="!isLoggedIn">
-            <a class="nav-link text-white" href="#">Đăng nhập</a>
+            <a class="nav-link text-white" href="/login">Đăng nhập</a>
             </template>
 
             <!-- Hiển thị khi đã đăng nhập -->
