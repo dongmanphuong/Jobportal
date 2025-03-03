@@ -9,12 +9,14 @@
             <div class="form-row">
                 <div class="col-2-3">
                     <label class="label small-label">Tên công việc *</label>
-                    <input v-model="jobName" type="text" class="input" :class="{'input-error': errors.jobName}" placeholder="Nhập tên công việc..." required/>
+                    <input v-model="jobName" type="text" class="input" :class="{ 'input-error': errors.jobName }"
+                        placeholder="Nhập tên công việc..." required />
                     <span v-if="errors.jobName" class="error-message">{{ errors.jobName }}</span>
                 </div>
                 <div class="col-1-3">
                     <label class="label small-label">Số lượng *</label>
-                    <input v-model="soluong" type="text" class="input" :class="{'input-error': errors.soluong}" placeholder="Nhập số lượng..." required/>
+                    <input v-model="soluong" type="text" class="input" :class="{ 'input-error': errors.soluong }"
+                        placeholder="Nhập số lượng..." required />
                     <span v-if="errors.soluong" class="error-message">{{ errors.soluong }}</span>
                 </div>
             </div>
@@ -24,7 +26,7 @@
                 <!-- Cột trái: Mô tả công việc -->
                 <div class="col-1-2">
                     <label class="label small-label">Mô tả công việc *</label>
-                    <textarea v-model="mota" class="input textarea" :class="{'input-error': errors.mota}" rows="8"
+                    <textarea v-model="mota" class="input textarea" :class="{ 'input-error': errors.mota }" rows="8"
                         placeholder="Nhập mô tả công việc..."></textarea>
                     <span v-if="errors.mota" class="error-message">{{ errors.mota }}</span>
                 </div>
@@ -34,8 +36,9 @@
                         <!-- Dòng 1: Mã nghề -->
                         <div class="job-info-row">
                             <label class="label small-label">Mã nghề *</label>
-                            <v-select v-model="companyType" :options="companyTypeOptions" label="label"
-                                placeholder="Chọn loại hình..." :class="{'vs-error': errors.companyType}" :clearable="true"></v-select>
+                            <v-select v-model="job_code" :options="jobCodeOptions" label="label"
+                                placeholder="Chọn loại hình..." :class="{ 'vs-error': errors.companyType }"
+                                :reduce="option => option.value" :clearable="true" @input="val => job_code = val"></v-select>
                             <span v-if="errors.companyType" class="error-message">{{ errors.companyType }}</span>
                         </div>
                         <!-- Dòng 2: Cấp 1 và Cấp 2 -->
@@ -66,8 +69,11 @@
                         </div>
                         <!-- Dòng 4: Chức vụ -->
                         <div class="job-info-row">
-                            <label class="label small-label">Chức vụ</label>
-                            <input v-model="chucvu" type="text" class="input" placeholder="Nhập chức vụ..." />
+                            <label class="label small-label">Chức vụ *</label>
+                            <v-select v-model="chucvu" :options="chucvuOptions" placeholder="Nhập chức vụ..."
+                                :reduce="option => option.value" :class="{ 'vs-error': errors.chucvu }"
+                                :clearable="true" @input="val => chucvu = val"></v-select>
+                            <span v-if="errors.chucvu" class="error-message">{{ errors.chucvu }}</span>
                         </div>
                     </div>
                 </div>
@@ -77,14 +83,16 @@
             <div class="form-row">
                 <div class="col-1-2">
                     <label class="label small-label">Trình độ học vấn *</label>
-                    <v-select v-model="province" :options="provinceOptions" label="label"
-                        placeholder="Chọn trình độ học vấn..." :class="{'vs-error': errors.province}" :clearable="true"></v-select>
+                    <v-select v-model="educationlevel" :options="educationlevelOptions" label="label"
+                        placeholder="Chọn trình độ học vấn..." :class="{ 'vs-error': errors.province }"
+                        :clearable="true" :reduce="option => option.value" @input="val => educationlevel = val"></v-select>
                     <span v-if="errors.province" class="error-message">{{ errors.province }}</span>
                 </div>
                 <div class="col-1-2">
                     <label class="label small-label">Trình độ CMKT *</label>
-                    <v-select v-model="cmkt" :options="provinceOptions" label="label"
-                        placeholder="Chọn trình độ CMKT..." :class="{'vs-error': errors.cmkt}" :clearable="true"></v-select>
+                    <v-select v-model="cmkt" :options="cmktOptions" label="label"
+                        placeholder="Chọn trình độ CMKT..." :class="{ 'vs-error': errors.cmkt }"
+                        :clearable="true" :reduce="option => option.value" @input="val => cmkt = val"></v-select>
                     <span v-if="errors.cmkt" class="error-message">{{ errors.cmkt }}</span>
                 </div>
             </div>
@@ -110,8 +118,8 @@
             <div class="form-row">
                 <div class="col-1-2">
                     <label class="label small-label">Trình độ kỹ năng nghề</label>
-                    <v-select v-model="kynangnghe" :options="provinceOptions" label="label"
-                        placeholder="Chọn trình độ kỹ năng nghề..."  :clearable="true"></v-select>
+                    <v-select v-model="kynangnghe" :options="kynangngheOptions" label="label"
+                        placeholder="Chọn trình độ kỹ năng nghề..." :clearable="true"></v-select>
                 </div>
                 <div class="col-1-2">
                     <label class="label small-label">Kỹ năng nghề bậc</label>
@@ -133,8 +141,8 @@
                 </div>
                 <div class="col-1-3">
                     <label class="label small-label">Khả năng sử dụng</label>
-                    <v-select v-model="khanang1" :options="provinceOptions" label="label" 
-                        placeholder="Chọn khả năng sử dụng..."  :clearable="true"></v-select>
+                    <v-select v-model="khanang1" :options="khanang1Options" label="label"
+                        placeholder="Chọn khả năng sử dụng..." :clearable="true"></v-select>
                 </div>
             </div>
 
@@ -150,8 +158,8 @@
                 </div>
                 <div class="col-1-3">
                     <label class="label small-label">Khả năng sử dụng</label>
-                    <v-select v-model="khanang2" :options="provinceOptions" label="label" 
-                        placeholder="Chọn khả năng sử dụng..."  :clearable="true"></v-select>
+                    <v-select v-model="khanang2" :options="khanang2Options" label="label"
+                        placeholder="Chọn khả năng sử dụng..." :clearable="true"></v-select>
                 </div>
             </div>
 
@@ -167,8 +175,8 @@
                 <div class="col-1-2">
                     <div class="form-group">
                         <label class="label small-label">Khả năng sử dụng</label>
-                        <v-select v-model="tinhocKS" :options="provinceOptions" label="label" 
-                            placeholder="Chọn khả năng sử dụng..."  :clearable="true"></v-select>
+                        <v-select v-model="tinhocKS" :options="tinhocKSOptions" label="label"
+                            placeholder="Chọn khả năng sử dụng..." :clearable="true"></v-select>
                     </div>
                 </div>
             </div>
@@ -184,8 +192,8 @@
                 <div class="col-1-2">
                     <div class="form-group">
                         <label class="label small-label">Khả năng sử dụng</label>
-                        <v-select v-model="tinhocKS2" :options="provinceOptions" label="label"
-                            placeholder="Chọn khả năng sử dụng..."  :clearable="true"></v-select>
+                        <v-select v-model="tinhocKS2" :options="tinhocKS2Options" label="label"
+                            placeholder="Chọn khả năng sử dụng..." :clearable="true"></v-select>
                     </div>
                 </div>
             </div>
@@ -195,15 +203,15 @@
                 <div class="col-1-2">
                     <div class="form-group">
                         <label class="label small-label">Kỹ năng mềm</label>
-                        <v-select v-model="kynangmem" :options="provinceOptions" label="label" 
-                            placeholder="Chọn kỹ năng mềm..."  :clearable="true"></v-select>
+                        <v-select v-model="kynangmem" :options="kynangmemOptions" label="label"
+                            placeholder="Chọn kỹ năng mềm..." :clearable="true"></v-select>
                     </div>
                 </div>
                 <div class="col-1-2">
                     <div class="form-group">
                         <label class="label small-label">Yêu cầu kinh nghiệm</label>
-                        <v-select v-model="kinhnghiem" :options="provinceOptions" label="label" 
-                            placeholder="Chọn kinh nghiệm..."  :clearable="true"></v-select>
+                        <v-select v-model="kinhnghiem" :options="kinhnghiemOptions" label="label"
+                            placeholder="Chọn kinh nghiệm..." :clearable="true"></v-select>
                     </div>
                 </div>
             </div>
@@ -213,30 +221,31 @@
                 <div class="col-1-3">
                     <div class="form-group">
                         <label class="label small-label">Nơi làm việc *</label>
-                        <v-select v-model="diadiem" :options="provinceOptions" label="label" 
-                            placeholder="Chọn nơi làm việc..." :class="{'vs-error': errors.diadiem}" :clearable="true"></v-select>
+                        <v-select v-model="diadiem" :options="provinceOptions" label="label"
+                            placeholder="Chọn nơi làm việc..." :class="{ 'vs-error': errors.diadiem }"
+                            :clearable="true" :reduce="option => option.value" @clear="handleProvinceClear"></v-select>
                         <span v-if="errors.diadiem" class="error-message">{{ errors.diadiem }}</span>
                     </div>
                 </div>
                 <div class="col-1-3">
                     <div class="form-group">
                         <label class="label small-label">Quận/Huyện</label>
-                        <v-select v-model="district" :options="districtOptions" label="label" 
-                            placeholder="Chọn quận/huyện..."  :clearable="true"></v-select>
+                        <v-select v-model="district" :options="districtOptions" label="label"
+                            placeholder="Chọn quận/huyện..." :clearable="true" :reduce="option => option.value" @clear="handleDistrictClear"></v-select>
                     </div>
                 </div>
                 <div class="col-1-3">
                     <div class="form-group">
                         <label class="label small-label">Phường/Xã</label>
-                        <v-select v-model="ward" :options="wardOptions" label="label" 
-                            placeholder="Chọn phường/xã..."  :clearable="true"></v-select>
+                        <v-select v-model="ward" :options="wardOptions" label="label" placeholder="Chọn phường/xã..."
+                            :clearable="true" :reduce="option => option.value" @clear="handleWardClear"></v-select>
                     </div>
                 </div>
             </div>
 
             <h3 class="section-title">Loại hợp đồng lao động</h3>
             <v-select v-model="contractType" :options="contractTypedOptions" label="label"
-                placeholder="Chọn loại hợp đồng..."  :clearable="true"></v-select>
+                placeholder="Chọn loại hợp đồng..." :clearable="true"></v-select>
 
             <h3 class="section-title">Yêu cầu thêm</h3>
             <div class="form-row checkbox-row">
@@ -270,7 +279,8 @@
                     <div class="form-group">
                         <label class="label small-label">Hình thức làm việc *</label>
                         <v-select v-model="hinhthuclamviec" :options="hinhthuclamviecOptions" label="label"
-                            placeholder="Chọn hình thức làm việc..." :class="{'vs-error': errors.hinhthuclamviec}" :clearable="true"></v-select>
+                            placeholder="Chọn hình thức làm việc..." :class="{ 'vs-error': errors.hinhthuclamviec }"
+                            :clearable="true" @input="val => hinhthuclamviec = val"></v-select>
                         <span v-if="errors.hinhthuclamviec" class="error-message">{{ errors.hinhthuclamviec }}</span>
                     </div>
                 </div>
@@ -278,7 +288,8 @@
                     <div class="form-group">
                         <label class="label small-label">Mục đích làm việc *</label>
                         <v-select v-model="mucdichlamviec" :options="mucdichlamviecOptions" label="label"
-                            placeholder="Chọn mục đích làm việc..." :class="{'vs-error': errors.mucdichlamviec}" :clearable="true"></v-select>
+                            placeholder="Chọn mục đích làm việc..." :class="{ 'vs-error': errors.mucdichlamviec }"
+                            :clearable="true" @input="val => mucdichlamviec = val"></v-select>
                         <span v-if="errors.mucdichlamviec" class="error-message">{{ errors.mucdichlamviec }}</span>
                     </div>
                 </div>
@@ -289,16 +300,18 @@
                 <div class="col-1-2">
                     <div class="form-group">
                         <label class="label small-label">Chọn kiểu lương *</label>
-                        <v-select v-model="kieuluong" :options="kieuluongOptions" label="label" 
-                            placeholder="Chọn kiểu lương..." :class="{'vs-error': errors.kieuluong}" :clearable="true"></v-select>
+                        <v-select v-model="kieuluong" :options="kieuluongOptions" label="label"
+                            placeholder="Chọn kiểu lương..." :class="{ 'vs-error': errors.kieuluong }"
+                            :clearable="true" @input="val => kieuluong = val"></v-select>
                         <span v-if="errors.kieuluong" class="error-message">{{ errors.kieuluong }}</span>
                     </div>
                 </div>
                 <div class="col-1-2">
                     <div class="form-group">
                         <label class="label small-label">Mức lương *</label>
-                        <v-select v-model="mucluong" :options="mucluongOptions" label="label" 
-                            placeholder="Chọn mức lương..." :class="{'vs-error': errors.mucluong}" :clearable="true"></v-select>
+                        <v-select v-model="mucluong" :options="mucluongOptions" label="label"
+                            placeholder="Chọn mức lương..." :class="{ 'vs-error': errors.mucluong }"
+                            :clearable="true" @input="val => mucluong = val"></v-select>
                         <span v-if="errors.mucluong" class="error-message">{{ errors.mucluong }}</span>
                     </div>
                 </div>
@@ -324,33 +337,33 @@
                 <div class="col-1-4">
                     <div class="form-group">
                         <label class="label small-label">Hỗ trợ ăn</label>
-                        <v-select v-model="hotroan" :options="hotroanOptions" label="label" 
-                            placeholder="Chọn hỗ trợ ăn..."  :clearable="true"></v-select>
+                        <v-select v-model="hotroan" :options="hotroanOptions" label="label"
+                            placeholder="Chọn hỗ trợ ăn..." :clearable="true"></v-select>
                     </div>
                 </div>
                 <div class="col-1-4">
                     <div class="form-group">
                         <label class="label small-label">Phúc lợi</label>
-                        <v-select v-model="hotroan" :options="hotroanOptions" label="label" 
-                            placeholder="Chọn phúc lợi..."  :clearable="true"></v-select>
+                        <v-select v-model="hotroan" :options="hotroanOptions" label="label"
+                            placeholder="Chọn phúc lợi..." :clearable="true"></v-select>
                     </div>
                 </div>
                 <div class="col-1-4">
                     <div class="form-group">
                         <label class="label small-label">Xe đưa đón</label>
-                        <v-select v-model="xeduadon" :options="xeduadonOptions" label="label" 
-                            placeholder="Chọn xe đưa đón..."  :clearable="true"></v-select>
+                        <v-select v-model="xeduadon" :options="xeduadonOptions" label="label"
+                            placeholder="Chọn xe đưa đón..." :clearable="true" :reduce="option => option.value"></v-select>
                     </div>
                 </div>
                 <div class="col-1-4">
                     <div class="form-group">
                         <label class="label small-label">Hỗ trợ</label>
-                        <v-select v-model="hotro" :options="hotroOptions" label="label" 
-                            placeholder="Chọn hỗ trợ..."  :clearable="true"></v-select>
+                        <v-select v-model="hotro" :options="hotroOptions" label="label" placeholder="Chọn hỗ trợ..."
+                            :clearable="true" :reduce="option => option.value"></v-select>
                     </div>
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <label class="label small-label">Khác</label>
                 <input v-model="khac" class="input" placeholder="Nhập thông tin khác..." />
@@ -361,29 +374,29 @@
                 <div class="col-1-4">
                     <div class="form-group">
                         <label class="label small-label">Nơi làm việc</label>
-                        <v-select v-model="noilamviec" :options="noilamviecOptions" label="label" 
-                            placeholder="Chọn nơi làm việc..."  :clearable="true"></v-select>
+                        <v-select v-model="noilamviec" :options="noilamviecOptions" label="label"
+                            placeholder="Chọn nơi làm việc..." :clearable="true"></v-select>
                     </div>
                 </div>
                 <div class="col-1-4">
                     <div class="form-group">
                         <label class="label small-label">Trọng lượng nâng</label>
                         <v-select v-model="trongluong" :options="trongluongOptions" label="label"
-                            placeholder="Chọn trọng lượng nâng..."  :clearable="true"></v-select>
+                            placeholder="Chọn trọng lượng nâng..." :clearable="true"></v-select>
                     </div>
                 </div>
                 <div class="col-1-4">
                     <div class="form-group">
                         <label class="label small-label">Đứng hoặc đi lại</label>
-                        <v-select v-model="dklamvc" :options="dklamvcOptions" label="label" 
-                            placeholder="Chọn..."  :clearable="true"></v-select>
+                        <v-select v-model="dklamvc" :options="dklamvcOptions" label="label" placeholder="Chọn..."
+                            :clearable="true"></v-select>
                     </div>
                 </div>
                 <div class="col-1-4">
                     <div class="form-group">
                         <label class="label small-label">Nghe nói</label>
-                        <v-select v-model="nghenoi" :options="nghenoiOptions" label="label" 
-                            placeholder="Chọn..."  :clearable="true"></v-select>
+                        <v-select v-model="nghenoi" :options="nghenoiOptions" label="label" placeholder="Chọn..."
+                            :clearable="true"></v-select>
                     </div>
                 </div>
             </div>
@@ -392,22 +405,22 @@
                 <div class="col-1-3">
                     <div class="form-group">
                         <label class="label small-label">Thị lực</label>
-                        <v-select v-model="thiluc" :options="thilucOptions" label="label" 
-                            placeholder="Chọn..."  :clearable="true"></v-select>
+                        <v-select v-model="thiluc" :options="thilucOptions" label="label" placeholder="Chọn..."
+                            :clearable="true"></v-select>
                     </div>
                 </div>
                 <div class="col-1-3">
                     <div class="form-group">
                         <label class="label small-label">Thao tác bằng tay</label>
-                        <v-select v-model="thaotac" :options="thaotacOptions" label="label" 
-                            placeholder="Chọn..."  :clearable="true"></v-select>
+                        <v-select v-model="thaotac" :options="thaotacOptions" label="label" placeholder="Chọn..."
+                            :clearable="true"></v-select>
                     </div>
                 </div>
                 <div class="col-1-3">
                     <div class="form-group">
                         <label class="label small-label">Dùng 2 tay</label>
-                        <v-select v-model="thaotac2" :options="thaotacOptions" label="label" 
-                            placeholder="Chọn..."  :clearable="true"></v-select>
+                        <v-select v-model="thaotac2" :options="thaotacOptions" label="label" placeholder="Chọn..."
+                            :clearable="true" :reduce="option => option.value"></v-select>
                     </div>
                 </div>
             </div>
@@ -415,27 +428,21 @@
             <h3 class="section-title">Đối tượng ưu tiên</h3>
             <label class="label small-label">Đối tượng ưu tiên</label>
             <v-select v-model="doituonguutien" :options="thaotacOptions" label="label"
-                placeholder="Chọn đối tượng ưu tiên..."  :clearable="true"></v-select>
+                placeholder="Chọn đối tượng ưu tiên..." :clearable="true" :reduce="option => option.value"></v-select>
             <h3 class="section-title">Hình thức tuyển dụng</h3>
             <div class="form-row">
                 <div class="col-1-2">
                     <div class="form-group">
                         <label class="label small-label">Hình thức tuyển dụng</label>
                         <v-select v-model="hinhthuctuyendung" :options="thaotacOptions" label="label"
-                            placeholder="Chọn hình thức tuyển dụng..."  :clearable="true"></v-select>
+                            placeholder="Chọn hình thức tuyển dụng..." :clearable="true" :reduce="option => option.value"></v-select>
                     </div>
                 </div>
                 <div class="col-1-2">
                     <div class="form-group">
                         <label class="label small-label">Thời gian tuyển dụng</label>
-                        <Datepicker 
-                            v-model="thoigiantuyendung"
-                            :format="formatDate"
-                            :language="vi"
-                            placeholder="Chọn thời gian..."
-                            input-class="input date-picker"
-                            :monday-first="true"
-                        />
+                        <Datepicker v-model="thoigiantuyendung" :format="formatDate" :language="vi"
+                            placeholder="Chọn thời gian..." input-class="input date-picker" :monday-first="true" :reduce="option => option.value" />
                     </div>
                 </div>
             </div>
@@ -443,15 +450,16 @@
             <h3 class="section-title">Mong muốn của doanh nghiệp đối với TTDVVL</h3>
             <label class="label small-label">Mong muốn doanh nghiệp</label>
             <v-select v-model="mongmuon" :options="thaotacOptions" label="label" placeholder="Chọn mong muốn..."
-                 :clearable="true"></v-select>
+                :clearable="true" :reduce="option => option.value"></v-select>
 
             <h3 class="section-title">2. Thông tin người liên hệ tuyển dụng</h3>
             <div class="form-group mb-15">
                 <label class="label small-label">Doanh nghiệp tuyển dụng *</label>
-                <input v-model="doanhnghiep" type="text" class="input" :class="{'input-error': errors.doanhnghiep}" placeholder="Nhập tên doanh nghiệp tuyển dụng..." />
+                <input v-model="doanhnghiep" type="text" class="input" :class="{ 'input-error': errors.doanhnghiep }"
+                    placeholder="Nhập tên doanh nghiệp tuyển dụng..." />
                 <span v-if="errors.doanhnghiep" class="error-message">{{ errors.doanhnghiep }}</span>
             </div>
-            
+
             <div class="form-row">
                 <div class="col-2-3">
                     <div class="form-group">
@@ -462,7 +470,8 @@
                 <div class="col-1-3">
                     <div class="form-group">
                         <label class="label small-label">MST *</label>
-                        <input v-model="mst" type="text" class="input" :class="{'input-error': errors.mst}" placeholder="Nhập MST..." />
+                        <input v-model="mst" type="text" class="input" :class="{ 'input-error': errors.mst }"
+                            placeholder="Nhập MST..." />
                         <span v-if="errors.mst" class="error-message">{{ errors.mst }}</span>
                     </div>
                 </div>
@@ -472,14 +481,16 @@
                 <div class="col-1-2">
                     <div class="form-group">
                         <label class="label small-label">Người liên hệ *</label>
-                        <input v-model="nguoiLH" type="text" class="input" :class="{'input-error': errors.nguoiLH}" placeholder="Nhập tên người liên hệ..." />
+                        <input v-model="nguoiLH" type="text" class="input" :class="{ 'input-error': errors.nguoiLH }"
+                            placeholder="Nhập tên người liên hệ..." />
                         <span v-if="errors.nguoiLH" class="error-message">{{ errors.nguoiLH }}</span>
                     </div>
                 </div>
                 <div class="col-1-2">
                     <div class="form-group">
                         <label class="label small-label">Điện thoại *</label>
-                        <input v-model="dienthoai" type="text" class="input" :class="{'input-error': errors.dienthoai}" placeholder="Nhập số điện thoại..." />
+                        <input v-model="dienthoai" type="text" class="input"
+                            :class="{ 'input-error': errors.dienthoai }" placeholder="Nhập số điện thoại..." />
                         <span v-if="errors.dienthoai" class="error-message">{{ errors.dienthoai }}</span>
                     </div>
                 </div>
@@ -489,7 +500,8 @@
                 <div class="col-1-2">
                     <div class="form-group">
                         <label class="label small-label">Email liên hệ *</label>
-                        <input v-model="emailLH" type="text" class="input" :class="{'input-error': errors.emailLH}" placeholder="Nhập email liên hệ..." />
+                        <input v-model="emailLH" type="text" class="input" :class="{ 'input-error': errors.emailLH }"
+                            placeholder="Nhập email liên hệ..." />
                         <span v-if="errors.emailLH" class="error-message">{{ errors.emailLH }}</span>
                     </div>
                 </div>
@@ -560,15 +572,14 @@
 
 <script>
 import vSelect from "vue-select";
-import "vue-select/dist/vue-select.css";
 import Datepicker from 'vuejs-datepicker';
 import { vi } from 'vuejs-datepicker/dist/locale';
+import { listProvince, listDistrict, listWard, getEmployer } from "@/api/recruitment/employer";
+import { getUserProfile } from "@/api/system/user";
+
 
 export default {
     components: { vSelect, Datepicker },
-    mounted() {
-        // Không cần thêm style qua JavaScript
-    },
     data() {
         return {
             jobName: "",
@@ -579,9 +590,9 @@ export default {
             cap2: "",
             cap3: "",
             cap4: "",
-            chucvu: "",
+            chucvu: null,
             province: "",
-            cmkt: "",
+            cmkt: null,
             chuyennghanhdaotao: "",
             trinhdokhac1: "",
             trinhdokhac2: "",
@@ -599,14 +610,14 @@ export default {
             tinhocKS2: "",
             kynangmem: "",
             kinhnghiem: "",
-            diadiem: "",
-            district: "",
-            ward: "",
+            diadiem: null,
+            district: null,
+            ward: null,
             contractType: "",
-            hinhthuclamviec: "",
-            mucdichlamviec: "",
-            kieuluong: "",
-            mucluong: "",
+            hinhthuclamviec: null,
+            mucdichlamviec: null,
+            kieuluong: null,
+            mucluong: null,
             lamca: false,
             dicongtac: false,
             bietphai: false,
@@ -658,203 +669,221 @@ export default {
                 emailLH: ""
             },
             submitted: false,
-            companyTypeOptions: [
-                { value: "Nhà nước", label: "Doanh nghiệp Nhà nước" },
-                { value: "Tư nhân", label: "Doanh nghiệp Tư nhân" }
-            ],
-            provinceOptions: [
-                { value: "HCM", label: "Hồ Chí Minh" },
-                { value: "HN", label: "Hà Nội" },
-                { value: "DN", label: "Đà Nẵng" }
-            ],
-            districtOptions: [
-                { value: "Q1", label: "Quận 1" },
-                { value: "Q2", label: "Quận 2" },
-                { value: "BT", label: "Bình Thạnh" }
-            ],
-            wardOptions: [
-                { value: "P1", label: "Phường 1" },
-                { value: "P2", label: "Phường 2" },
-                { value: "P3", label: "Phường 3" }
-            ],
-            hotroanOptions: [
-                { value: "TVPL", label: "Tư vấn pháp luật" },
-                { value: "K", label: "Khác" }
-            ],
+            companyTypeOptions: [],
+            contractTypedOptions: [],
+            provinceOptions: [],
+            districtOptions: [],
+            wardOptions: [],
+            hotroanOptions: [],
+            chucvuOptions: [],
+            hinhthuclamviecOptions: [],
+            mucdichlamviecOptions: [],
+            kieuluongOptions: [],
+            mucluongOptions: [],
+            noilamviecOptions: [],
+            trongluongOptions: [],
+            dklamvcOptions: [],
+            nghenoiOptions: [],
+            thilucOptions: [],
+            thaotacOptions: [],
+            xeduadonOptions: [],
+            hotroOptions: [],
             vi: vi
         };
     },
+    mounted() {
+        this.loading = true;
+        // Also load province options
+        this.fetchProvinceOptions();
+    },
     watch: {
-        // Watchers for text inputs
-        jobName(val) {
-            if (val && val.trim() && this.errors.jobName) {
-                this.errors.jobName = "";
+        diadiem(newValue) {
+            if (newValue) {
+                this.fetchDistrictOptions(newValue);
+            } else {
+                this.handleProvinceClear();
             }
         },
-        soluong(val) {
-            if (val && val.trim() && this.errors.soluong) {
-                this.errors.soluong = "";
-            }
-        },
-        mota(val) {
-            if (val && val.trim() && this.errors.mota) {
-                this.errors.mota = "";
-            }
-        },
-        doanhnghiep(val) {
-            if (val && val.trim() && this.errors.doanhnghiep) {
-                this.errors.doanhnghiep = "";
-            }
-        },
-        mst(val) {
-            if (val && val.trim() && this.errors.mst) {
-                this.errors.mst = "";
-            }
-        },
-        nguoiLH(val) {
-            if (val && val.trim() && this.errors.nguoiLH) {
-                this.errors.nguoiLH = "";
-            }
-        },
-        dienthoai(val) {
-            if (val && val.trim() && this.errors.dienthoai) {
-                this.errors.dienthoai = "";
-            }
-        },
-        emailLH(val) {
-            if (val && val.trim()) {
-                if (this.validateEmail(val)) {
-                    this.errors.emailLH = "";
-                } else if (this.submitted) {
-                    this.errors.emailLH = "Email không hợp lệ";
-                }
-            }
-        },
-        
-        // Watchers for select inputs
-        companyType(val) {
-            if (val && this.errors.companyType) {
-                this.errors.companyType = "";
-            }
-        },
-        province(val) {
-            if (val && this.errors.province) {
-                this.errors.province = "";
-            }
-        },
-        cmkt(val) {
-            if (val && this.errors.cmkt) {
-                this.errors.cmkt = "";
-            }
-        },
-        diadiem(val) {
-            if (val && this.errors.diadiem) {
-                this.errors.diadiem = "";
-            }
-        },
-        hinhthuclamviec(val) {
-            if (val && this.errors.hinhthuclamviec) {
-                this.errors.hinhthuclamviec = "";
-            }
-        },
-        mucdichlamviec(val) {
-            if (val && this.errors.mucdichlamviec) {
-                this.errors.mucdichlamviec = "";
-            }
-        },
-        kieuluong(val) {
-            if (val && this.errors.kieuluong) {
-                this.errors.kieuluong = "";
-            }
-        },
-        mucluong(val) {
-            if (val && this.errors.mucluong) {
-                this.errors.mucluong = "";
+        district(newValue) {
+            if (newValue) {
+                this.fetchWardOptions(newValue);
+            } else {
+                this.handleDistrictClear();
             }
         }
     },
     methods: {
+        handleProvinceClear() {
+            this.diadiem = null;
+            this.district = null;
+            this.ward = null;
+            this.districtOptions = [];
+            this.wardOptions = [];
+        },
+
+        handleDistrictClear() {
+            this.district = null;
+            this.ward = null;
+            this.wardOptions = [];
+        },
+
+        handleWardClear() {
+            this.ward = null;
+        },
+
+        async fetchDistrictOptions(provinceId) {
+            if (!provinceId) {
+                this.districtOptions = [];
+                this.district = null;
+                this.wardOptions = [];
+                this.ward = null;
+                return;
+            }
+            try {
+                this.loading = true;
+                const response = await listDistrict(provinceId);
+                console.log("District API response:", response);
+                
+                if (Array.isArray(response)) {
+                    this.districtOptions = response.map(item => ({
+                        value: item.value || item.id,
+                        label: item.label || item.name
+                    }));
+                } else {
+                    console.error("Invalid district data format:", response);
+                    this.errors.api = "Dữ liệu quận/huyện không hợp lệ";
+                }
+            } catch (error) {
+                console.error("Error fetching districts:", error);
+                this.errors.api = "Không thể tải danh sách quận/huyện";
+            } finally {
+                this.loading = false;
+            }
+        },
+
+        async fetchWardOptions(districtId) {
+            if (!districtId) {
+                this.wardOptions = [];
+                this.ward = null;
+                return;
+            }
+            try {
+                this.loading = true;
+                const response = await listWard(districtId);
+                
+                if (Array.isArray(response)) {
+                    this.wardOptions = response.map(item => ({
+                        value: item.value || item.id,
+                        label: item.label || item.name
+                    }));
+                } else {
+                    this.errors.api = "Dữ liệu phường/xã không hợp lệ";
+                }
+            } catch (error) {
+                this.errors.api = "Không thể tải danh sách phường/xã";
+            } finally {
+                this.loading = false;
+            }
+        },
+        async fetchProvinceOptions() {
+            try {
+                this.loading = true;
+                const response = await listProvince();                
+                if (Array.isArray(response)) {
+                    this.provinceOptions = response.map(item => ({
+                        value: item.value || item.id,
+                        label: item.label || item.name
+                    }));
+                } else {
+                    this.errors.api = "Dữ liệu tỉnh/thành phố không hợp lệ";
+                }
+            } catch (error) {
+                this.errors.api = "Không thể tải danh sách tỉnh/thành phố";
+            } finally {
+                this.loading = false;
+            }
+        },
         validateForm() {
             let isValid = true;
             for (let field in this.errors) {
                 this.errors[field] = "";
             }
-            
+
             if (!this.jobName.trim()) {
                 this.errors.jobName = "Vui lòng nhập tên công việc";
                 isValid = false;
             }
-            
+
             if (!this.soluong.trim()) {
                 this.errors.soluong = "Vui lòng nhập số lượng";
                 isValid = false;
             }
-            
+
             if (!this.mota.trim()) {
                 this.errors.mota = "Vui lòng nhập mô tả công việc";
                 isValid = false;
             }
-            
+
             if (!this.companyType) {
                 this.errors.companyType = "Vui lòng chọn mã nghề";
                 isValid = false;
             }
-            
+
             if (!this.province) {
                 this.errors.province = "Vui lòng chọn trình độ học vấn";
                 isValid = false;
             }
-            
+
             if (!this.cmkt) {
                 this.errors.cmkt = "Vui lòng chọn trình độ CMKT";
                 isValid = false;
             }
-            
+
             if (!this.diadiem) {
                 this.errors.diadiem = "Vui lòng chọn nơi làm việc";
                 isValid = false;
             }
-            
+
             if (!this.hinhthuclamviec) {
                 this.errors.hinhthuclamviec = "Vui lòng chọn hình thức làm việc";
                 isValid = false;
             }
-            
+
             if (!this.mucdichlamviec) {
                 this.errors.mucdichlamviec = "Vui lòng chọn mục đích làm việc";
                 isValid = false;
             }
-            
+
             if (!this.kieuluong) {
                 this.errors.kieuluong = "Vui lòng chọn kiểu lương";
                 isValid = false;
             }
-            
+
             if (!this.mucluong) {
                 this.errors.mucluong = "Vui lòng chọn mức lương";
                 isValid = false;
             }
-            
+
             if (!this.doanhnghiep.trim()) {
                 this.errors.doanhnghiep = "Vui lòng nhập tên doanh nghiệp";
                 isValid = false;
             }
-            
+
             if (!this.mst.trim()) {
                 this.errors.mst = "Vui lòng nhập MST";
                 isValid = false;
             }
-            
+
             if (!this.nguoiLH.trim()) {
                 this.errors.nguoiLH = "Vui lòng nhập tên người liên hệ";
                 isValid = false;
             }
-            
+
             if (!this.dienthoai.trim()) {
                 this.errors.dienthoai = "Vui lòng nhập số điện thoại";
                 isValid = false;
             }
-            
+
             if (!this.emailLH.trim()) {
                 this.errors.emailLH = "Vui lòng nhập email liên hệ";
                 isValid = false;
@@ -862,18 +891,18 @@ export default {
                 this.errors.emailLH = "Email không hợp lệ";
                 isValid = false;
             }
-            
+
             return isValid;
         },
-        
+
         validateEmail(email) {
             const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
         },
-        
+
         submitForm() {
             this.submitted = true;
-            
+
             if (this.validateForm()) {
                 alert("Lưu thành công!");
             } else {
@@ -884,13 +913,26 @@ export default {
                 }
             }
         },
-        
+
         formatDate(date) {
             if (!date) return '';
             const day = date.getDate().toString().padStart(2, '0');
             const month = (date.getMonth() + 1).toString().padStart(2, '0');
             const year = date.getFullYear();
             return `${day}/${month}/${year}`;
+        }
+    },
+    computed: {
+        isFormValid() {
+            return !Object.values(this.errors).some(error => error);
+        },
+        formData() {
+            // Return cleaned form data
+            return {
+                jobName: this.jobName.trim(),
+                soluong: this.soluong,
+                // ... other fields
+            };
         }
     }
 };
@@ -1084,30 +1126,18 @@ export default {
         gap: 20px;
         margin-bottom: 25px;
     }
-    
+
     .form-group {
         margin-bottom: 20px;
     }
-    
+
     h3.section-title {
         margin-top: 30px;
         margin-bottom: 20px;
     }
 }
 
-/* Basic styles for v-select - minimal to avoid conflicts */
-.v-select {
-    margin-top: 4px;
-}
-
-/* Fix for datepicker */
-.vdp-datepicker input {
-    height: 36px;
-    padding: 6px 10px;
-    margin-top: 4px;
-}
-
-/* Comprehensive v-select styling */
+/* Updated v-select styling */
 .v-select {
     position: relative;
     width: 100%;
@@ -1118,112 +1148,150 @@ export default {
     border: 1px solid #e2e8f0;
     border-radius: 6px;
     height: 36px;
-    padding: 0;
+    padding: 0 8px;
     background: white;
-    width: 100%;
     display: flex;
     align-items: center;
 }
 
 .v-select .vs__selected-options {
-    padding: 0 6px;
-    margin: 0;
-    width: calc(100% - 40px);
-    height: 100%;
-    overflow: hidden;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+    padding: 0;
+    position: relative;
 }
 
 .v-select .vs__actions {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    padding: 0 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 6px 0 3px;
+    position: relative;
+    pointer-events: auto;
+}
+
+.v-select .vs__clear {
+    fill: #999;
+    transform: scale(0.8);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 8px;
     display: flex;
     align-items: center;
 }
 
 .v-select .vs__search {
+    border: none;
     padding: 0;
     margin: 0;
-    border: none;
-    font-size: 14px;
+    width: 0;
+    max-width: 100%;
+    flex-grow: 1;
     height: 100%;
-    min-height: 0;
+    line-height: 1.4;
+    font-family: inherit;
 }
 
 .v-select .vs__selected {
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
     border: none;
+    color: #333;
+    line-height: 1.4;
     font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
-    background: transparent;
+    z-index: 0;
+}
+
+.v-select .vs__deselect {
+    display: inline-flex;
+    appearance: none;
+    margin-left: 4px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    background: none;
+    fill: #999;
+    text-shadow: 0 1px 0 #fff;
 }
 
 .v-select .vs__dropdown-menu {
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
     top: calc(100% + 4px);
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    left: 0;
     z-index: 1000;
+    width: 100%;
+    max-height: 350px;
+    min-width: 160px;
+    overflow-y: auto;
+    padding: 5px 0;
+    background: white;
+    border: 1px solid rgba(60, 60, 60, 0.26);
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
 .v-select .vs__dropdown-option {
+    line-height: 1.4;
     padding: 8px 12px;
+    margin: 0;
+    cursor: pointer;
     font-size: 14px;
 }
 
 .v-select .vs__dropdown-option--highlight {
-    background: #e0f2fe;
-    color: #0284c7;
+    background: #5897fb;
+    color: #fff;
 }
 
-.v-select .vs__clear {
-    margin-right: 8px;
-    fill: #94a3b8;
-}
-
-.v-select .vs__open-indicator {
-    fill: #94a3b8;
-}
-
-.col-1-3 .v-select .vs__selected,
-.col-1-4 .v-select .vs__selected,
-.job-info .v-select .vs__selected {
-    max-width: calc(100% - 20px);
-}
-
-/* Fix for focus state */
-.v-select.vs--focus .vs__dropdown-toggle {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 1px #bfdbfe;
-}
-
-/* Fix for open state */
-.v-select.vs--open .vs__dropdown-toggle {
-    border-color: #3b82f6;
-}
-
-/* Fix for disabled state */
-.v-select.vs--disabled .vs__dropdown-toggle {
-    background-color: #f9fafb;
+.v-select .vs__dropdown-option--disabled {
+    background: inherit;
+    color: rgba(60, 60, 60, 0.5);
     cursor: not-allowed;
 }
 
-/* Fix for single select */
 .v-select.vs--single .vs__selected {
-    position: static;
+    width: 100%;
+    height: 100%;
+    line-height: 34px;
+    position: absolute;
+    left: 8px;
+    top: 0;
+    pointer-events: none;
 }
 
-/* Fix for searching state */
-.v-select.vs--searching .vs__selected {
-    display: none;
+.v-select.vs--searchable .vs__dropdown-toggle {
+    cursor: text;
+}
+
+.v-select.vs--unsearchable .vs__dropdown-toggle {
+    cursor: pointer;
+}
+
+.v-select.vs--open .vs__dropdown-toggle {
+    border-bottom-color: transparent;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.v-select.vs--loading .vs__spinner {
+    display: block;
+}
+
+/* Fix for clear button visibility */
+.v-select .vs__clear {
+    display: flex !important;
+    opacity: 0.6;
+}
+
+.v-select .vs__clear:hover {
+    opacity: 1;
 }
 
 /* Validation styles */
@@ -1244,8 +1312,8 @@ export default {
 }
 
 /* Add some space after error messages */
-.error-message + .form-group,
-.error-message + .form-row {
+.error-message+.form-group,
+.error-message+.form-row {
     margin-top: 8px;
 }
 
@@ -1286,28 +1354,30 @@ export default {
         gap: 10px;
         padding: 0;
     }
-    
+
     .status-checkboxes .checkbox-group {
         flex: 0 0 auto;
     }
 }
 
 /* Specific adjustments for contact info section */
-.section h3.section-title:nth-of-type(13) {  /* Targeting "2. Thông tin người liên hệ tuyển dụng" */
+.section h3.section-title:nth-of-type(13) {
+    /* Targeting "2. Thông tin người liên hệ tuyển dụng" */
     margin-bottom: 12px;
 }
 
-.section h3.section-title:nth-of-type(13) + .form-group {
+.section h3.section-title:nth-of-type(13)+.form-group {
     margin-bottom: 12px;
 }
 
-.section h3.section-title:nth-of-type(13) ~ .form-row {
+.section h3.section-title:nth-of-type(13)~.form-row {
     margin-bottom: 12px;
 }
 
 /* Specific style for job description textarea */
 .col-1-2 .input.textarea[placeholder="Nhập mô tả công việc..."] {
-    height: 224px; /* This matches the height of the right column with its content */
+    height: 224px;
+    /* This matches the height of the right column with its content */
     resize: none;
 }
 </style>
